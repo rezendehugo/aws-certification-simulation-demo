@@ -1,0 +1,2056 @@
+[
+  {
+    "id": "aif-q004",
+    "domainId": 1,
+    "objective": "1.3",
+    "type": "multiple_choice",
+    "stem": "A manufacturer built a model that classifies photos of parts as defective or not. The team wants to know what proportion of the part images the model classified correctly. Which evaluation metric should they use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mean absolute error (MAE)"
+      },
+      {
+        "id": "B",
+        "text": "Number of training epochs"
+      },
+      {
+        "id": "C",
+        "text": "Root mean squared error (RMSE)"
+      },
+      {
+        "id": "D",
+        "text": "Accuracy"
+      }
+    ],
+    "correctAnswer": [
+      "D"
+    ],
+    "explanation": "Accuracy is the ratio of correct predictions to the total number of predictions, so it directly measures how many part images the model classified correctly, which is exactly what the team wants for this classification task.\nRoot mean squared error (RMSE) and mean absolute error (MAE) are regression metrics that quantify the difference between predicted and actual continuous values, so neither is suited to measuring classification correctness. Number of training epochs is a training configuration setting that controls how many passes the model makes over the data; it is not an evaluation metric at all.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q006",
+    "domainId": 1,
+    "objective": "1.1",
+    "type": "multiple_choice",
+    "stem": "A company runs an ML pipeline on Amazon SageMaker AI in production. Its requests carry large payloads of up to 1 GB and can take up to an hour to process, and the company wants near real-time latency. Which SageMaker AI inference option meets these requirements?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Real-time inference"
+      },
+      {
+        "id": "B",
+        "text": "Batch transform"
+      },
+      {
+        "id": "C",
+        "text": "Serverless inference"
+      },
+      {
+        "id": "D",
+        "text": "Asynchronous inference"
+      }
+    ],
+    "correctAnswer": [
+      "D"
+    ],
+    "explanation": "Asynchronous inference is built for large payloads of up to 1 GB and long processing times of up to an hour; it queues incoming requests and processes them in the background, returning results when ready without requiring the caller to wait synchronously, which suits workloads that need near real-time handling of demanding requests.\nReal-time inference targets small payloads and fast synchronous responses, and its payload and timeout limits would be exceeded by 1 GB inputs and hour-long processing. Serverless inference suits intermittent traffic with smaller payloads and likewise cannot handle such large inputs or long durations. Batch transform processes large datasets offline in bulk and is not designed to deliver near real-time latency.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q007",
+    "domainId": 1,
+    "objective": "1.2",
+    "type": "multiple_choice",
+    "stem": "A company needs to build models for several new but related tasks. Rather than training models from scratch, it wants to adapt existing pre-trained models. Which ML strategy meets this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Increase the number of epochs"
+      },
+      {
+        "id": "B",
+        "text": "Use transfer learning"
+      },
+      {
+        "id": "C",
+        "text": "Decrease the number of epochs"
+      },
+      {
+        "id": "D",
+        "text": "Use unsupervised learning"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Transfer learning lets a company take a model already trained on one task and adapt it to new, related tasks, which reuses the knowledge captured in the pre-trained model and saves significant time and data compared to training from scratch.\nIncreasing the number of epochs simply trains a model for more passes over the data and does not provide a way to reuse an existing pre-trained model. Decreasing the number of epochs reduces training passes and likewise has nothing to do with adapting pre-trained models for new tasks. Unsupervised learning finds patterns in unlabeled data but is a learning approach rather than a strategy for reusing and adapting an already trained model.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q011",
+    "domainId": 1,
+    "objective": "1.3",
+    "type": "multiple_choice",
+    "stem": "A company is building an ML model with Amazon SageMaker and needs to share and manage variables used for model development across several teams. Which SageMaker feature meets this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Amazon SageMaker Data Wrangler"
+      },
+      {
+        "id": "B",
+        "text": "Amazon SageMaker Feature Store"
+      },
+      {
+        "id": "C",
+        "text": "Amazon SageMaker Clarify"
+      },
+      {
+        "id": "D",
+        "text": "Amazon SageMaker Model Cards"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Amazon SageMaker Feature Store is a centralized repository for storing, sharing, and reusing features, which lets multiple teams manage the same variables for model development.\nAmazon SageMaker Data Wrangler prepares and transforms data, Amazon SageMaker Clarify detects bias and supports explainability, and Amazon SageMaker Model Cards document model details. None of these is designed to share and manage features across teams.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q014",
+    "domainId": 1,
+    "objective": "1.2",
+    "type": "multiple_choice",
+    "stem": "A startup is building an educational quiz app that asks players questions such as: \"A bag holds six red, four green, and three yellow marbles. What is the probability of drawing a green marble?\" Which approach satisfies this requirement with the LEAST operational overhead?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Train a supervised learning regression model to predict the probability"
+      },
+      {
+        "id": "B",
+        "text": "Build an unsupervised learning model to estimate the probability density"
+      },
+      {
+        "id": "C",
+        "text": "Apply reinforcement learning to train a model that returns the probability"
+      },
+      {
+        "id": "D",
+        "text": "Write simple code that calculates the probability using basic arithmetic rules"
+      }
+    ],
+    "correctAnswer": [
+      "D"
+    ],
+    "explanation": "The probability here is a deterministic calculation of favorable outcomes divided by total outcomes, so a few lines of code applying basic arithmetic produce an exact answer with no data to gather, no model to train, and no endpoint to host, giving the least operational overhead.\nThe three machine learning options all stand up an unnecessary pipeline of data collection, training, tuning, and hosting for a problem that already has a known closed-form answer. Beyond that shared waste, supervised regression would only approximate a value that can be computed exactly; unsupervised learning is meant to uncover structure in unlabeled data, which is irrelevant when the formula is known; and reinforcement learning is designed for sequential decision-making guided by rewards in an environment, not for answering a static arithmetic question.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q015",
+    "domainId": 1,
+    "objective": "1.3",
+    "type": "multiple_choice",
+    "stem": "A company has deployed a model to production and wants a metric that reflects how efficiently the model operates at runtime. Which metric should it use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Average inference latency"
+      },
+      {
+        "id": "B",
+        "text": "Customer satisfaction score (CSAT)"
+      },
+      {
+        "id": "C",
+        "text": "Number of training examples"
+      },
+      {
+        "id": "D",
+        "text": "Training time per epoch"
+      }
+    ],
+    "correctAnswer": [
+      "A"
+    ],
+    "explanation": "Average inference latency captures how long the model takes to return a prediction once it is running, so it directly reflects the runtime efficiency of operating the model in production, where lower latency means faster, more efficient responses.\nCustomer satisfaction score (CSAT) measures how happy users are with a product or service, which is a business outcome rather than a measure of operational efficiency. Training time per epoch and number of training examples both relate to the training phase, namely how long training runs and how much data it uses, and say nothing about how efficiently the deployed model operates at inference time.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q016",
+    "domainId": 1,
+    "objective": "1.2",
+    "type": "multiple_choice",
+    "stem": "A telecom support team wants to study what customers talk about during recorded phone calls and pull out the important points. Which solution meets these requirements?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create classification labels with Amazon Comprehend"
+      },
+      {
+        "id": "B",
+        "text": "Build a conversational chatbot with Amazon Lex"
+      },
+      {
+        "id": "C",
+        "text": "Convert the call recordings to text with Amazon Transcribe"
+      },
+      {
+        "id": "D",
+        "text": "Extract information from the recordings with Amazon SageMaker Model Monitor"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Amazon Transcribe converts the speech in the call recordings into text, which the team can then analyze to pull out the key information discussed.\nAmazon Comprehend analyzes text for insights such as classification, but it needs text rather than raw audio as input. Amazon Lex builds conversational chatbots and does not transcribe existing recordings. Amazon SageMaker Model Monitor watches deployed models for drift and has nothing to do with audio transcription.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q017",
+    "domainId": 1,
+    "objective": "1.1",
+    "type": "multiple_choice",
+    "stem": "A retailer has accumulated petabytes of customer records that have no labels or predefined categories. The business wants to group these customers into distinct segments to target them with tailored promotions. Which machine learning approach best fits this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Supervised learning"
+      },
+      {
+        "id": "B",
+        "text": "Unsupervised learning"
+      },
+      {
+        "id": "C",
+        "text": "Reinforcement learning"
+      },
+      {
+        "id": "D",
+        "text": "Semi-supervised learning"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Unsupervised learning discovers patterns and natural groupings within unlabeled data, making it the right approach for segmenting customers when no predefined labels or categories exist, as is the case with the retailer's unlabeled records.\nSupervised learning requires labeled training data where each record has a known target output, which the retailer does not have. Reinforcement learning trains an agent through rewards and penalties as it interacts with an environment, which does not apply to segmenting a static dataset of customers. Semi-supervised learning relies on a small amount of labeled data combined with a larger pool of unlabeled data, but here there are no labels at all, so a purely unsupervised approach is the correct fit.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q020",
+    "domainId": 1,
+    "objective": "1.2",
+    "type": "multiple_choice",
+    "stem": "A company wants to use AI to protect its application from threats by checking whether an incoming IP address comes from a suspicious source. Which solution meets this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Build a speech recognition system"
+      },
+      {
+        "id": "B",
+        "text": "Develop an anomaly detection system"
+      },
+      {
+        "id": "C",
+        "text": "Create a fraud forecasting system"
+      },
+      {
+        "id": "D",
+        "text": "Set up a named entity recognition system using Natural Language Processing (NLP)"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "An anomaly detection system learns what normal traffic and behavior look like and flags activity that deviates from those patterns, so it can pick out IP addresses that behave suspiciously or differ from legitimate sources, directly meeting the goal of protecting the application from threats.\nA speech recognition system converts spoken audio into text and has nothing to do with analyzing IP addresses. A named entity recognition system based on NLP extracts entities such as names and places from text, not network threat signals. A fraud forecasting system predicts future fraud volumes or trends rather than flagging an individual suspicious IP as it arrives.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q027",
+    "domainId": 1,
+    "objective": "1.3",
+    "type": "multiple_choice",
+    "stem": "A company has built an image classification model and wants a web application to call it for real-time predictions. The company needs a fully managed way to host the model and serve those predictions that scales automatically with demand. Which solution meets these requirements?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use Amazon SageMaker Serverless Inference to deploy the model"
+      },
+      {
+        "id": "B",
+        "text": "Use Amazon CloudFront to deploy the model"
+      },
+      {
+        "id": "C",
+        "text": "Use Amazon API Gateway to host the model and serve predictions"
+      },
+      {
+        "id": "D",
+        "text": "Use AWS Batch to host the model and serve predictions"
+      }
+    ],
+    "correctAnswer": [
+      "A"
+    ],
+    "explanation": "Amazon SageMaker Serverless Inference is a fully managed option that hosts a model and serves predictions on demand while automatically provisioning and scaling the underlying compute, so a web application can call the model for real-time predictions without the company managing capacity.\nAmazon CloudFront is a content delivery network that caches and distributes content to reduce latency, and it cannot host an ML model or generate predictions. Amazon API Gateway creates and manages the API layer that fronts a backend, but it does not itself host a model or run inference and would still need a compute service behind it. AWS Batch runs batch computing jobs on managed compute and is suited to offline bulk processing rather than serving low-latency, on-demand predictions to a web application.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q031",
+    "domainId": 1,
+    "objective": "1.2",
+    "type": "multiple_choice",
+    "stem": "A wildlife researcher has a large collection of animal photos and wants to automatically identify and categorize the animals in each image without manual effort. Which strategy meets this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Named entity recognition"
+      },
+      {
+        "id": "B",
+        "text": "Inpainting"
+      },
+      {
+        "id": "C",
+        "text": "Object detection"
+      },
+      {
+        "id": "D",
+        "text": "Anomaly detection"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Object detection is a Computer Vision technique that automatically finds and classifies the objects within an image, so it can locate each animal in a photo and assign it to a category without manual effort, which is exactly what the researcher needs.\nAnomaly detection flags data points that deviate from normal patterns, not the contents of an image. Named entity recognition is a Natural Language Processing (NLP) technique that extracts entities such as names and places from text rather than from photos. Inpainting is a generative Computer Vision technique that fills in missing or removed regions of an image, rather than identifying and categorizing what is in it.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q457",
+    "domainId": 1,
+    "objective": "1.3",
+    "type": "ordering",
+    "stem": "A team at a logistics company is building a machine learning model that predicts delivery delays. Arrange the following stages of the ML development lifecycle in the correct order, from first to last.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Train the model on the prepared dataset to learn patterns that predict delays"
+      },
+      {
+        "id": "B",
+        "text": "Engineer features and clean the gathered data into a training-ready dataset"
+      },
+      {
+        "id": "C",
+        "text": "Deploy the validated model to an endpoint so applications can request predictions"
+      },
+      {
+        "id": "D",
+        "text": "Define the business problem and the success metric for the delay-prediction use case"
+      },
+      {
+        "id": "E",
+        "text": "Collect historical shipment and delivery records from source systems"
+      }
+    ],
+    "correctAnswer": [
+      "D",
+      "E",
+      "B",
+      "A",
+      "C"
+    ],
+    "explanation": "The ML lifecycle starts by framing the business problem and defining a success metric (D), because every later choice depends on knowing what you are predicting and how success is measured. You then collect the raw data (E), prepare it and engineer features into a training-ready dataset (B), train the model on that dataset (A), and finally deploy the validated model to an endpoint (C) so applications can consume its predictions.\nA common mistake is to start with data collection or jump straight to model training, but gathering or modeling data before the business goal is defined risks building the wrong model on the wrong data. Note that data preparation and feature engineering (B) must follow collection (E), since you cannot clean or transform data you have not yet gathered, and deployment (C) is the last step shown because a model is only served after it has been trained and validated.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q458",
+    "domainId": 1,
+    "objective": "1.1",
+    "type": "matching",
+    "stem": "Match each machine learning approach or technique on the left with the scenario on the right that best represents it. Pair each left item with exactly one right item.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Supervised learning (classification)"
+      },
+      {
+        "id": "B",
+        "text": "Unsupervised learning (clustering)"
+      },
+      {
+        "id": "C",
+        "text": "Reinforcement learning"
+      },
+      {
+        "id": "D",
+        "text": "Supervised learning (regression)"
+      }
+    ],
+    "matchChoices": [
+      {
+        "id": "1",
+        "text": "Grouping retail customers into segments based on purchasing behavior when no predefined labels exist"
+      },
+      {
+        "id": "2",
+        "text": "Predicting the dollar amount of a house sale from features such as size and location"
+      },
+      {
+        "id": "3",
+        "text": "Training a warehouse robot to navigate by rewarding successful moves and penalizing collisions"
+      },
+      {
+        "id": "4",
+        "text": "Labeling incoming emails as spam or not spam using a dataset of previously labeled emails"
+      }
+    ],
+    "correctAnswer": {
+      "A": "4",
+      "B": "1",
+      "C": "3",
+      "D": "2"
+    },
+    "explanation": "Supervised classification (A) learns from labeled examples to assign inputs to discrete categories, which fits sorting emails into spam or not spam using previously labeled emails (4). Unsupervised clustering (B) finds structure in unlabeled data, matching customer segmentation with no predefined labels (1); reinforcement learning (C) learns through rewards and penalties, matching the robot trained by trial and error (3); and supervised regression (D) predicts a continuous numeric value, matching the house sale price prediction (2).\nThe key distinction is the type of output and the supervision signal: classification produces a category, regression produces a number, and both require labeled data, while clustering needs no labels and reinforcement learning needs no fixed dataset at all but instead a reward signal. A tempting error is to pair the house price scenario (2) with classification, but a continuous dollar amount is a numeric prediction, which makes it regression, not a discrete class.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain1.json"
+  },
+  {
+    "id": "aif-q002",
+    "domainId": 2,
+    "objective": "2.1",
+    "type": "multiple_choice",
+    "stem": "A publisher needs to turn long research reports into short briefs that capture their main points, using a large language model (LLM). Which solution meets this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Build a recommendation engine"
+      },
+      {
+        "id": "B",
+        "text": "Develop a summarization chatbot"
+      },
+      {
+        "id": "C",
+        "text": "Build a named entity recognition system"
+      },
+      {
+        "id": "D",
+        "text": "Create a multi-language translation system"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "A summarization chatbot uses an LLM to read long documents and produce a shorter version that keeps the essential points, which is exactly what condensing research reports into briefs requires.\nA recommendation engine suggests relevant items from user behavior and does not condense documents. A named entity recognition system only pulls out entities such as names, dates, and places rather than producing a coherent summary. A multi-language translation system converts text between languages without shortening or distilling the content.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q010",
+    "domainId": 2,
+    "objective": "2.2",
+    "type": "multiple_choice",
+    "stem": "A smart-home device maker wants its appliances to run language-model inference on the device itself, with the lowest latency possible. Which solution meets this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deploy optimized large language models (LLMs) on the edge devices"
+      },
+      {
+        "id": "B",
+        "text": "Deploy optimized small language models (SLMs) on the edge devices"
+      },
+      {
+        "id": "C",
+        "text": "Call a centralized small language model (SLM) API asynchronously from the edge devices"
+      },
+      {
+        "id": "D",
+        "text": "Call a centralized large language model (LLM) API asynchronously from the edge devices"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Deploying optimized small language models (SLMs) on the edge devices keeps inference local and avoids network round-trips, which delivers the lowest possible latency, and SLMs are compact enough to run on constrained edge hardware.\nDeploying LLMs on edge devices is impractical because their size and compute demands exceed typical edge hardware and would raise latency. Calling a centralized SLM or LLM API requires network communication, and the asynchronous round-trips add latency rather than minimizing it.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q012",
+    "domainId": 2,
+    "objective": "2.3",
+    "type": "multiple_choice",
+    "stem": "A fintech engineering team plans to adopt Amazon Q Developer to ship features faster. What can Amazon Q Developer do to help the team?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Run an application without provisioning or managing servers"
+      },
+      {
+        "id": "B",
+        "text": "Convert audio files into text documents by using ML models"
+      },
+      {
+        "id": "C",
+        "text": "Generate code snippets and provide reference tracking and open source license tracking"
+      },
+      {
+        "id": "D",
+        "text": "Enable voice commands for coding and natural-language search"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Amazon Q Developer boosts developer productivity by generating code snippets and providing reference tracking and open source license tracking.\nRunning an application without provisioning or managing servers describes serverless compute such as AWS Lambda. Converting audio files into text describes Amazon Transcribe. Enabling voice commands for coding is not a function of Amazon Q Developer.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q018",
+    "domainId": 2,
+    "objective": "2.1",
+    "type": "multiple_choice",
+    "stem": "An ecommerce team is building visual search that accepts both a typed phrase and a product photo as the query. Which kind of foundation model (FM) should power it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Text embedding model"
+      },
+      {
+        "id": "B",
+        "text": "Multimodal embedding model"
+      },
+      {
+        "id": "C",
+        "text": "Image generation model"
+      },
+      {
+        "id": "D",
+        "text": "Multimodal generation model"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "A multimodal embedding model encodes both text and images into a shared vector space, so queries of either type can be compared and matched, which is what a search application handling text and image queries needs.\nA text embedding model handles only text. An image generation model creates images from prompts rather than encoding queries for search. A multimodal generation model produces new content across modalities rather than the embeddings needed for similarity search.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q022",
+    "domainId": 2,
+    "objective": "2.1",
+    "type": "multiple_choice",
+    "stem": "A marketing agency is exploring generative AI. Which of these tasks is a generative AI use case?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Improving network security by using an intrusion detection system"
+      },
+      {
+        "id": "B",
+        "text": "Forecasting stock market trends from historical financial data"
+      },
+      {
+        "id": "C",
+        "text": "Generating photorealistic images from text descriptions for a marketing campaign"
+      },
+      {
+        "id": "D",
+        "text": "Speeding up database queries with optimized indexing"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Generative AI creates new content, and producing photorealistic images from text descriptions for a marketing campaign is content generation, a classic generative AI use case.\nIntrusion detection is a security and classification task. Forecasting stock trends from historical data is predictive analytics. Optimizing database indexing is performance tuning. None of these create new content, so they are not generative AI use cases.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q023",
+    "domainId": 2,
+    "objective": "2.1",
+    "type": "multiple_choice",
+    "stem": "While picking a foundation model (FM) on Amazon Bedrock, a research team needs to know how much text it can pack into a single prompt. Which model property tells them this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Temperature"
+      },
+      {
+        "id": "B",
+        "text": "Model size"
+      },
+      {
+        "id": "C",
+        "text": "Context window"
+      },
+      {
+        "id": "D",
+        "text": "Batch size"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "The context window defines how many tokens a foundation model can take in at once, so it determines how much information fits into a single prompt.\nTemperature controls output randomness, not input capacity. Model size relates to parameter count and overall capability, not prompt length. Batch size concerns how many inputs are processed together, not how much text one prompt can hold.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q032",
+    "domainId": 2,
+    "objective": "2.3",
+    "type": "multiple_choice",
+    "stem": "A small studio wants to prototype on Amazon Bedrock on a tight budget and avoid any long-term commitment. Which Amazon Bedrock pricing model fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Provisioned Throughput"
+      },
+      {
+        "id": "B",
+        "text": "Model customization"
+      },
+      {
+        "id": "C",
+        "text": "On-Demand"
+      },
+      {
+        "id": "D",
+        "text": "Spot Instances"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "The On-Demand pricing model charges only for what is used with no upfront or long-term commitment, which fits a limited budget that needs flexibility.\nProvisioned Throughput requires committing to and paying for a fixed capacity level over time. Model customization is a fine-tuning activity, not a flexible pricing option. Spot Instances are an Amazon EC2 pricing concept and are not an Amazon Bedrock pricing model.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q033",
+    "domainId": 2,
+    "objective": "2.3",
+    "type": "multiple_choice",
+    "stem": "A data-science team wants to stand up a foundation model (FM) quickly inside its own VPC. Which AWS service or feature lets the team do that?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Amazon Personalize"
+      },
+      {
+        "id": "B",
+        "text": "PartyRock, an Amazon Bedrock Playground"
+      },
+      {
+        "id": "C",
+        "text": "Amazon SageMaker JumpStart"
+      },
+      {
+        "id": "D",
+        "text": "Amazon SageMaker AI endpoints"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Amazon SageMaker JumpStart offers pre-built foundation models that a team can deploy quickly inside its own VPC and begin using right away, which matches the requirement.\nAmazon Personalize is a recommendation service, not an FM-deployment feature. PartyRock is a public playground for experimenting with apps, not for deploying FMs in a VPC. Amazon SageMaker AI endpoints host models for inference, but they do not provide a curated catalog of pre-built foundation models ready to deploy with a few clicks, which is the value JumpStart adds.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q035",
+    "domainId": 2,
+    "objective": "2.1",
+    "type": "multiple_choice",
+    "stem": "A retail company keeps large volumes of sales data in a database. It wants an application that lets non-technical staff type a plain-language question and have it automatically turned into a SQL query. Which type of model is best suited to power this application?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Residual neural network (ResNet)"
+      },
+      {
+        "id": "B",
+        "text": "Support vector machine (SVM)"
+      },
+      {
+        "id": "C",
+        "text": "WaveNet"
+      },
+      {
+        "id": "D",
+        "text": "Generative pre-trained transformer (GPT)"
+      }
+    ],
+    "correctAnswer": [
+      "D"
+    ],
+    "explanation": "Generative pre-trained transformers are large language models trained to generate text, and they can translate a natural-language request into a structured SQL query, which lets non-technical staff retrieve data without writing SQL themselves, exactly as the requirement describes.\nA residual neural network (ResNet) is a deep architecture built for image recognition and computer vision, not language generation. A support vector machine (SVM) is a classic supervised algorithm for classification or regression and cannot generate SQL from text. WaveNet is a generative model for producing realistic audio and speech, so it is the wrong modality for converting text into queries.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q050",
+    "domainId": 2,
+    "objective": "2.3",
+    "type": "multiple_choice",
+    "stem": "A company summarizes contracts with an Amazon Bedrock base model and has now trained a custom model for better quality. What must the company do to use the custom model in Amazon Bedrock?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deploy the custom model to an Amazon SageMaker AI endpoint for real-time inference"
+      },
+      {
+        "id": "B",
+        "text": "Register the model in the Amazon SageMaker Model Registry"
+      },
+      {
+        "id": "C",
+        "text": "Request model access for the custom model in Amazon Bedrock"
+      },
+      {
+        "id": "D",
+        "text": "Purchase Provisioned Throughput for the custom model"
+      }
+    ],
+    "correctAnswer": [
+      "D"
+    ],
+    "explanation": "To run a custom (fine-tuned) model in Amazon Bedrock, the company must purchase Provisioned Throughput for that model, which allocates the dedicated capacity Bedrock requires to serve custom models.\nDeploying to a SageMaker AI endpoint or registering in the SageMaker Model Registry are Amazon SageMaker workflows, not how Bedrock serves a custom model. Requesting model access applies to Bedrock base models, not to using your own custom model.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q055",
+    "domainId": 2,
+    "objective": "2.1",
+    "type": "multiple_choice",
+    "stem": "A company is building an application that must generate synthetic data based on its existing data. Which type of model can the company use to meet this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "XGBoost"
+      },
+      {
+        "id": "B",
+        "text": "WaveNet"
+      },
+      {
+        "id": "C",
+        "text": "Generative adversarial network (GAN)"
+      },
+      {
+        "id": "D",
+        "text": "Residual neural network"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "A generative adversarial network (GAN) is built from two competing neural networks, a generator that creates synthetic samples resembling the real data and a discriminator that tries to tell real from generated, and through this competition it learns to produce realistic synthetic data based on an existing dataset, which is exactly what the company needs.\nXGBoost is a gradient-boosting algorithm for supervised classification and regression, not for generating new data. A residual neural network (ResNet) is a deep convolutional architecture used mainly for image recognition and classification. WaveNet is a generative model, but it is specialized for synthesising raw audio such as speech rather than producing general synthetic data from an arbitrary existing dataset.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q063",
+    "domainId": 2,
+    "objective": "2.1",
+    "type": "multiple_choice",
+    "stem": "In AI and Natural Language Processing (NLP), what is the term for the numerical representations of real-world objects and concepts that help models better understand text?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tokens"
+      },
+      {
+        "id": "B",
+        "text": "Parameters"
+      },
+      {
+        "id": "C",
+        "text": "Embeddings"
+      },
+      {
+        "id": "D",
+        "text": "Models"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Embeddings are numerical vector representations of objects and concepts such as words or phrases; by placing similar items close together in vector space they capture relationships and meaning, which helps AI and NLP models understand and work with text more effectively.\nTokens are the individual units, such as words or sub-words, that text is split into before processing, not representations of meaning. A model is the trained system that makes predictions, not a representation of a concept. Parameters are the internal weights a model learns during training and do not represent real-world objects or concepts.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q074",
+    "domainId": 2,
+    "objective": "2.3",
+    "type": "multiple_choice",
+    "stem": "A retail analyst wants charts of top-product sales by store over the last year generated automatically. Which AWS solution fits this need?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Amazon Q Developer"
+      },
+      {
+        "id": "B",
+        "text": "Amazon Q in Amazon QuickSight"
+      },
+      {
+        "id": "C",
+        "text": "Amazon Q in AWS Chatbot"
+      },
+      {
+        "id": "D",
+        "text": "Amazon Q in Amazon EC2"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Amazon Q in Amazon QuickSight lets users ask questions in natural language and automatically builds charts and visualizations, such as total sales for top products, which meets the requirement.\nAmazon Q Developer assists with coding tasks. Amazon Q in AWS Chatbot helps operate AWS resources from chat channels. Amazon Q in Amazon EC2 provides EC2 guidance. None of these generate business data visualizations.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q077",
+    "domainId": 2,
+    "objective": "2.2",
+    "type": "multiple_choice",
+    "stem": "An AI practitioner uses a large language model to write marketing copy. The output sounds plausible and factual but is actually incorrect. Which problem is the model exhibiting?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data leakage"
+      },
+      {
+        "id": "B",
+        "text": "Hallucination"
+      },
+      {
+        "id": "C",
+        "text": "Overfitting"
+      },
+      {
+        "id": "D",
+        "text": "Underfitting"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Hallucination is when a large language model produces content that sounds plausible and factual but is actually incorrect or fabricated, which matches the marketing copy described.\nData leakage is the unintended exposure of information, overfitting is when a model memorizes training data and generalizes poorly, and underfitting is when a model is too simple to capture patterns. None of these describes confidently stated but false output.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q080",
+    "domainId": 2,
+    "objective": "2.1",
+    "type": "multiple_choice",
+    "stem": "A travel company receives a flood of booking questions every day and plans to use Agents for Amazon Bedrock to keep up. What is a key benefit of using these agents?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Generating custom foundation models (FMs) to predict customer needs"
+      },
+      {
+        "id": "B",
+        "text": "Choosing a foundation model (FM) based on predefined criteria and metrics"
+      },
+      {
+        "id": "C",
+        "text": "Automating repetitive tasks and orchestrating complex, multi-step workflows"
+      },
+      {
+        "id": "D",
+        "text": "Calling several foundation models (FMs) at once and merging their results"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Agents for Amazon Bedrock automate repetitive tasks and orchestrate complex, multi-step workflows, which lets the company handle high volumes of inquiries faster and more efficiently.\nAgents do not generate custom foundation models, they do not choose a model by predefined criteria, and their purpose is not to call multiple models and merge results. Their value is task automation and workflow orchestration.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain2.json"
+  },
+  {
+    "id": "aif-q005",
+    "domainId": 3,
+    "objective": "3.2",
+    "type": "multiple_choice",
+    "stem": "A travel company uses a pre-trained large language model (LLM) to power a booking assistant. The company needs the assistant's replies to be brief and written in a particular language. Which approach will best align the LLM's output with these expectations?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Choose an LLM of a different size"
+      },
+      {
+        "id": "B",
+        "text": "Increase the temperature value"
+      },
+      {
+        "id": "C",
+        "text": "Refine the prompt"
+      },
+      {
+        "id": "D",
+        "text": "Increase the Top K value"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Refining the prompt lets the company state the required response length and target language directly, so the model returns brief replies in the chosen language.\nChoosing a different model size changes the model's capacity and cost rather than enforcing length or language. Increasing the temperature adds randomness, making the output less controlled. Increasing the Top K value widens the pool of candidate tokens, which also does not control response length or language.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q008",
+    "domainId": 3,
+    "objective": "3.3",
+    "type": "multiple_choice",
+    "stem": "A manufacturer needs a high-accuracy labeled image dataset for a defect-detection model and wants to keep mislabeled examples to a minimum. Which approach best meets these requirements?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Automated annotation with Amazon Rekognition Custom Labels"
+      },
+      {
+        "id": "B",
+        "text": "Human-in-the-loop validation with Amazon SageMaker Ground Truth Plus"
+      },
+      {
+        "id": "C",
+        "text": "Synthetic image generation with an Amazon Bedrock foundation model"
+      },
+      {
+        "id": "D",
+        "text": "Automated active-learning labeling with Amazon SageMaker Ground Truth"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Human-in-the-loop validation with Amazon SageMaker Ground Truth Plus routes labels through expert reviewers who verify and correct them, producing the highest-accuracy annotations with the fewest mistakes.\nAmazon Rekognition Custom Labels automates labeling but, without human review, can propagate errors; generating synthetic images with an Amazon Bedrock model creates data yet does nothing to validate the labels; SageMaker Ground Truth's automated active-learning labeling cuts effort but raises the chance of incorrect annotations, the opposite of the goal.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q019",
+    "domainId": 3,
+    "objective": "3.3",
+    "type": "multiple_choice",
+    "stem": "A company uses a foundation model (FM) from Amazon Bedrock for a search tool. The company wants to fine-tune the FM on its own data to make the tool more accurate. Which approach will correctly fine-tune the model?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Purchase Provisioned Throughput for Amazon Bedrock"
+      },
+      {
+        "id": "B",
+        "text": "Supply labeled examples that each contain a prompt field and a completion field"
+      },
+      {
+        "id": "C",
+        "text": "Prepare the dataset as a .txt file that holds multiple lines of .csv content"
+      },
+      {
+        "id": "D",
+        "text": "Train the model on journals and textbooks"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Fine-tuning a model on Amazon Bedrock requires a labeled dataset in which each record pairs an input prompt with the expected completion, so the model learns the desired input-to-output behavior from the company data.\nProvisioned Throughput is a capacity and pricing option for inference, not a fine-tuning method. A .txt file containing .csv lines is not the required fine-tuning format. Training on journals and textbooks is unstructured content that lacks the prompt-and-completion pairs that fine-tuning needs.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q021",
+    "domainId": 3,
+    "objective": "3.1",
+    "type": "multiple_choice",
+    "stem": "An engineering team wants to use Amazon OpenSearch Service as the backbone of a vector search application. Which capability makes this possible?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Full-text keyword (BM25) search and ranking"
+      },
+      {
+        "id": "B",
+        "text": "Geospatial indexing and queries"
+      },
+      {
+        "id": "C",
+        "text": "k-NN nearest neighbor search over high-dimensional vectors"
+      },
+      {
+        "id": "D",
+        "text": "Cross-cluster replication for disaster recovery"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "k-NN nearest neighbor search lets Amazon OpenSearch Service index embeddings and return the vectors most similar to a query, which is the core of a vector database application such as semantic search.\nBM25 full-text search matches keywords rather than semantic vectors; geospatial indexing handles location data; cross-cluster replication supports availability and disaster recovery. None provides vector similarity search.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q024",
+    "domainId": 3,
+    "objective": "3.2",
+    "type": "multiple_choice",
+    "stem": "A company is building a self-service support chatbot on a foundation model (FM). The chatbot's responses must match the company's brand tone. Which solution meets this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Iterate on and refine the prompt until the FM produces responses in the desired style"
+      },
+      {
+        "id": "B",
+        "text": "Set a low limit on the number of tokens the FM can produce"
+      },
+      {
+        "id": "C",
+        "text": "Use batch inference to generate detailed responses"
+      },
+      {
+        "id": "D",
+        "text": "Set a higher temperature value"
+      }
+    ],
+    "correctAnswer": [
+      "A"
+    ],
+    "explanation": "Iteratively refining the prompt steers the foundation model toward responses that match the company brand tone, because the prompt instructions and examples shape the style of the output.\nLimiting output tokens only shortens responses. Batch inference changes how requests are processed, not their tone. Raising the temperature increases randomness, which makes tone less consistent rather than more aligned.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q025",
+    "domainId": 3,
+    "objective": "3.2",
+    "type": "multiple_choice",
+    "stem": "A company wants to use a large language model (LLM) on Amazon Bedrock to label text passages as positive or negative. Which prompt engineering strategy meets this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add a detailed explanation of sentiment analysis and how LLMs work to the prompt"
+      },
+      {
+        "id": "B",
+        "text": "Provide only the new passage to classify, with no examples or additional context"
+      },
+      {
+        "id": "C",
+        "text": "Include a few example passages, each labeled positive or negative, in the prompt"
+      },
+      {
+        "id": "D",
+        "text": "Include the new passage along with a few examples of unrelated tasks such as summarization or translation"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Including a few example passages, each labeled positive or negative, is few-shot prompting, which shows the model the input-to-label pattern and improves classification accuracy on a new passage.\nAdding an explanation of how sentiment analysis or LLMs work provides theory but no examples to learn from. Providing only the passage with no examples is zero-shot and gives the model less guidance. Examples of unrelated tasks such as summarization or translation steer the model away from sentiment classification.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q029",
+    "domainId": 3,
+    "objective": "3.2",
+    "type": "multiple_choice",
+    "stem": "A startup is launching an LLM-powered virtual agent and wants to stop users from coaxing it into unsafe actions or leaking its hidden instructions. Which action most directly reduces this risk?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Increase the model's temperature so responses vary more"
+      },
+      {
+        "id": "B",
+        "text": "Raise the Top P value to widen token sampling"
+      },
+      {
+        "id": "C",
+        "text": "Add system instructions in a prompt template that teach the model to recognize and refuse manipulation attempts"
+      },
+      {
+        "id": "D",
+        "text": "Reduce the maximum output length on each request"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "A prompt template with system instructions that teach the model to spot and refuse manipulation patterns is a prompt-engineering safeguard that directly lowers the risk of prompt injection and instruction leakage.\nRaising temperature or Top P only changes how random the sampling is, and shortening the maximum output length just truncates responses; none of these counters prompt manipulation.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q038",
+    "domainId": 3,
+    "objective": "3.1",
+    "type": "multiple_choice",
+    "stem": "A logistics company runs an Amazon Titan model on Amazon Bedrock and wants the model's answers to draw on its internal shipping documents. Which solution adds this private context?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Fine-tune the FM on the internal documents"
+      },
+      {
+        "id": "B",
+        "text": "Create an Amazon Bedrock knowledge base over the internal documents"
+      },
+      {
+        "id": "C",
+        "text": "Lower the temperature value"
+      },
+      {
+        "id": "D",
+        "text": "Switch to a larger foundation model"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "An Amazon Bedrock knowledge base indexes the internal documents and retrieves the relevant passages at query time (RAG), so the Titan model grounds its answers in the company's private data without any training.\nFine-tuning can embed knowledge but is costlier and static, so it is not the targeted way to supplement answers with frequently used documents; lowering the temperature only reduces randomness; switching to a larger model adds capability but still gives it no access to the private documents.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q041",
+    "domainId": 3,
+    "objective": "3.3",
+    "type": "multiple_choice",
+    "stem": "An ML team is training a foundation model (FM) and wants to push its accuracy up to a required threshold. What should the team do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Decrease the number of epochs"
+      },
+      {
+        "id": "B",
+        "text": "Decrease the batch size"
+      },
+      {
+        "id": "C",
+        "text": "Increase the number of epochs"
+      },
+      {
+        "id": "D",
+        "text": "Increase the temperature parameter"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Increasing the number of epochs lets the model train over more passes of the data, which generally improves accuracy until it reaches the target level.\nDecreasing the epochs gives the model less training and tends to lower accuracy. Decreasing the batch size mainly affects training dynamics and memory use rather than reliably raising accuracy toward a target. Temperature is an inference parameter that controls output randomness and has no effect on training accuracy.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q042",
+    "domainId": 3,
+    "objective": "3.4",
+    "type": "multiple_choice",
+    "stem": "A support center rolls out a large language model (LLM) chatbot to cut down how many steps agents take when answering customer questions. Which business metric best shows whether the chatbot is making a difference?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Corporate social responsibility"
+      },
+      {
+        "id": "B",
+        "text": "Regulatory compliance"
+      },
+      {
+        "id": "C",
+        "text": "Average call duration"
+      },
+      {
+        "id": "D",
+        "text": "Website engagement rate"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Average call duration directly reflects how much the chatbot reduces the steps agents take to resolve questions, so tracking it measures the chatbot's business impact.\nCorporate social responsibility and regulatory compliance are organizational concerns unrelated to how quickly agents resolve customer questions. Website engagement rate measures online visitor behavior, not call center efficiency.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q046",
+    "domainId": 3,
+    "objective": "3.1",
+    "type": "multiple_choice",
+    "stem": "An appliance maker wants a chat interface over its PDF product manuals using large language models (LLMs) on Amazon Bedrock, at the lowest cost. Which approach fits best?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add all the manuals to every prompt as context"
+      },
+      {
+        "id": "B",
+        "text": "Upload the manuals to an Amazon Bedrock knowledge base and retrieve only the relevant passages per query"
+      },
+      {
+        "id": "C",
+        "text": "Fine-tune a model on the manuals and serve the fine-tuned model"
+      },
+      {
+        "id": "D",
+        "text": "Continuously pre-train the base model on the manual content"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "A knowledge base retrieves just the passages relevant to each question, so the model gets the right context cheaply, without paying to send whole manuals every time or to train the model.\nPasting all manuals into every prompt inflates token costs; fine-tuning adds training cost and must be redone when manuals change; continuous pre-training on the corpus is the most expensive option and unnecessary for a Q&A interface.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q048",
+    "domainId": 3,
+    "objective": "3.2",
+    "type": "multiple_choice",
+    "stem": "A cosmetics brand wants a pre-trained generative AI model to write campaign copy that fits its brand voice and messaging. What should the team do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add more layers to the model's architecture to increase its complexity"
+      },
+      {
+        "id": "B",
+        "text": "Craft clear, well-structured prompts that provide instructions and context to guide the model's output"
+      },
+      {
+        "id": "C",
+        "text": "Tune the model's architecture and hyperparameters to improve its overall performance"
+      },
+      {
+        "id": "D",
+        "text": "Collect a large, diverse dataset and pre-train a new generative model from scratch"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Crafting clear prompts with instructions and context guides the pre-trained model to generate content that matches the brand voice, without modifying the model itself.\nAdding layers or tuning the architecture and hyperparameters means re-engineering or retraining the model, which is unnecessary and costly here. Pre-training a new model from scratch is even more resource-intensive and is not needed to align output with brand voice.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q051",
+    "domainId": 3,
+    "objective": "3.4",
+    "type": "multiple_choice",
+    "stem": "A consultancy must choose an Amazon Bedrock model for internal use, and its analysts care about the writing style of the answers. How should the firm choose the model?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Evaluate the models with built-in prompt datasets"
+      },
+      {
+        "id": "B",
+        "text": "Choose the model based on public model leaderboards"
+      },
+      {
+        "id": "C",
+        "text": "Evaluate the models with a human workforce using custom prompt datasets"
+      },
+      {
+        "id": "D",
+        "text": "Compare the models using the InvocationLatency runtime metric in Amazon CloudWatch"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Using a human workforce to evaluate the models against custom prompt datasets captures subjective style preferences that automated scores miss, so it best identifies the model whose responses match what employees prefer.\nBuilt-in prompt datasets and public leaderboards measure general performance, not the company specific style preference. The InvocationLatency metric in Amazon CloudWatch measures response speed, not response style.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q064",
+    "domainId": 3,
+    "objective": "3.3",
+    "type": "multiple_choice",
+    "stem": "A biotech firm's chatbot answers questions from dense clinical research papers, but even after several prompt tweaks the model handles the specialized terminology poorly. What will best improve it?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use few-shot prompting with sample question-and-answer pairs"
+      },
+      {
+        "id": "B",
+        "text": "Apply domain adaptation fine-tuning on the specialized corpus"
+      },
+      {
+        "id": "C",
+        "text": "Add a Retrieval Augmented Generation (RAG) step over the papers"
+      },
+      {
+        "id": "D",
+        "text": "Lower the temperature to make answers more focused"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Domain adaptation fine-tuning trains the model on the specialized corpus so it actually learns the clinical terminology, which is what fixes poor comprehension of dense domain language.\nFew-shot prompting and a lower temperature shape responses but do not teach new vocabulary; a RAG step retrieves relevant passages, yet the model still struggles to interpret the specialized terms it has not learned.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q065",
+    "domainId": 3,
+    "objective": "3.1",
+    "type": "multiple_choice",
+    "stem": "A news app runs sentiment analysis with a large language model (LLM) on Amazon Bedrock and wants the same input to yield steadier results. Which inference parameter should it change?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Increase the temperature value"
+      },
+      {
+        "id": "B",
+        "text": "Increase the maximum generation length"
+      },
+      {
+        "id": "C",
+        "text": "Decrease the temperature value"
+      },
+      {
+        "id": "D",
+        "text": "Reduce the maximum number of output tokens"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Lowering the temperature reduces randomness in token selection, making the model outputs more deterministic and consistent for the same input.\nRaising the temperature increases randomness and variability. Changing the maximum generation length or reducing the number of output tokens only affects response length, not how consistent the responses are.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q069",
+    "domainId": 3,
+    "objective": "3.2",
+    "type": "multiple_choice",
+    "stem": "An online learning company runs a question-answering assistant and wants the answer style to match each learner's age range, which the app already passes to the model. Which approach needs the LEAST effort?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Train a separate fine-tuned model for each age range"
+      },
+      {
+        "id": "B",
+        "text": "Build a Retrieval Augmented Generation (RAG) pipeline of age-specific content"
+      },
+      {
+        "id": "C",
+        "text": "Post-process every response with a second model to adjust the tone"
+      },
+      {
+        "id": "D",
+        "text": "Add a role and audience instruction to the prompt that states the user's age range"
+      }
+    ],
+    "correctAnswer": [
+      "D"
+    ],
+    "explanation": "Adding a role and audience instruction to the prompt is a simple prompt-engineering change that steers the style to the stated age range with almost no extra work.\nFine-tuning a model per age range, building a RAG pipeline of age-specific content, and running a second model to rewrite tone all add significant data, infrastructure, or processing effort.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q070",
+    "domainId": 3,
+    "objective": "3.4",
+    "type": "multiple_choice",
+    "stem": "A team needs to check how accurately its image-classification foundation model (FM) performs. Which strategy should the team use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Count the number of layers in the model's neural network"
+      },
+      {
+        "id": "B",
+        "text": "Calculate the total cost of the resources the model uses"
+      },
+      {
+        "id": "C",
+        "text": "Check the color accuracy of the images the model processes"
+      },
+      {
+        "id": "D",
+        "text": "Measure the model's accuracy on a predefined benchmark dataset"
+      }
+    ],
+    "correctAnswer": [
+      "D"
+    ],
+    "explanation": "Measuring the model's accuracy against a predefined benchmark dataset is the standard way to assess classification accuracy, because performance is compared against known correct labels.\nCounting neural-network layers describes architecture, not accuracy. Calculating total resource cost measures expense. Checking the color accuracy of processed images is unrelated to classification correctness.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain3.json"
+  },
+  {
+    "id": "aif-q001",
+    "domainId": 4,
+    "objective": "4.2",
+    "type": "multiple_choice",
+    "stem": "A logistics company uses ML models to forecast demand each quarter. An analyst is preparing a report that helps stakeholders understand how the trained models reach their predictions. What should the analyst include to satisfy the transparency and explainability needs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sample data used for training"
+      },
+      {
+        "id": "B",
+        "text": "Model convergence tables"
+      },
+      {
+        "id": "C",
+        "text": "Partial dependence plots (PDPs)"
+      },
+      {
+        "id": "D",
+        "text": "Source code used to train the model"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Partial dependence plots (PDPs) show how one or more input features relate to a model's predicted output, which makes them an effective way to explain feature influence and give stakeholders transparency into how the trained models reach their forecasts.\nSource code used to train the model and sample training data reveal implementation and inputs but do not explain how individual features drive predictions. Model convergence tables describe how training progressed toward a solution rather than how the finished model behaves, so they do not meet the explainability requirement.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain4.json"
+  },
+  {
+    "id": "aif-q003",
+    "domainId": 4,
+    "objective": "4.2",
+    "type": "multiple_choice",
+    "stem": "A research lab needs to sort genetic samples into 20 categories based on their characteristics. The team requires an algorithm whose internal decision logic can be clearly documented to show how it produces each output. Which algorithm fits this need?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Logistic regression"
+      },
+      {
+        "id": "B",
+        "text": "Decision trees"
+      },
+      {
+        "id": "C",
+        "text": "Neural networks"
+      },
+      {
+        "id": "D",
+        "text": "Linear regression"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Decision trees make their internal logic explicit through a series of readable split rules, so the team can document exactly how the model moves from input characteristics to one of the 20 output categories. This interpretability is why decision trees fit the requirement.\nNeural networks are highly opaque, so their internal mechanism is difficult to document. Linear regression predicts a continuous value rather than assigning discrete categories, which does not match a 20-class problem. Logistic regression is interpretable through its coefficients but is less natural for clearly documenting decision paths across many classes than a decision tree.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain4.json"
+  },
+  {
+    "id": "aif-q037",
+    "domainId": 4,
+    "objective": "4.1",
+    "type": "multiple_choice",
+    "stem": "A team trains a model that generates images of people in various jobs, but imbalanced data skews certain attributes and introduces bias. Which technique addresses this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Monitor the class distribution after deployment"
+      },
+      {
+        "id": "B",
+        "text": "Augment the data to balance underrepresented classes"
+      },
+      {
+        "id": "C",
+        "text": "Train for more epochs on the existing imbalanced data"
+      },
+      {
+        "id": "D",
+        "text": "Apply stronger output filtering to the generated images"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Augmenting the data to balance underrepresented classes reduces the skew that causes the bias, addressing the problem at its source.\nMonitoring only detects imbalance, training more epochs on the same imbalanced data reinforces the bias, and output filtering screens results without fixing the underlying dataset.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain4.json"
+  },
+  {
+    "id": "aif-q039",
+    "domainId": 4,
+    "objective": "4.2",
+    "type": "multiple_choice",
+    "stem": "A bank is adapting a foundation model (FM) to support its lending decisions. Regulators require the model to be transparent and explainable. Which solution will meet these requirements?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure security and compliance with Amazon Inspector"
+      },
+      {
+        "id": "B",
+        "text": "Secure and encrypt the training data with Amazon Macie"
+      },
+      {
+        "id": "C",
+        "text": "Produce metrics, reports, and example explanations with Amazon SageMaker Clarify"
+      },
+      {
+        "id": "D",
+        "text": "Collect more data and add custom labels with Amazon Rekognition"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Amazon SageMaker Clarify supports transparency and explainability by producing metrics, reports, and example explanations that show how a model reaches its decisions, which helps satisfy regulatory requirements.\nAmazon Inspector scans for software vulnerabilities and Amazon Macie protects sensitive data, neither of which explains model behavior. Collecting more data and adding labels with Amazon Rekognition addresses image labeling, not model explainability.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain4.json"
+  },
+  {
+    "id": "aif-q047",
+    "domainId": 4,
+    "objective": "4.1",
+    "type": "multiple_choice",
+    "stem": "A media platform plans to use a large language model for content moderation and wants to check its outputs for bias and unfair treatment of particular groups. Which data source allows this assessment with the least administrative effort?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Moderation logs"
+      },
+      {
+        "id": "B",
+        "text": "User-generated content"
+      },
+      {
+        "id": "C",
+        "text": "Benchmark datasets"
+      },
+      {
+        "id": "D",
+        "text": "Internal content moderation guidelines"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Benchmark datasets are standardized, curated datasets created specifically to evaluate models for bias and fairness, so they let the platform assess the model's outputs consistently with very little administrative effort.\nUser-generated content and moderation logs would need substantial manual labeling and review and do not provide a consistent fairness baseline. Internal content moderation guidelines are policy documents, not a dataset that can be used to measure bias in outputs.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain4.json"
+  },
+  {
+    "id": "aif-q049",
+    "domainId": 4,
+    "objective": "4.1",
+    "type": "multiple_response",
+    "stem": "A lender is building a generative AI solution that offers discounts to new applicants based on business rules. To use the model responsibly and limit bias that could harm some customers, which two actions should the company take?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Check the data for imbalances or disparities across groups"
+      },
+      {
+        "id": "B",
+        "text": "Run the model as frequently as possible"
+      },
+      {
+        "id": "C",
+        "text": "Evaluate the model's behavior so the company can offer transparency to stakeholders"
+      },
+      {
+        "id": "D",
+        "text": "Use the ROUGE metric to measure the quality of generated text"
+      },
+      {
+        "id": "E",
+        "text": "Keep the model's inference time within accepted limits"
+      }
+    ],
+    "correctAnswer": [
+      "A",
+      "C"
+    ],
+    "explanation": "Checking the data for imbalances or disparities helps surface and reduce bias that could unfairly affect some applicants, and evaluating the model's behavior lets the company explain its decisions and offer transparency to stakeholders. Both are core responsible AI practices for limiting bias.\nRunning the model frequently and keeping inference time within limits are operational concerns that do not address bias. The ROUGE metric measures the overlap of generated text with reference text for summarization quality and does not detect bias.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain4.json"
+  },
+  {
+    "id": "aif-q052",
+    "domainId": 4,
+    "objective": "4.1",
+    "type": "multiple_choice",
+    "stem": "A student submits essays by copying text produced by a generative AI tool without attribution. Which responsible AI challenge does this illustrate?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Toxicity"
+      },
+      {
+        "id": "B",
+        "text": "Hallucinations"
+      },
+      {
+        "id": "C",
+        "text": "Privacy"
+      },
+      {
+        "id": "D",
+        "text": "Plagiarism"
+      }
+    ],
+    "correctAnswer": [
+      "D"
+    ],
+    "explanation": "Reusing generative AI output as one's own work without attribution is plagiarism, which is a recognized responsible AI and intellectual-property concern.\nToxicity refers to harmful or offensive content, hallucinations are fabricated but plausible-sounding outputs, and privacy concerns the handling of personal data. None of these describes copying generated text and presenting it as original work.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain4.json"
+  },
+  {
+    "id": "aif-q053",
+    "domainId": 4,
+    "objective": "4.1",
+    "type": "multiple_choice",
+    "stem": "A pharmaceutical company will train its own large language model (LLM) on private data and wants to limit the carbon footprint of training. Which Amazon EC2 instance type has the LEAST environmental impact for training LLMs?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Amazon EC2 P series"
+      },
+      {
+        "id": "B",
+        "text": "Amazon EC2 Trn series"
+      },
+      {
+        "id": "C",
+        "text": "Amazon EC2 G series"
+      },
+      {
+        "id": "D",
+        "text": "Amazon EC2 C series"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Amazon EC2 Trn series instances are powered by AWS Trainium, which is purpose-built for energy-efficient training of large models, so it has the least environmental impact of the listed options.\nThe C series is general-purpose and compute-optimized CPU instances that are not specialized for efficient LLM training. The G and P series are GPU instances optimized for performance rather than energy efficiency, so they have a larger environmental footprint for this workload.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain4.json"
+  },
+  {
+    "id": "aif-q054",
+    "domainId": 4,
+    "objective": "4.1",
+    "type": "multiple_choice",
+    "stem": "A company builds an app that creates children's stories with Amazon Bedrock and must keep the content appropriate for young users. Which feature fits?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Agents for Amazon Bedrock"
+      },
+      {
+        "id": "B",
+        "text": "Amazon Bedrock Guardrails"
+      },
+      {
+        "id": "C",
+        "text": "Amazon Bedrock Prompt Management"
+      },
+      {
+        "id": "D",
+        "text": "Amazon Bedrock playgrounds"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Amazon Bedrock Guardrails apply content filters and topic restrictions to model output, keeping generated stories appropriate for children.\nAgents orchestrate tasks, Prompt Management versions prompts, and playgrounds is an experimentation console; none enforces content safety.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain4.json"
+  },
+  {
+    "id": "aif-q057",
+    "domainId": 4,
+    "objective": "4.1",
+    "type": "multiple_choice",
+    "stem": "A store installed cameras and uses an ML model to review the footage for possible theft. The model flags people from one ethnic group far more often than others. Which type of bias is influencing the model's output?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Measurement bias"
+      },
+      {
+        "id": "B",
+        "text": "Sampling bias"
+      },
+      {
+        "id": "C",
+        "text": "Confirmation bias"
+      },
+      {
+        "id": "D",
+        "text": "Observer bias"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Sampling bias arises when the training data does not represent the full population, which can cause a model to flag one ethnic group far more often than others. The skewed flagging points to training data that under-represented some groups.\nMeasurement bias comes from systematic errors in how data is recorded. Confirmation bias and observer bias relate to how people interpret or label results, not to the representativeness of the training sample.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain4.json"
+  },
+  {
+    "id": "aif-q009",
+    "domainId": 5,
+    "objective": "5.1",
+    "type": "multiple_choice",
+    "stem": "A startup runs a chatbot built on an Amazon Bedrock foundation model (FM). The chatbot needs to read files in an Amazon S3 bucket that is protected with Amazon S3 managed keys (SSE-S3), yet every attempt to read them fails. What will resolve the issue?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use prompt engineering to tell the model where to look for the data in Amazon S3"
+      },
+      {
+        "id": "B",
+        "text": "Strip any sensitive details out of the S3 data"
+      },
+      {
+        "id": "C",
+        "text": "Grant the IAM role that Amazon Bedrock assumes permission to decrypt the data with the correct encryption key"
+      },
+      {
+        "id": "D",
+        "text": "Update the S3 bucket policy to allow public internet access to the data"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "The read failures are a permissions problem: the IAM role that Amazon Bedrock assumes must be allowed to access and decrypt the encrypted objects, so granting it permission to decrypt the data with the correct key resolves the access failure.\nPrompt engineering cannot grant access to encrypted data. Removing sensitive data does not address the missing decrypt permission and defeats the purpose of using the data. Opening the bucket to the public internet is an insecure change that still does not give the role decrypt permission.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain5.json"
+  },
+  {
+    "id": "aif-q013",
+    "domainId": 5,
+    "objective": "5.1",
+    "type": "multiple_choice",
+    "stem": "A bank is building an AI application on Amazon Bedrock. The application sits in a VPC that, to satisfy regulators, must be cut off from all internet traffic. Which AWS service or feature meets these requirements?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Internet gateway"
+      },
+      {
+        "id": "B",
+        "text": "Amazon Macie"
+      },
+      {
+        "id": "C",
+        "text": "AWS PrivateLink"
+      },
+      {
+        "id": "D",
+        "text": "Amazon CloudFront"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "AWS PrivateLink creates private connectivity between a VPC and AWS services such as Amazon Bedrock, so traffic stays on the AWS network and never reaches the public internet, which satisfies the no-internet compliance requirement.\nAn internet gateway does the opposite of what is required by giving the VPC a path to the public internet. Amazon Macie discovers and protects sensitive data in Amazon S3 and does not provide private connectivity. Amazon CloudFront is a content delivery network that serves content over the internet.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain5.json"
+  },
+  {
+    "id": "aif-q026",
+    "domainId": 5,
+    "objective": "5.1",
+    "type": "multiple_choice",
+    "stem": "A security company invokes foundation models (FMs) on Amazon Bedrock and wants to limit use to approved users only. Before tightening its IAM roles and policies later, it first needs to spot any attempts to reach the models without authorization. Which AWS service should it use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "AWS Trusted Advisor"
+      },
+      {
+        "id": "B",
+        "text": "Amazon Inspector"
+      },
+      {
+        "id": "C",
+        "text": "AWS CloudTrail"
+      },
+      {
+        "id": "D",
+        "text": "AWS Audit Manager"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "AWS CloudTrail records API activity across AWS services, so it captures who attempted to call Amazon Bedrock and when, letting the company identify unauthorized access attempts and refine its IAM roles and policies.\nAWS Trusted Advisor gives best-practice recommendations on cost, performance, and security but does not log individual access attempts. Amazon Inspector scans workloads for software vulnerabilities. AWS Audit Manager automates evidence collection for audits rather than tracking who tried to access a service.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain5.json"
+  },
+  {
+    "id": "aif-q028",
+    "domainId": 5,
+    "objective": "5.2",
+    "type": "multiple_choice",
+    "stem": "A company regularly audits its operations alongside independent software vendors (ISVs) and wants an email alert each time a new ISV compliance report is published. Which AWS service meets this requirement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "AWS Data Exchange"
+      },
+      {
+        "id": "B",
+        "text": "AWS Trusted Advisor"
+      },
+      {
+        "id": "C",
+        "text": "AWS Artifact"
+      },
+      {
+        "id": "D",
+        "text": "AWS Audit Manager"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "AWS Artifact provides on-demand access to compliance reports and agreements, including third-party reports, and can notify the company when a new report becomes available.\nAWS Data Exchange is a marketplace for third-party datasets, not compliance reports. AWS Trusted Advisor offers best-practice checks. AWS Audit Manager automates evidence collection for the company's own audits rather than distributing ISV reports.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain5.json"
+  },
+  {
+    "id": "aif-q030",
+    "domainId": 5,
+    "objective": "5.2",
+    "type": "multiple_choice",
+    "stem": "An insurer is mapping its generative AI projects onto the Generative AI Security Scoping Matrix. Which scope leaves the insurer with the MOST security responsibility?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Building and training a generative AI model from scratch using data the company owns"
+      },
+      {
+        "id": "B",
+        "text": "Fine-tuning an existing third-party foundation model (FM) with the company's own data"
+      },
+      {
+        "id": "C",
+        "text": "Building an application on top of an existing third-party foundation model (FM)"
+      },
+      {
+        "id": "D",
+        "text": "Using a third-party enterprise application that has generative AI features built in"
+      }
+    ],
+    "correctAnswer": [
+      "A"
+    ],
+    "explanation": "Building and training a model from scratch on data the company owns gives the company full control over the data, training, deployment, and safeguards, so it carries the most security responsibility.\nFine-tuning a third-party FM, building an application on a third-party FM, and using a vendor application with embedded generative AI each shift increasing portions of responsibility to the provider, so they grant the company less ownership.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain5.json"
+  },
+  {
+    "id": "aif-q034",
+    "domainId": 5,
+    "objective": "5.1",
+    "type": "multiple_choice",
+    "stem": "How can a company use large language models securely on Amazon Bedrock?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure IAM roles and policies based on least privilege"
+      },
+      {
+        "id": "B",
+        "text": "Enable AWS Audit Manager to run automatic model evaluation jobs"
+      },
+      {
+        "id": "C",
+        "text": "Enable Amazon Bedrock automatic model evaluation jobs"
+      },
+      {
+        "id": "D",
+        "text": "Use Amazon CloudWatch Logs to make models explainable and monitor for bias"
+      }
+    ],
+    "correctAnswer": [
+      "A"
+    ],
+    "explanation": "Configuring IAM roles and policies based on least privilege restricts which users and applications can access the Amazon Bedrock models and actions, which is the foundational way to use large language models securely.\nAWS Audit Manager collects evidence for compliance and does not run model evaluation jobs. Amazon Bedrock model evaluation assesses model performance rather than securing access. Amazon CloudWatch Logs records activity but does not make models explainable or detect bias.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain5.json"
+  },
+  {
+    "id": "aif-q040",
+    "domainId": 5,
+    "objective": "5.1",
+    "type": "multiple_response",
+    "stem": "A chatbot built on a fine-tuned Amazon SageMaker JumpStart model must meet several regulatory frameworks. Which two capabilities help the company demonstrate compliance?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cost optimization"
+      },
+      {
+        "id": "B",
+        "text": "Data protection"
+      },
+      {
+        "id": "C",
+        "text": "Elastic auto scaling"
+      },
+      {
+        "id": "D",
+        "text": "Threat detection"
+      },
+      {
+        "id": "E",
+        "text": "Faster time to market"
+      }
+    ],
+    "correctAnswer": [
+      "B",
+      "D"
+    ],
+    "explanation": "Data protection (safeguarding sensitive data) and threat detection (identifying security risks) are security controls that regulators expect, so they directly support demonstrating compliance.\nCost optimization, elastic auto scaling, and faster time to market are performance and business concerns that do not establish regulatory compliance.",
+    "scored": true,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain5.json"
+  },
+  {
+    "id": "aif-q061",
+    "domainId": 5,
+    "objective": "5.1",
+    "type": "multiple_choice",
+    "stem": "An AI practitioner relies on an Amazon Bedrock base model to summarize support chats and wants to keep a record of what goes into and comes out of the model for monitoring. Which approach should the practitioner take?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set AWS CloudTrail as the model's log destination"
+      },
+      {
+        "id": "B",
+        "text": "Configure model invocation logging in Amazon EventBridge"
+      },
+      {
+        "id": "C",
+        "text": "Turn on model invocation logging in Amazon Bedrock"
+      },
+      {
+        "id": "D",
+        "text": "Set AWS Audit Manager as the model's log destination"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Turning on model invocation logging in Amazon Bedrock captures and stores the model's input and output data, which is exactly what the practitioner needs to monitor invocations.\nAWS CloudTrail records management API calls but not the model's prompt and response payloads. Amazon EventBridge routes events between services and is not where Bedrock invocation logging is enabled. AWS Audit Manager collects audit evidence rather than invocation data.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain5.json"
+  },
+  {
+    "id": "aif-q066",
+    "domainId": 5,
+    "objective": "5.1",
+    "type": "multiple_choice",
+    "stem": "A company plans to build a large language model (LLM) application with Amazon Bedrock using customer data held in Amazon S3. Its policy says each team may reach only the records of its own customers. Which solution meets these requirements?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a single Amazon Bedrock service role with full Amazon S3 access, then create IAM roles per team scoped to each team's customer folders"
+      },
+      {
+        "id": "B",
+        "text": "Create an Amazon Bedrock custom service role for each team that grants access only to that team's customer data"
+      },
+      {
+        "id": "C",
+        "text": "Create one service role with Amazon S3 access and require teams to name the customer on each Amazon Bedrock request"
+      },
+      {
+        "id": "D",
+        "text": "Redact personal data in Amazon S3 and update the bucket policy to allow team access to customer data"
+      }
+    ],
+    "correctAnswer": [
+      "B"
+    ],
+    "explanation": "Creating a separate Amazon Bedrock custom service role for each team, scoped to only that team's customer data, enforces the policy through least-privilege access and prevents teams from reaching other teams' data.\nA single role with full Amazon S3 access plus per-team IAM roles still grants the shared Bedrock role broad access, risking exposure. A single role that depends on teams naming the customer relies on cooperation rather than enforced controls. Redacting data and opening the bucket policy does not segregate access by team.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain5.json"
+  },
+  {
+    "id": "aif-q078",
+    "domainId": 5,
+    "objective": "5.1",
+    "type": "multiple_choice",
+    "stem": "An AI practitioner fine-tuned a custom model on Amazon Bedrock using a dataset that contained confidential records. The practitioner must guarantee that the model's inference responses are never based on that confidential data. What should the practitioner do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mask the confidential data in the inference responses with dynamic data masking"
+      },
+      {
+        "id": "B",
+        "text": "Encrypt the confidential data in the inference responses with Amazon SageMaker AI"
+      },
+      {
+        "id": "C",
+        "text": "Delete the custom model, remove the confidential data from the training dataset, and retrain the model"
+      },
+      {
+        "id": "D",
+        "text": "Encrypt the confidential data in the custom model with AWS Key Management Service (AWS KMS)"
+      }
+    ],
+    "correctAnswer": [
+      "C"
+    ],
+    "explanation": "Because the confidential data was part of the training set, the only reliable fix is to delete the custom model, remove the confidential data from the dataset, and retrain so the model never learned patterns from that data.\nDynamic data masking and encrypting responses act after the model has already learned from the confidential data, so the information can still influence outputs. Encrypting the data in the model with AWS KMS protects it at rest but does not stop the model from generating responses based on it.",
+    "scored": false,
+    "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain5.json"
+  }
+]
