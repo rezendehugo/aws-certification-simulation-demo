@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: AWS Certification support
+    url: https://aws.amazon.com/contact-us/aws-training/
+    about: Contact AWS for official exam, scheduling, or certification support.

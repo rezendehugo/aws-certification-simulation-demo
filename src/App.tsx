@@ -4,6 +4,8 @@ import { Simulation } from "./components/Simulation";
 import { TopBar } from "./components/TopBar";
 import { Welcome } from "./components/Welcome";
 import questionsData from "./data/questions.json";
+import portugueseTranslations from "./data/questions.pt-BR.json";
+import { localizeQuestion } from "./domain/localization";
 import { resultFor } from "./domain/scoring";
 import {
   clearAttempt,
@@ -15,9 +17,10 @@ import {
   saveLocale,
   saveTheme,
 } from "./domain/storage";
-import type { AttemptState, Locale, Question, Theme } from "./types";
+import type { AttemptState, Locale, Question, QuestionTranslations, Theme } from "./types";
 
 const questions = questionsData as Question[];
+const translations = portugueseTranslations as QuestionTranslations;
 
 function scrollToTop(): void {
   window.scrollTo({ top: 0 });
@@ -91,6 +94,10 @@ export function App() {
         : null,
     [attempt],
   );
+  const localizedQuestions = useMemo(
+    () => questions.map((question) => localizeQuestion(question, locale, translations)),
+    [locale],
+  );
 
   return (
     <>
@@ -103,7 +110,7 @@ export function App() {
         <Welcome locale={locale} resumable={false} onStart={start} onReset={reset} />
       ) : attempt.status === "active" ? (
         <Simulation
-          questions={questions}
+          questions={localizedQuestions}
           attempt={attempt}
           locale={locale}
           onUpdate={update}
@@ -112,7 +119,7 @@ export function App() {
       ) : (
         result && (
           <Results
-            questions={questions}
+            questions={localizedQuestions}
             answers={attempt.answers}
             result={result}
             locale={locale}
