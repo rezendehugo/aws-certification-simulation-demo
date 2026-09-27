@@ -4,6 +4,7 @@ import rawQuestions from "../src/data/questions.json" with { type: "json" };
 import rawTranslations from "../src/data/questions.pt-BR.json" with { type: "json" };
 import { localizeQuestion } from "../src/domain/localization.ts";
 import { answersEqual, resultFor } from "../src/domain/scoring.ts";
+import { jsonReport, markdownReport } from "../src/domain/report.ts";
 import { dictionaries } from "../src/i18n.ts";
 import type { Question, QuestionTranslations } from "../src/types.ts";
 
@@ -182,4 +183,25 @@ test("result excludes hidden unscored items", () => {
 
 test("locale dictionaries have identical keys", () => {
   assert.deepEqual(Object.keys(dictionaries.en).sort(), Object.keys(dictionaries["pt-BR"]).sort());
+});
+
+test("learner-facing Portuguese reports use domain names and localized empty states", () => {
+  const question = questions[0]!;
+  const result = {
+    score: 0,
+    total: 1,
+    percentage: 0,
+    unanswered: 1,
+    elapsedSeconds: 0,
+    domainScores: [{ domainId: question.domainId, correct: 0, total: 1, percentage: 0 }],
+  };
+  const markdown = markdownReport(result, [question], {}, "pt-BR");
+  const json = JSON.parse(jsonReport(result, "pt-BR")) as { domainScores: Array<Record<string, unknown>> };
+
+  assert.match(markdown, /Fundamentos de IA e ML/);
+  assert.match(markdown, /Questões para revisar/);
+  assert.match(markdown, /- Nenhuma/);
+  assert.doesNotMatch(markdown, /Domínio\s+1\b|Objective\s+1\.3|\bEvidence\b|\bNone\b/);
+  assert.equal(json.domainScores[0]?.domain, "Fundamentos de IA e ML");
+  assert.equal("domainId" in (json.domainScores[0] ?? {}), false);
 });

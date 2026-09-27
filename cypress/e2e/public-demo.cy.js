@@ -43,20 +43,35 @@ describe("public Lite demo release checks", () => {
     cy.contains("button", "Unflag").should("be.visible");
   });
 
-  it("downloads personal reports without exporting an answer key", () => {
-    cy.contains("button", "Start simulation").click();
-    cy.contains("button", "Submit").click();
-    cy.get('[role="dialog"]').within(() => cy.contains("button", "Submit now").click());
+  it("shows Portuguese domain and question-format names instead of source IDs", () => {
+    cy.get(".preferences select").eq(0).select("pt-BR");
+    cy.contains("button", "Iniciar simulado").click();
+    cy.get(".badges span").should("have.length", 2);
+    cy.get(".badges span").eq(0).should("have.text", "Fundamentos de IA e ML");
+    cy.get(".badges span").eq(1).should("have.text", "Múltipla escolha");
+    cy.get(".badges").should("not.contain.text", "1.3");
+  });
 
-    cy.contains("button", "Export JSON").click();
+  it("downloads personal reports without exporting an answer key", () => {
+    cy.get(".preferences select").eq(0).select("pt-BR");
+    cy.contains("button", "Iniciar simulado").click();
+    cy.contains("button", "Entregar").click();
+    cy.get('[role="dialog"]').within(() => cy.contains("button", "Entregar agora").click());
+
+    cy.contains("button", "Exportar JSON").click();
     cy.readFile("cypress/downloads/aif-c01-result.json", { timeout: 10000 }).then((content) => {
       expect(content).to.have.property("certification", "AIF-C01");
+      expect(content.domainScores[0]).to.have.property("domain", "Fundamentos de IA e ML");
+      expect(content.domainScores[0]).not.to.have.property("domainId");
       expect(JSON.stringify(content)).not.to.match(/correctAnswer|answerKey|"answers"|AWS_SECRET_ACCESS_KEY/i);
     });
 
-    cy.contains("button", "Export AI brief").click();
+    cy.contains("button", "Exportar resumo de estudo para IA").click();
     cy.readFile("cypress/downloads/aif-c01-study-brief.md", { timeout: 10000 }).then((content) => {
-      expect(content).to.contain("Raw static-demo practice score");
+      expect(content).to.contain("Pontuação bruta de prática da demonstração");
+      expect(content).to.contain("Fundamentos de IA e ML");
+      expect(content).to.contain("- Nenhuma");
+      expect(content).not.to.match(/Domínio\s+1\b|Objective\s+1\.3|\bEvidence\b|\bNone\b/i);
       expect(content).not.to.match(/correctAnswer|answerKey|AWS_SECRET_ACCESS_KEY/i);
     });
   });
