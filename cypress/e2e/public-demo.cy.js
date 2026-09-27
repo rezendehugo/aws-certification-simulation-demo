@@ -10,17 +10,25 @@ describe("public Lite demo release checks", () => {
   it("keeps language and theme choices across reloads", () => {
     for (const theme of ["light", "dark", "system"]) {
       for (const locale of [
-        { value: "en", lang: "en", start: "Start simulation" },
-        { value: "pt-BR", lang: "pt-BR", start: "Iniciar simulado" },
+        { value: "en", lang: "en", start: "Start simulation", title: "AIF-C01 Simulation Demo", minutes: "minutes", domains: "domains", source: "Source & attribution" },
+        { value: "pt-BR", lang: "pt-BR", start: "Iniciar simulado", title: "Simulado AWS Certified AI Practitioner (AIF-C01)", minutes: "minutos", domains: "domínios", source: "Código-fonte e atribuição" },
       ]) {
         cy.get(".preferences select").eq(0).select(locale.value);
         cy.get(".preferences select").eq(1).select(theme);
         cy.get("html").should("have.attr", "lang", locale.lang);
         cy.get("html").should("have.attr", "data-theme", theme);
+        cy.title().should("equal", locale.title);
         cy.reload();
         cy.get("html").should("have.attr", "lang", locale.lang);
         cy.get("html").should("have.attr", "data-theme", theme);
+        cy.title().should("equal", locale.title);
         cy.contains("button", locale.start).should("be.visible");
+        cy.get(".facts").contains(locale.minutes).should("be.visible");
+        cy.get(".facts").contains(locale.domains).should("be.visible");
+        cy.get(".welcome aside").contains(locale.source).should("be.visible");
+        if (locale.value === "pt-BR") {
+          cy.get('.preferences select').eq(0).find('option[value="pt-BR"]').should("have.text", "PT-BR");
+        }
       }
     }
   });

@@ -8,7 +8,7 @@ Um simulado open source para AWS Certified AI Practitioner com 65 questões, con
 
 ## [Iniciar o simulado →](https://rezendehugo.github.io/aws-certification-simulation-demo/)
 
-Sem cadastro, analytics ou servidor. O progresso permanece no seu navegador.
+Sem cadastro, rastreamento ou servidor. O progresso permanece no seu navegador.
 
 > [Read in English](README.md)
 
@@ -26,7 +26,7 @@ Sem cadastro, analytics ou servidor. O progresso permanece no seu navegador.
 
 ## Sobre as traduções
 
-As 65 traduções atuais são rascunhos comunitários automáticos e ainda precisam de revisão humana. Essa informação aparece na aplicação. Os identificadores das respostas não são traduzidos, portanto mudar o idioma não altera a correção ou a pontuação.
+As 65 traduções atuais são rascunhos comunitários automáticos e ainda precisam de revisão humana. Essa informação aparece na aplicação. Os identificadores das respostas não são traduzidos, portanto mudar o idioma não altera a correção ou a pontuação. Preservamos nomes de serviços e termos de prova em inglês quando uma tradução literal pode confundir conceitos; consulte o [guia PT-BR e glossário de termos](docs/pt-BR-translation-guide.md).
 
 Você conhece AWS e português técnico? Revise uma questão usando o [guia oficial AIF-C01 em português](https://docs.aws.amazon.com/pt_br/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html) e envie uma [correção de tradução](https://github.com/rezendehugo/aws-certification-simulation-demo/issues/new?template=translation.yml).
 

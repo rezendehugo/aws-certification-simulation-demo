@@ -34,6 +34,13 @@ export function App() {
 
   useEffect(() => {
     document.documentElement.lang = locale;
+    document.title = locale === "pt-BR" ? "Simulado AWS Certified AI Practitioner (AIF-C01)" : "AIF-C01 Simulation Demo";
+    document.querySelector('meta[name="description"]')?.setAttribute(
+      "content",
+      locale === "pt-BR"
+        ? "Simulado independente em português brasileiro para a certificação AWS Certified AI Practitioner."
+        : "Free bilingual AWS AI Practitioner simulation demo.",
+    );
     saveLocale(locale);
   }, [locale]);
 
