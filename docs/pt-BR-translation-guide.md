@@ -24,6 +24,7 @@ The Portuguese edition should teach the concept in natural Brazilian Portuguese 
 | machine learning (ML) | **aprendizado de máquina (ML)** |
 | inference | **inferência**; retain *inference* when contrasting AWS inference modes |
 | latency | **latência** |
+| runtime | **execução do modelo (runtime)** when distinguishing deployed operation from training |
 | feature / feature engineering | **atributo (feature)** / **engenharia de atributos (feature engineering)** when the ML meaning is intended; avoid translating *feature* as *recurso* in this context |
 | large language model (LLM) | **grande modelo de linguagem (large language model, LLM)**; avoid *modelo de linguagem ampla* |
 | small language model (SLM) | **modelo de linguagem de pequeno porte (small language model, SLM)**; keep **SLM** distinct from **LLM** |

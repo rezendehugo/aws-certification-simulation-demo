@@ -14,12 +14,12 @@
   "aif-q006": {
     "stem": "Uma empresa executa um pipeline de ML em produção no Amazon SageMaker AI. As solicitações podem conter cargas úteis de até 1 GB e levar até uma hora para serem processadas; a empresa precisa de latência quase em tempo real. Qual modalidade de inferência do SageMaker AI atende a esses requisitos?",
     "options": {
-      "A": "Inferência em tempo real",
-      "B": "Transformação em lote",
-      "C": "Inferência sem servidor",
-      "D": "Inferência assíncrona"
+      "A": "Inferência em tempo real (real-time inference)",
+      "B": "Transformação em lote (batch transform)",
+      "C": "Inferência sem servidor (serverless inference)",
+      "D": "Inferência assíncrona (asynchronous inference)"
     },
-    "explanation": "A inferência assíncrona foi projetada para cargas úteis grandes (até 1 GB) e processamentos longos (até uma hora). Ela enfileira as solicitações e as processa em segundo plano; os resultados ficam disponíveis quando o processamento termina. Por isso, é apropriada para o requisito de cargas grandes, processamento demorado e latência quase em tempo real.\nA inferência em tempo real atende a cargas menores e respostas síncronas rápidas; entradas de 1 GB e processamento de até uma hora excederiam os limites dessa modalidade. A inferência sem servidor é adequada para tráfego intermitente, mas também não atende a cargas desse tamanho nem a processamentos tão longos. A transformação em lote processa conjuntos de dados offline e não foi projetada para atender a requisitos de latência quase em tempo real.",
+    "explanation": "A inferência assíncrona (asynchronous inference) foi projetada para cargas úteis grandes (até 1 GB) e processamentos longos (até uma hora). Ela enfileira as solicitações e as processa em segundo plano; os resultados ficam disponíveis quando o processamento termina. Por isso, é apropriada para o requisito de cargas grandes, processamento demorado e latência quase em tempo real.\nA inferência em tempo real atende a cargas menores e respostas síncronas rápidas; entradas de 1 GB e processamento de até uma hora excederiam os limites dessa modalidade. A inferência sem servidor é adequada para tráfego intermitente, mas também não atende a cargas desse tamanho nem a processamentos tão longos. A transformação em lote processa conjuntos de dados offline e não foi projetada para atender a requisitos de latência quase em tempo real.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -48,11 +48,11 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q014": {
-    "stem": "Uma startup está criando um aplicativo educativo de perguntas e respostas. Ele faz perguntas como: \"Uma sacola contém seis bolinhas vermelhas, quatro verdes e três amarelas. Qual é a probabilidade de tirar uma bolinha verde?\" Qual abordagem atende a esse requisito com a MENOR sobrecarga operacional?",
+    "stem": "Uma startup está criando um aplicativo educativo de perguntas e respostas. Ele faz perguntas como: \"Uma sacola contém seis bolas de gude vermelhas, quatro verdes e três amarelas. Qual é a probabilidade de tirar uma bola de gude verde?\" Qual abordagem atende a esse requisito com a MENOR sobrecarga operacional?",
     "options": {
-      "A": "Treine um modelo de regressão com aprendizado supervisionado para prever a probabilidade",
-      "B": "Construa um modelo de aprendizado não supervisionado para estimar a densidade de probabilidade",
-      "C": "Use aprendizado por reforço para treinar um modelo que retorne a probabilidade",
+      "A": "Treine um modelo de regressão com aprendizado supervisionado (supervised learning) para prever a probabilidade",
+      "B": "Construa um modelo de aprendizado não supervisionado (unsupervised learning) para estimar a densidade de probabilidade",
+      "C": "Use aprendizado por reforço (reinforcement learning) para treinar um modelo que retorne a probabilidade",
       "D": "Escreva um código simples que calcule a probabilidade usando regras aritméticas básicas"
     },
     "explanation": "A probabilidade pode ser calculada dividindo o número de resultados favoráveis pelo total de resultados. Algumas linhas de código com operações aritméticas fornecem a resposta exata, sem dados para coletar, modelo para treinar ou endpoint para hospedar — a menor sobrecarga operacional.\nAs outras três opções de aprendizado de máquina exigiriam um fluxo de coleta de dados, treinamento, ajuste e hospedagem desnecessário para um problema cuja resposta pode ser calculada diretamente. A regressão supervisionada apenas estimaria um valor conhecido; o aprendizado não supervisionado procura padrões em dados sem rótulos, o que é irrelevante quando a fórmula já é conhecida; e o aprendizado por reforço trata de decisões sequenciais guiadas por recompensas, não de uma questão aritmética estática.",
@@ -60,14 +60,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q015": {
-    "stem": "Uma empresa implantou um modelo em produção e quer avaliar com que eficiência ele opera durante a inferência. Qual métrica deve usar?",
+    "stem": "Uma empresa implantou um modelo em produção e quer uma métrica que reflita sua eficiência durante a execução (runtime). Qual métrica deve usar?",
     "options": {
       "A": "Latência média de inferência",
       "B": "Pontuação de satisfação do cliente (CSAT)",
       "C": "Número de exemplos de treinamento",
       "D": "Tempo de treinamento por época"
     },
-    "explanation": "A latência média de inferência mede o tempo que o modelo leva para retornar uma previsão após receber uma solicitação. Em produção, uma latência menor significa respostas mais rápidas; por isso, essa métrica indica a eficiência operacional durante a inferência.\nA pontuação de satisfação do cliente (CSAT) mede a satisfação dos usuários, um resultado de negócio que não indica a eficiência operacional do modelo. O tempo de treinamento por época e o número de exemplos de treinamento dizem respeito à etapa de treinamento, não ao desempenho do modelo implantado durante a inferência.",
+    "explanation": "A latência média de inferência mede o tempo que o modelo leva para retornar uma previsão após receber uma solicitação. Em produção, uma latência menor significa respostas mais rápidas; por isso, essa métrica indica a eficiência operacional do modelo durante a execução (runtime).\nA pontuação de satisfação do cliente (CSAT) mede a satisfação dos usuários, um resultado de negócio que não indica a eficiência operacional do modelo. O tempo de treinamento por época e o número de exemplos de treinamento dizem respeito à etapa de treinamento, não ao desempenho do modelo em execução.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -96,14 +96,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q020": {
-    "stem": "Uma empresa deseja usar IA para proteger seus aplicativos contra ameaças, verificando se um endereço IP recebido vem de uma fonte suspeita. Qual solução atende a esse requisito?",
+    "stem": "Uma empresa deseja usar IA para proteger seus aplicativos contra ameaças, verificando se o endereço IP de origem de uma solicitação recebida é suspeito. Qual solução atende a esse requisito?",
     "options": {
       "A": "Construa um sistema de reconhecimento de fala",
-      "B": "Desenvolva um sistema de detecção de anomalias",
+      "B": "Desenvolva um sistema de detecção de anomalias (anomaly detection)",
       "C": "Crie um sistema de previsão de fraude",
       "D": "Configure um sistema de reconhecimento de entidades nomeadas usando processamento de linguagem natural (natural language processing, NLP)"
     },
-    "explanation": "Um sistema de detecção de anomalias aprende os padrões considerados normais e sinaliza desvios. Assim, pode identificar endereços IP com comportamento suspeito, atendendo ao objetivo de detectar possíveis ameaças.\nUm sistema de reconhecimento de fala converte áudio em texto e não analisa a reputação de endereços IP. Um sistema de reconhecimento de entidades nomeadas extrai entidades — como nomes de pessoas, organizações e locais — de textos; isso não é detecção de ameaças de rede. Já a previsão de fraude estima padrões ou tendências de fraude, em vez de identificar, nesse contexto, se um IP recebido vem de uma origem suspeita.",
+    "explanation": "Um sistema de detecção de anomalias (anomaly detection) aprende os padrões considerados normais e sinaliza desvios. Assim, pode identificar endereços IP com comportamento suspeito, atendendo ao objetivo de detectar possíveis ameaças.\nUm sistema de reconhecimento de fala converte áudio em texto e não analisa a origem das conexões. Um sistema de reconhecimento de entidades nomeadas extrai entidades — como nomes de pessoas, organizações e locais — de textos; isso não é detecção de ameaças de rede. Já a previsão de fraude estima padrões ou tendências de fraude, em vez de identificar se o IP de origem de uma solicitação recebida é suspeito.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -147,10 +147,10 @@
   "aif-q458": {
     "stem": "Associe cada abordagem ou técnica de aprendizado de máquina, apresentada à esquerda, ao cenário que melhor a representa, à direita. Cada item deve ser associado a exatamente um cenário.",
     "options": {
-      "A": "Aprendizado supervisionado (classificação)",
-      "B": "Aprendizado não supervisionado (clustering)",
-      "C": "Aprendizado por reforço",
-      "D": "Aprendizado supervisionado (regressão)"
+      "A": "Aprendizado supervisionado (supervised learning — classificação)",
+      "B": "Aprendizado não supervisionado (unsupervised learning — clustering)",
+      "C": "Aprendizado por reforço (reinforcement learning)",
+      "D": "Aprendizado supervisionado (supervised learning — regressão)"
     },
     "matchChoices": {
       "1": "Agrupar clientes de varejo em segmentos com base no comportamento de compra quando não existem rótulos predefinidos",
@@ -179,10 +179,10 @@
     "options": {
       "A": "Implante grandes modelos de linguagem (LLMs) otimizados nos dispositivos de borda",
       "B": "Implante modelos de linguagem de pequeno porte (SLMs) otimizados nos dispositivos de borda",
-      "C": "Chame uma API centralizada de modelo de linguagem de pequeno porte (SLM) a partir dos dispositivos de borda",
-      "D": "Chame uma API centralizada de grande modelo de linguagem (LLM) a partir dos dispositivos de borda"
+      "C": "Chame de forma assíncrona, a partir dos dispositivos de borda, uma API centralizada de modelo de linguagem de pequeno porte (SLM)",
+      "D": "Chame de forma assíncrona, a partir dos dispositivos de borda, uma API centralizada de grande modelo de linguagem (LLM)"
     },
-    "explanation": "Implantar modelos de linguagem de pequeno porte (small language models, SLMs) otimizados nos dispositivos de borda mantém a inferência local e evita a latência da comunicação com um serviço remoto. Esses modelos são compactos o suficiente para executar em hardware de borda com recursos limitados.\nImplantar grandes modelos de linguagem (large language models, LLMs) nesses dispositivos costuma ser inviável porque seu tamanho e suas necessidades computacionais excedem a capacidade do hardware de borda. Chamar uma API centralizada de SLM ou LLM exige comunicação pela rede, o que aumenta a latência em vez de minimizá-la.",
+    "explanation": "Implantar modelos de linguagem de pequeno porte (small language models, SLMs) otimizados nos dispositivos de borda mantém a inferência local e evita a latência da comunicação com um serviço remoto. Esses modelos são compactos o suficiente para executar em hardware de borda com recursos limitados.\nImplantar grandes modelos de linguagem (large language models, LLMs) nesses dispositivos costuma ser inviável porque seu tamanho e suas necessidades computacionais excedem a capacidade do hardware de borda. Invocar uma API centralizada de SLM ou LLM exige comunicação pela rede; mesmo que as chamadas sejam assíncronas, esse percurso acrescenta latência em vez de minimizá-la.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -199,7 +199,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q018": {
-    "stem": "Uma equipe de comércio eletrônico está construindo uma pesquisa visual que aceita uma frase digitada e uma foto do produto como consulta. Que tipo de modelo de base (FM) deve alimentá-lo?",
+    "stem": "Uma equipe de comércio eletrônico está desenvolvendo uma busca visual que aceita tanto uma frase digitada quanto uma foto do produto como consulta. Que tipo de modelo de base (foundation model, FM) deve alimentá-la?",
     "options": {
       "A": "Modelo de embeddings de texto (text embedding model)",
       "B": "Modelo de embeddings multimodais (multimodal embedding model)",

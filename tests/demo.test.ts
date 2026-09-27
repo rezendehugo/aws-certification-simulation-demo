@@ -133,7 +133,17 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q012"].options.C, /referências às fontes.*licenças de código aberto/i);
   assert.match(translations["aif-q018"].options.B, /embeddings multimodais \(multimodal embedding model\)/i);
   assert.match(translations["aif-q018"].explanation, /mesmo espaço vetorial/i);
+  assert.match(translations["aif-q018"].stem, /modelo de base \(foundation model, FM\)/i);
   assert.match(translations["aif-q022"].options.C, /^Gerar imagens fotorrealistas/);
+  assert.match(translations["aif-q006"].options.D, /Inferência assíncrona \(asynchronous inference\)/i);
+  assert.match(translations["aif-q014"].options.C, /aprendizado por reforço \(reinforcement learning\)/i);
+  assert.match(translations["aif-q020"].options.B, /detecção de anomalias \(anomaly detection\)/i);
+  assert.match(translations["aif-q458"].options.B, /aprendizado não supervisionado \(unsupervised learning/i);
+  assert.match(translations["aif-q010"].options.C, /de forma assíncrona/i);
+  assert.match(translations["aif-q010"].explanation, /chamadas sejam assíncronas/i);
+  assert.match(translations["aif-q014"].stem, /bolas de gude/);
+  assert.match(translations["aif-q015"].stem, /execução \(runtime\)/i);
+  assert.match(translations["aif-q020"].stem, /IP de origem de uma solicitação recebida/i);
   assert.match(translations["aif-q457"].options.B, /engenharia de atributos/i);
   assert.match(translations["aif-q457"].options.D, /^Defina /);
 });
