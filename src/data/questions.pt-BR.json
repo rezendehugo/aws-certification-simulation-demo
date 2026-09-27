@@ -187,36 +187,36 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q012": {
-    "stem": "Uma equipe de engenharia fintech planeja adotar o Amazon Q Developer para fornecer recursos com mais rapidez. O que o Amazon Q Developer pode fazer para ajudar a equipe?",
+    "stem": "Uma equipe de engenharia de uma fintech planeja adotar o Amazon Q Developer para entregar funcionalidades mais rapidamente. Como o Amazon Q Developer pode ajudar a equipe?",
     "options": {
       "A": "Execute um aplicativo sem provisionar ou gerenciar servidores",
       "B": "Converta arquivos de áudio em documentos de texto usando modelos de ML",
-      "C": "Gere trechos de código e forneça rastreamento de referência e rastreamento de licença de código aberto",
+      "C": "Gere trechos de código e mostre referências às fontes e informações sobre as licenças de código aberto correspondentes",
       "D": "Habilite comandos de voz para codificação e pesquisa em linguagem natural"
     },
-    "explanation": "O Amazon Q Developer aumenta a produtividade do desenvolvedor gerando snippets de código e fornecendo rastreamento de referência e rastreamento de licença de código aberto.\nA execução de um aplicativo sem provisionamento ou gerenciamento de servidores descreve a computação sem servidor, como o AWS Lambda. A conversão de arquivos de áudio em texto descreve o Amazon Transcribe. A ativação de comandos de voz para codificação não é uma função do Amazon Q Developer.",
+    "explanation": "O Amazon Q Developer pode aumentar a produtividade ao gerar trechos de código. Quando uma sugestão se parece com código disponível publicamente, a ferramenta pode mostrar referências à fonte e informações sobre a licença associada.\nExecutar um aplicativo sem provisionar ou gerenciar servidores descreve computação sem servidor, como o AWS Lambda. Converter arquivos de áudio em texto é uma função do Amazon Transcribe. Comandos de voz para codificação não são a funcionalidade descrita para o Amazon Q Developer.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q018": {
     "stem": "Uma equipe de comércio eletrônico está construindo uma pesquisa visual que aceita uma frase digitada e uma foto do produto como consulta. Que tipo de modelo de base (FM) deve alimentá-lo?",
     "options": {
-      "A": "Modelo de incorporação de texto",
-      "B": "Modelo de incorporação multimodal",
+      "A": "Modelo de embeddings de texto (text embedding model)",
+      "B": "Modelo de embeddings multimodais (multimodal embedding model)",
       "C": "Modelo de geração de imagem",
       "D": "Modelo de geração multimodal"
     },
-    "explanation": "Um modelo de incorporação multimodal codifica texto e imagens em um espaço vetorial compartilhado, para que consultas de qualquer tipo possam ser comparadas e correspondidas, que é o que um aplicativo de pesquisa que lida com consultas de texto e imagem precisa.\nUm modelo de incorporação de texto lida apenas com texto. Um modelo de geração de imagens cria imagens a partir de prompts em vez de codificar consultas para pesquisa. Um modelo de geração multimodal produz novos conteúdos entre modalidades, em vez dos embeddings necessários para a busca por similaridade.",
+    "explanation": "Um modelo de embeddings multimodais representa texto e imagens em um mesmo espaço vetorial, permitindo comparar uma frase digitada com uma foto de produto. É disso que a pesquisa visual descrita precisa.\nUm modelo de embeddings de texto representa apenas texto. Um modelo de geração de imagens cria imagens a partir de prompts, em vez de representar consultas para pesquisa. Um modelo generativo multimodal cria conteúdo em diferentes modalidades; não é o tipo de modelo de embeddings usado na busca por similaridade.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q022": {
     "stem": "Uma agência de marketing está explorando IA generativa. Qual dessas tarefas é um caso de uso generativo de IA?",
     "options": {
-      "A": "Melhorando a segurança da rede usando um sistema de detecção de intrusão",
-      "B": "Previsão de tendências do mercado de ações a partir de dados financeiros históricos",
-      "C": "Gerando imagens fotorrealistas a partir de descrições de texto para uma campanha de marketing",
-      "D": "Acelerando consultas de banco de dados com indexação otimizada"
+      "A": "Melhorar a segurança da rede com um sistema de detecção de intrusão",
+      "B": "Prever tendências do mercado de ações com base em dados financeiros históricos",
+      "C": "Gerar imagens fotorrealistas a partir de descrições textuais para uma campanha de marketing",
+      "D": "Acelerar consultas ao banco de dados com indexação otimizada"
     },
     "explanation": "A IA generativa cria novo conteúdo, e a produção de imagens fotorrealistas a partir de descrições de texto para uma campanha de marketing é a geração de conteúdo, um caso de uso clássico de IA generativa.\nA detecção de intrusão é uma tarefa de segurança e classificação. A previsão de tendências de ações a partir de dados históricos é uma análise preditiva. Otimizar a indexação do banco de dados é ajustar o desempenho. Nenhum deles cria novo conteúdo, portanto não são casos de uso generativos de IA.",
     "status": "machine-draft",

@@ -40,7 +40,7 @@ The Portuguese edition should teach the concept in natural Brazilian Portuguese 
 | few-shot / zero-shot | **few-shot (com exemplos)** / **zero-shot (sem exemplos)**; retain exam terms on first mention |
 | Provisioned Throughput (Amazon Bedrock) | Keep the product term **Provisioned Throughput (throughput provisionado)**; avoid *taxa de transferência*, which can imply network bandwidth |
 | inpainting | **preenchimento de imagem (inpainting)** |
-| embeddings | **embeddings (representações vetoriais)**; avoid literal *incorporações* |
+| embeddings | Prefer **embeddings (representações vetoriais)** on first use to preserve exam mapping. AWS Portuguese docs sometimes use **incorporação**; if used, pair it with *embeddings* so learners can recognize the English term. |
 | hallucination | **alucinação (hallucination)** |
 | bias / fairness | **viés (bias)** / **equidade (fairness)**; retain English if the distinction is tested |
 | measurement / sampling bias | **viés de medição (measurement bias)** / **viés de amostragem (sampling bias)**; preserve distinctions between bias sources |
@@ -69,3 +69,4 @@ When a translation error may change the correct answer, treat it as a high-prior
 - [AWS machine-learning terminology, including precision](https://docs.aws.amazon.com/pt_br/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html)
 - [Amazon SageMaker Feature Store documentation](https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/feature-store.html)
 - [Amazon Bedrock Provisioned Throughput prerequisites](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/prov-thru-prereq.html)
+- [Cohere Embed v4 multimodal embeddings](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-parameters-embed-v4.html)

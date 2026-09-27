@@ -129,13 +129,17 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q066"].explanation, /função de serviço do Amazon Bedrock exclusiva para cada equipe/i);
   assert.match(translations["aif-q037"].options.B, /aumento de dados \(data augmentation\)/i);
   assert.match(translations["aif-q065"].options.C, /^Diminua o valor da temperatura/);
+  assert.match(translations["aif-q012"].options.C, /referências às fontes.*licenças de código aberto/i);
+  assert.match(translations["aif-q018"].options.B, /embeddings multimodais \(multimodal embedding model\)/i);
+  assert.match(translations["aif-q018"].explanation, /mesmo espaço vetorial/i);
+  assert.match(translations["aif-q022"].options.C, /^Gerar imagens fotorrealistas/);
   assert.match(translations["aif-q457"].options.B, /engenharia de atributos/i);
   assert.match(translations["aif-q457"].options.D, /^Defina /);
 });
 
 test("Portuguese drafts preserve AWS service names and avoid known literal calques", () => {
   const serviceNamePattern = /\b(?:Amazon|AWS)\s+[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}/g;
-  const knownCalques = /engenharia imediata|modelo fundacional|modelos fundacionais|modelo básico|modelos básicos|taxa de transferência|rendimento provisionado|Amazon Personalizar|Cloud Front|Incorporações|\bPNL\b/i;
+  const knownCalques = /engenharia imediata|modelo fundacional|modelos fundacionais|modelo básico|modelos básicos|taxa de transferência|rendimento provisionado|Amazon Personalizar|Cloud Front|incorporaç[aã]|\bPNL\b/i;
 
   for (const question of questions) {
     const translation = translations[question.id];
