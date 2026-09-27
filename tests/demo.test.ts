@@ -114,7 +114,7 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.doesNotMatch(translations["aif-q042"].explanation, /rastreamento mede/i);
   assert.match(translations["aif-q042"].stem, /chatbot baseado em um grande modelo de linguagem/i);
   assert.match(translations["aif-q005"].options.B, /^Aumente /);
-  assert.match(translations["aif-q005"].options.C, /^Refine /);
+  assert.match(translations["aif-q005"].options.C, /^Aprimore o prompt$/);
   assert.match(translations["aif-q005"].options.D, /^Aumente /);
   assert.match(translations["aif-q007"].options.A, /^Aumente /);
   assert.match(translations["aif-q007"].options.C, /^Diminua /);
@@ -144,6 +144,13 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q014"].stem, /bolas de gude/);
   assert.match(translations["aif-q015"].stem, /execução \(runtime\)/i);
   assert.match(translations["aif-q020"].stem, /IP de origem de uma solicitação recebida/i);
+  assert.match(translations["aif-q025"].options.C, /few-shot prompting/i);
+  assert.match(translations["aif-q025"].options.B, /zero-shot/i);
+  assert.match(translations["aif-q029"].options.B, /top-p/);
+  assert.doesNotMatch(translations["aif-q029"].options.B, /P superior/i);
+  assert.match(translations["aif-q029"].stem, /induzam o agente a executar.*revelem suas instruções/i);
+  assert.match(translations["aif-q080"].options.B, /foundation model, FM/i);
+  assert.match(translations["aif-q080"].explanation, /^O recurso Agents for Amazon Bedrock automatiza/);
   assert.match(translations["aif-q457"].options.B, /engenharia de atributos/i);
   assert.match(translations["aif-q457"].options.D, /^Defina /);
 });

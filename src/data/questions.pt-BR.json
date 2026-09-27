@@ -331,14 +331,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q080": {
-    "stem": "Uma agência de viagens recebe muitas perguntas sobre reservas todos os dias e planeja usar Agents for Amazon Bedrock para dar conta da demanda. Qual é um dos principais benefícios desses agentes?",
+    "stem": "Uma agência de viagens recebe muitas perguntas sobre reservas todos os dias e planeja usar Agents for Amazon Bedrock para dar conta da demanda. Qual é um dos principais benefícios desse recurso?",
     "options": {
-      "A": "Gerar modelos de base personalizados (FMs) para prever as necessidades dos clientes",
-      "B": "Escolher um modelo de base (FM) com base em critérios e métricas predefinidos",
+      "A": "Gerar modelos de base (foundation models, FMs) personalizados para prever as necessidades dos clientes",
+      "B": "Escolher um modelo de base (foundation model, FM) com base em critérios e métricas predefinidos",
       "C": "Automatizar tarefas repetitivas e orquestrar fluxos de trabalho complexos com várias etapas",
-      "D": "Chamar vários modelos de base (FMs) ao mesmo tempo e combinar os resultados"
+      "D": "Chamar vários modelos de base (foundation models, FMs) ao mesmo tempo e combinar os resultados"
     },
-    "explanation": "Agents for Amazon Bedrock automatiza tarefas repetitivas e orquestra fluxos de trabalho com várias etapas, ajudando a empresa a lidar com um grande volume de consultas com mais eficiência.\nOs agentes não geram modelos de base personalizados nem escolhem um modelo por critérios predefinidos. Seu propósito também não é chamar vários modelos e mesclar os resultados: o benefício principal é automatizar tarefas e orquestrar o fluxo de trabalho.",
+    "explanation": "O recurso Agents for Amazon Bedrock automatiza tarefas repetitivas e orquestra fluxos de trabalho com várias etapas, ajudando a empresa a lidar com um grande volume de consultas com mais eficiência.\nOs agentes não geram modelos de base personalizados nem escolhem um modelo por critérios predefinidos. Seu propósito também não é chamar vários modelos e mesclar os resultados: o benefício principal é automatizar tarefas e orquestrar o fluxo de trabalho.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -347,10 +347,10 @@
     "options": {
       "A": "Escolha um LLM de tamanho diferente",
       "B": "Aumente o valor da temperatura",
-      "C": "Refine o prompt",
+      "C": "Aprimore o prompt",
       "D": "Aumente o valor de top-k"
     },
-    "explanation": "Refinar o prompt permite especificar diretamente o nível de concisão e o idioma desejados, orientando o modelo a responder de acordo com essas expectativas.\nEscolher um modelo de outro tamanho altera a capacidade e o custo, mas não determina o idioma nem a concisão da resposta. Aumentar a temperatura torna as respostas mais aleatórias e menos previsíveis. Aumentar o valor de top-k amplia o conjunto de tokens que podem ser selecionados, mas também não controla o idioma nem o tamanho da resposta.",
+    "explanation": "Aprimorar o prompt permite especificar diretamente o nível de concisão e o idioma desejados, orientando o modelo a responder de acordo com essas expectativas.\nEscolher um modelo de outro tamanho altera a capacidade e o custo, mas não determina o idioma nem a concisão da resposta. Aumentar a temperatura torna as respostas mais aleatórias e menos previsíveis. Aumentar o valor de top-k amplia o conjunto de tokens que podem ser selecionados, mas também não controla o idioma nem o tamanho da resposta.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -406,19 +406,19 @@
     "stem": "Uma empresa quer usar um grande modelo de linguagem (large language model, LLM) no Amazon Bedrock para classificar trechos de texto como positivos ou negativos. Qual estratégia de engenharia de prompts (prompt engineering) atende a esse requisito?",
     "options": {
       "A": "Adicione ao prompt uma explicação detalhada da análise de sentimento e de como funcionam os LLMs",
-      "B": "Forneça apenas o novo trecho para classificar, sem exemplos nem contexto adicional",
-      "C": "Inclua no prompt alguns trechos de exemplo rotulados como positivos ou negativos (few-shot)",
+      "B": "Forneça apenas o novo trecho para classificar, sem exemplos nem contexto adicional (zero-shot)",
+      "C": "Inclua no prompt alguns trechos de exemplo rotulados como positivos ou negativos (few-shot prompting)",
       "D": "Inclua o novo trecho junto com exemplos de tarefas não relacionadas, como resumir ou traduzir"
     },
-    "explanation": "Incluir alguns trechos de exemplo rotulados como positivos ou negativos é uma forma de prompting few-shot: mostra ao modelo o padrão de classificação esperado e pode melhorar o desempenho em um novo trecho.\nUma explicação geral sobre análise de sentimento ou LLMs não demonstra o formato específico de saída desejado. Fornecer apenas o novo trecho é uma abordagem zero-shot e depende do conhecimento prévio do modelo. Exemplos de tarefas não relacionadas, como resumo ou tradução, demonstram um padrão irrelevante para classificar sentimento.",
+    "explanation": "Incluir alguns trechos de exemplo rotulados como positivos ou negativos é uma estratégia de few-shot prompting: ela mostra ao modelo o padrão de classificação esperado e pode melhorar o desempenho ao classificar um novo trecho.\nUma explicação geral sobre análise de sentimento ou LLMs não demonstra o formato específico de saída desejado. Fornecer apenas o novo trecho é uma abordagem zero-shot e depende do conhecimento prévio do modelo. Exemplos de tarefas não relacionadas, como resumo ou tradução, demonstram um padrão irrelevante para classificar sentimento.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q029": {
-    "stem": "Uma startup está lançando um agente virtual com tecnologia LLM e quer impedir que os usuários o induzam a ações inseguras ou vazem suas instruções ocultas. Qual ação reduz mais diretamente esse risco?",
+    "stem": "Uma startup está lançando um agente virtual com tecnologia LLM e quer impedir que os usuários induzam o agente a executar ações inseguras ou revelem suas instruções ocultas. Qual ação reduz mais diretamente esse risco?",
     "options": {
       "A": "Aumente a temperatura do modelo para que as respostas variem mais",
-      "B": "Aumente o valor P superior para ampliar a amostragem de tokens",
+      "B": "Aumente o valor de top-p para ampliar a amostragem de tokens",
       "C": "Adicione instruções de sistema a um template de prompt (prompt template) para orientar o modelo a reconhecer e recusar tentativas de manipulação",
       "D": "Reduza o comprimento máximo de saída em cada solicitação"
     },
