@@ -1,6 +1,6 @@
 {
   "aif-q004": {
-    "stem": "Um fabricante construiu um modelo que classifica fotos de peças como defeituosas ou não. A equipe quer saber qual proporção das imagens da peça o modelo classificou corretamente. Qual métrica de avaliação eles devem usar?",
+    "stem": "Um fabricante desenvolveu um modelo para classificar fotos de peças como defeituosas ou não defeituosas. A equipe quer saber a proporção de imagens classificadas corretamente. Qual métrica de avaliação deve usar?",
     "options": {
       "A": "Erro absoluto médio (MAE)",
       "B": "Número de épocas de treinamento",
@@ -12,14 +12,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q006": {
-    "stem": "Uma empresa executa um pipeline de ML em Amazon SageMaker AI em produção. Suas solicitações carregam grandes cargas de até 1 GB e podem levar até uma hora para serem processadas, e a empresa deseja latência quase em tempo real. Qual opção de inferência do SageMaker AI atende a esses requisitos?",
+    "stem": "Uma empresa executa um pipeline de ML em produção no Amazon SageMaker AI. As solicitações podem conter cargas úteis de até 1 GB e levar até uma hora para serem processadas; a empresa precisa de latência quase em tempo real. Qual modalidade de inferência do SageMaker AI atende a esses requisitos?",
     "options": {
       "A": "Inferência em tempo real",
       "B": "Transformação em lote",
       "C": "Inferência sem servidor",
       "D": "Inferência assíncrona"
     },
-    "explanation": "A inferência assíncrona é criada para grandes cargas de até 1 GB e longos tempos de processamento de até uma hora; ele enfileira as solicitações recebidas e as processa em segundo plano, retornando resultados quando prontos, sem exigir que o chamador espere de forma síncrona, o que é adequado para cargas de trabalho que precisam de tratamento quase em tempo real de solicitações exigentes.\nA inferência em tempo real visa cargas pequenas e respostas síncronas rápidas, e sua carga útil e limites de tempo limite seriam excedidos por entradas de 1 GB e processamento de uma hora. A inferência sem servidor é adequada para tráfego intermitente com cargas úteis menores e da mesma forma não pode lidar com entradas tão grandes ou durações longas. A transformação em lote processa grandes conjuntos de dados offline em massa e não foi projetada para fornecer latência quase em tempo real.",
+    "explanation": "A inferência assíncrona foi projetada para cargas úteis grandes (até 1 GB) e processamentos longos (até uma hora). Ela enfileira as solicitações e as processa em segundo plano; os resultados ficam disponíveis quando o processamento termina. Por isso, é apropriada para o requisito de cargas grandes, processamento demorado e latência quase em tempo real.\nA inferência em tempo real atende a cargas menores e respostas síncronas rápidas; entradas de 1 GB e processamento de até uma hora excederiam os limites dessa modalidade. A inferência sem servidor é adequada para tráfego intermitente, mas também não atende a cargas desse tamanho nem a processamentos tão longos. A transformação em lote processa conjuntos de dados offline e não foi projetada para atender a requisitos de latência quase em tempo real.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -60,14 +60,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q015": {
-    "stem": "Uma empresa implantou um modelo em produção e deseja uma métrica que reflita a eficiência com que o modelo opera em tempo de execução. Qual métrica ele deve usar?",
+    "stem": "Uma empresa implantou um modelo em produção e quer avaliar com que eficiência ele opera durante a inferência. Qual métrica deve usar?",
     "options": {
       "A": "Latência média de inferência",
       "B": "Pontuação de satisfação do cliente (CSAT)",
       "C": "Número de exemplos de treinamento",
       "D": "Tempo de treinamento por época"
     },
-    "explanation": "A latência média de inferência captura quanto tempo o modelo leva para retornar uma previsão depois de estar em execução, refletindo diretamente a eficiência do tempo de execução da operação do modelo em produção, onde latência mais baixa significa respostas mais rápidas e eficientes.\nA pontuação de satisfação do cliente (CSAT) mede o grau de satisfação dos usuários com um produto ou serviço, que é um resultado comercial e não uma medida de eficiência operacional. O tempo de treinamento por época e o número de exemplos de treinamento estão relacionados à fase de treinamento, ou seja, quanto tempo o treinamento é executado e quantos dados ele usa, e não dizem nada sobre a eficiência com que o modelo implantado opera no momento da inferência.",
+    "explanation": "A latência média de inferência mede o tempo que o modelo leva para retornar uma previsão após receber uma solicitação. Em produção, uma latência menor significa respostas mais rápidas; por isso, essa métrica indica a eficiência operacional durante a inferência.\nA pontuação de satisfação do cliente (CSAT) mede a satisfação dos usuários, um resultado de negócio que não indica a eficiência operacional do modelo. O tempo de treinamento por época e o número de exemplos de treinamento dizem respeito à etapa de treinamento, não ao desempenho do modelo implantado durante a inferência.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -122,7 +122,7 @@
   "aif-q031": {
     "stem": "Um pesquisador da vida selvagem possui uma grande coleção de fotos de animais e deseja identificar e categorizar automaticamente os animais em cada imagem, sem esforço manual. Qual estratégia atende a esse requisito?",
     "options": {
-      "A": "Reconhecimento de entidade nomeada",
+      "A": "Reconhecimento de entidades nomeadas",
       "B": "Preenchimento de imagem (inpainting)",
       "C": "Detecção de objetos",
       "D": "Detecção de anomalias"
@@ -132,15 +132,15 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q457": {
-    "stem": "Uma equipe de uma empresa de logística está construindo um modelo de machine learning que prevê atrasos nas entregas. Organize os seguintes estágios do ciclo de vida de desenvolvimento de ML na ordem correta, do primeiro ao último.",
+    "stem": "Uma equipe de uma empresa de logística está desenvolvendo um modelo de aprendizado de máquina (ML) para prever atrasos nas entregas. Organize as etapas do ciclo de vida de desenvolvimento de ML na ordem correta, da primeira à última.",
     "options": {
       "A": "Treine o modelo no conjunto de dados preparado para aprender padrões que preveem atrasos",
-      "B": "Projete recursos e limpe os dados coletados em um conjunto de dados pronto para treinamento",
+      "B": "Faça a engenharia de atributos e limpe os dados coletados para preparar o conjunto de dados para o treinamento",
       "C": "Implante o modelo validado em um endpoint para que os aplicativos possam solicitar previsões",
-      "D": "Definir o problema de negócios e a métrica de sucesso para o caso de uso de previsão de atraso",
+      "D": "Defina o problema de negócio e a métrica de sucesso para prever atrasos",
       "E": "Colete registros históricos de remessa e entrega dos sistemas de origem"
     },
-    "explanation": "O ciclo de vida do ML começa enquadrando o problema de negócios e definindo uma métrica de sucesso (D), porque cada escolha posterior depende de saber o que você está prevendo e como o sucesso é medido. Em seguida, você coleta os dados brutos (E), prepara-os e projeta recursos em um conjunto de dados pronto para treinamento (B), treina o modelo nesse conjunto de dados (A) e, finalmente, implanta o modelo validado em um endpoint (C) para que os aplicativos possam consumir suas previsões.\nUm erro comum é começar com a coleta de dados ou ir direto para o treinamento do modelo, mas coletar ou modelar dados antes que a meta de negócios seja definida corre o risco de construir o modelo errado com base nos dados errados. Observe que a preparação de dados e a engenharia de recursos (B) devem seguir a coleta (E), uma vez que você não pode limpar ou transformar dados que ainda não reuniu, e a implantação (C) é a última etapa mostrada porque um modelo só é servido depois de ter sido treinado e validado.",
+    "explanation": "O ciclo de vida de ML começa com a definição do problema de negócio e da métrica de sucesso (D), pois as etapas seguintes dependem de saber o que será previsto e como o sucesso será medido. Depois, a equipe coleta os dados brutos (E), prepara os dados e faz a engenharia de atributos para obter um conjunto pronto para treinamento (B), treina o modelo (A) e, por fim, implanta o modelo validado em um endpoint (C) para que as aplicações solicitem previsões.\nComeçar pela coleta ou pelo treinamento, antes de definir o objetivo de negócio, pode levar à criação do modelo errado com dados inadequados. A preparação dos dados e a engenharia de atributos (B) vêm depois da coleta (E), pois não é possível limpar ou transformar dados que ainda não foram obtidos. A implantação (C) é a última etapa apresentada: o modelo só pode ser disponibilizado depois de treinado e validado.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -163,14 +163,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q002": {
-    "stem": "Um editor precisa transformar longos relatórios de pesquisa em resumos curtos que capturem seus pontos principais, usando um modelo de linguagem ampla (LLM). Qual solução atende a esse requisito?",
+    "stem": "Uma editora precisa transformar relatórios de pesquisa extensos em resumos concisos que retenham as ideias principais, usando um grande modelo de linguagem (large language model, LLM). Qual solução atende a esse requisito?",
     "options": {
       "A": "Crie um mecanismo de recomendação",
-      "B": "Desenvolva um chatbot de resumo",
+      "B": "Desenvolva um chatbot para resumir documentos",
       "C": "Construa um sistema de reconhecimento de entidade nomeada",
       "D": "Crie um sistema de tradução multilíngue"
     },
-    "explanation": "Um chatbot de resumo usa um LLM para ler documentos longos e produzir uma versão mais curta que mantém os pontos essenciais, que é exatamente o que exige a condensação de relatórios de pesquisa em resumos.\nUm mecanismo de recomendação sugere itens relevantes do comportamento do usuário e não condensa documentos. Um sistema de reconhecimento de entidades nomeadas apenas extrai entidades como nomes, datas e locais, em vez de produzir um resumo coerente. Um sistema de tradução multilíngue converte texto entre idiomas sem encurtar ou destilar o conteúdo.",
+    "explanation": "Um chatbot para resumir documentos usa um LLM para ler textos extensos e produzir uma versão concisa que preserve as ideias principais — exatamente o que a editora precisa.\nUm mecanismo de recomendação sugere itens com base no comportamento do usuário, mas não resume documentos. Um sistema de reconhecimento de entidades nomeadas extrai itens como nomes, datas e locais; não produz um resumo coerente. Um sistema de tradução para vários idiomas converte o texto entre idiomas sem reduzi-lo nem sintetizar seu conteúdo.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },

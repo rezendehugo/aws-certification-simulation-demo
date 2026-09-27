@@ -103,6 +103,11 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q026"].stem, /foundation models, FMs/);
   assert.doesNotMatch(translations["aif-q009"].options.A, /engenharia imediata/i);
   assert.match(translations["aif-q020"].options.D, /natural language processing, NLP/);
+  assert.match(translations["aif-q002"].stem, /grande modelo de linguagem \(large language model, LLM\)/i);
+  assert.doesNotMatch(JSON.stringify(translations), /modelo de linguagem ampla/i);
+  assert.match(translations["aif-q006"].explanation, /latência quase em tempo real/i);
+  assert.match(translations["aif-q457"].options.B, /engenharia de atributos/i);
+  assert.match(translations["aif-q457"].options.D, /^Defina /);
 });
 
 test("Portuguese drafts preserve AWS service names and avoid known literal calques", () => {

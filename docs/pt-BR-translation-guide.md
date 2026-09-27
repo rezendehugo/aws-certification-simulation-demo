@@ -7,6 +7,7 @@ The Portuguese edition should teach the concept in natural Brazilian Portuguese 
 - Write for Brazilian learners: use **aprendizado de máquina**, **usuário**, **registro**, and natural Brazilian sentence order. Avoid European Portuguese forms such as *aprendizagem* when *aprendizado* is intended, and *registo*.
 - Preserve AWS service, product, feature, API, and certification names exactly as AWS writes them (for example, **Amazon SageMaker Feature Store**, **Amazon SageMaker Data Wrangler**, **Amazon Bedrock**, **Amazon S3**, **AIF-C01**). Do not translate a brand name into a made-up Portuguese product name.
 - Keep familiar acronyms likely to appear in the exam. Expand in Portuguese on first use where useful, with the English expansion when that helps recognition (for example, **processamento de linguagem natural (natural language processing, NLP)**).
+- Prefer **grande modelo de linguagem (large language model, LLM)**, a term used in AWS documentation; do not translate *large* as *ampla*, which can suggest breadth rather than model scale.
 - Keep English terms alongside Portuguese when a direct translation is ambiguous, uncommon, or materially different from exam vocabulary. Prefer **acurácia (accuracy)** over **precisão** for the share of all predictions that are correct. Reserve **precisão (precision)** for the positive predictive-value metric. Include the English term when needed to make the distinction unmistakable.
 - Use official AWS Brazilian Portuguese exam and service documentation as terminology references, not as sources for new question content. AWS localized pages may vary; when a translation could collapse two exam concepts, retain the English term and explain the distinction.
 - Preserve quantities, units, negation, qualifiers (such as *least*, *most*, *near real-time*), scope, and causal relationships. Never make a distractor weaker or the correct option more obvious through translation.
@@ -23,7 +24,8 @@ The Portuguese edition should teach the concept in natural Brazilian Portuguese 
 | machine learning (ML) | **aprendizado de máquina (ML)** |
 | inference | **inferência**; retain *inference* when contrasting AWS inference modes |
 | latency | **latência** |
-| feature / feature engineering | **atributo (feature)** / **engenharia de atributos (feature engineering)** when the ML meaning is intended |
+| feature / feature engineering | **atributo (feature)** / **engenharia de atributos (feature engineering)** when the ML meaning is intended; avoid translating *feature* as *recurso* in this context |
+| large language model (LLM) | **grande modelo de linguagem (large language model, LLM)**; avoid *modelo de linguagem ampla* |
 | Feature Store | AWS product name; never translate |
 | Knowledge Bases for Amazon Bedrock | Keep the AWS feature name in English; explain as **base de conhecimento do Amazon Bedrock** |
 | Agents for Amazon Bedrock | Keep the feature name in English; explain as **agentes do Amazon Bedrock** |
