@@ -30,6 +30,7 @@ export function markdownReport(
   return `# AIF-C01 — ${translate(locale, "result")}
 
 ${translate(locale, "score")}: ${result.score}/${result.total} (${result.percentage}%)
+${reportNotes[locale]}
 ${translate(locale, "unanswered")}: ${result.unanswered}
 
 ## ${translate(locale, "domainPerformance")}

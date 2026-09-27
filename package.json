@@ -1,6 +1,7 @@
 {
   "name": "aws-certification-simulation-demo",
   "version": "1.0.0",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,20 +9,25 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint src tests vite.config.ts",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "build": "tsc --noEmit && vite build && cp dist/index.html dist/404.html",
-    "check": "npm run typecheck && npm test && npm run lint && npm run build"
+    "build": "tsc --noEmit && vite build && cp dist/index.html dist/404.html && node scripts/check-public-artifact.mjs",
+    "check": "npm run typecheck && npm test && npm run lint && npm run build",
+    "e2e": "node scripts/run-cypress.mjs",
+    "check:pages-boundary": "node scripts/check-pages-boundary.mjs",
+    "sbom": "npm sbom --package-lock-only --sbom-format=spdx --sbom-type=application"
   },
   "dependencies": {
     "@vitejs/plugin-react": "6.0.2",
-    "vite": "8.2.0",
-    "typescript": "5.9.3",
     "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react-dom": "19.2.6",
+    "typescript": "5.9.3",
+    "vite": "8.2.0"
   },
   "devDependencies": {
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
+    "cypress": "15.21.1",
+    "cypress-axe": "1.7.0",
     "eslint": "9.39.4",
     "typescript-eslint": "8.57.1"
   }

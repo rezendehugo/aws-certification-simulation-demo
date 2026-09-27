@@ -3,6 +3,7 @@ import { Results } from "./components/Results";
 import { Simulation } from "./components/Simulation";
 import { TopBar } from "./components/TopBar";
 import { Welcome } from "./components/Welcome";
+import { PublicNotice } from "./components/PublicNotice";
 import questionsData from "./data/questions.json";
 import portugueseTranslations from "./data/questions.pt-BR.json";
 import { localizeQuestion } from "./domain/localization";
@@ -128,6 +129,7 @@ export function App() {
           />
         )
       )}
+      <PublicNotice locale={locale} />
     </>
   );
 }
