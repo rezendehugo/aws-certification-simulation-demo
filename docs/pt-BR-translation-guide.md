@@ -63,6 +63,10 @@ Every record stays `machine-draft` until a human checks the complete stem, every
 
 When a translation error may change the correct answer, treat it as a high-priority content issue and correct the complete item—not only the option that exposed it. Preserve answer IDs and scoring keys.
 
+## Source-content issues requiring resolution
+
+- **aif-q009:** The English source says the S3 objects use Amazon S3-managed keys (**SSE-S3**) but its explanation and keyed answer require permission to decrypt with an encryption key. AWS documents that SSE-S3 needs no additional permissions, while `kms:Decrypt` applies to SSE-KMS data. Keep this translation as `machine-draft`; do not mark it human-reviewed or silently change its answer. The source item must be corrected or clarified first. See the [S3 permission guidance](https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html) and [Bedrock knowledge-base role permissions](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-permissions.html).
+
 ## Reference sources
 
 - [AWS Certified AI Practitioner exam guide in Brazilian Portuguese](https://docs.aws.amazon.com/pt_br/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html)

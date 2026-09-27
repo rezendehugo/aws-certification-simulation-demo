@@ -98,7 +98,7 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.equal(translations["aif-q074"].options.B, "Amazon Q in Amazon QuickSight");
   assert.match(translations["aif-q080"].stem, /Agents for Amazon Bedrock/);
   assert.match(translations["aif-q064"].options.B, /domain-adaptation fine-tuning/);
-  assert.match(translations["aif-q040"].stem, /fine-tuning \(ajuste fino\)/);
+  assert.match(translations["aif-q040"].stem, /ajuste fino \(fine-tuning\)/);
   assert.match(translations["aif-q078"].stem, /fine-tuning/);
   assert.match(translations["aif-q069"].options.B, /retrieval-augmented generation/);
   assert.match(translations["aif-q030"].options.B, /foundation model, FM/);
@@ -151,6 +151,17 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q029"].stem, /induzam o agente a executar.*revelem suas instruções/i);
   assert.match(translations["aif-q080"].options.B, /foundation model, FM/i);
   assert.match(translations["aif-q080"].explanation, /^O recurso Agents for Amazon Bedrock automatiza/);
+  assert.match(translations["aif-q024"].options.A, /^Teste e aprimore o prompt/);
+  assert.match(translations["aif-q041"].options.C, /épocas \(epochs\)/i);
+  assert.match(translations["aif-q070"].options.D, /benchmark dataset/i);
+  assert.match(translations["aif-q001"].options.C, /partial dependence plots, PDPs/i);
+  assert.match(translations["aif-q003"].options.B, /árvores de decisão \(decision trees\)/i);
+  assert.match(translations["aif-q037"].options.B, /underrepresented classes/i);
+  assert.match(translations["aif-q037"].options.C, /épocas \(epochs\)/i);
+  assert.match(translations["aif-q047"].stem, /large language model, LLM/i);
+  assert.match(translations["aif-q054"].stem, /conteúdo apropriado para crianças/i);
+  assert.match(translations["aif-q061"].options.C, /model invocation logging/i);
+  assert.match(translations["aif-q061"].explanation, /model invocation logging/i);
   assert.match(translations["aif-q457"].options.B, /engenharia de atributos/i);
   assert.match(translations["aif-q457"].options.D, /^Defina /);
 });

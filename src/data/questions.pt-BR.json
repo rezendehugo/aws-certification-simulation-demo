@@ -393,12 +393,12 @@
   "aif-q024": {
     "stem": "Uma empresa está criando um chatbot de autoatendimento com um modelo de base (foundation model, FM). As respostas precisam seguir o tom de voz da marca. Qual solução atende a esse requisito?",
     "options": {
-      "A": "Teste e refine o prompt até que o modelo de base produza respostas no estilo desejado",
+      "A": "Teste e aprimore o prompt até que o modelo de base produza respostas no estilo desejado",
       "B": "Defina um limite baixo para o número de tokens que o FM pode produzir",
       "C": "Use inferência em lote para gerar respostas detalhadas",
       "D": "Defina um valor de temperatura mais alto"
     },
-    "explanation": "Testar e refinar o prompt orienta o modelo de base (foundation model, FM) a produzir respostas compatíveis com o tom da marca. As instruções e os exemplos incluídos no prompt ajudam a moldar o estilo da resposta.\nLimitar os tokens de saída apenas encurta as respostas. A inferência em lote altera como as solicitações são processadas, não o tom. Aumentar a temperatura eleva a aleatoriedade e pode tornar o estilo menos consistente.",
+    "explanation": "Testar e aprimorar o prompt orienta o modelo de base (foundation model, FM) a produzir respostas compatíveis com o tom da marca. As instruções e os exemplos incluídos no prompt ajudam a moldar o estilo da resposta.\nLimitar os tokens de saída apenas encurta as respostas. A inferência em lote altera como as solicitações são processadas, não o tom. Aumentar a temperatura eleva a aleatoriedade e pode tornar o estilo menos consistente.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -441,12 +441,12 @@
   "aif-q041": {
     "stem": "Uma equipe de ML está treinando um modelo de base (foundation model, FM) e quer elevar sua acurácia (accuracy) até um limite definido. O que deve fazer?",
     "options": {
-      "A": "Diminuir o número de épocas",
+      "A": "Diminuir o número de épocas (epochs)",
       "B": "Diminuir o tamanho do lote",
-      "C": "Aumentar o número de épocas",
+      "C": "Aumentar o número de épocas (epochs)",
       "D": "Aumentar o parâmetro de temperatura"
     },
-    "explanation": "Aumentar o número de épocas permite que o modelo percorra os dados de treinamento mais vezes, o que pode melhorar a acurácia até o limite desejado.\nDiminuir o número de épocas reduz o treinamento e pode prejudicar a acurácia. O tamanho do lote influencia a dinâmica do treinamento e o uso de memória, mas não é uma forma direta e confiável de atingir uma meta de acurácia. A temperatura controla a aleatoriedade da saída durante a inferência; não altera a acurácia do treinamento.",
+    "explanation": "Aumentar o número de épocas (epochs) permite que o modelo percorra os dados de treinamento mais vezes, o que pode melhorar a acurácia até o limite desejado.\nDiminuir o número de épocas reduz o treinamento e pode prejudicar a acurácia. O tamanho do lote influencia a dinâmica do treinamento e o uso de memória, mas não é uma forma direta e confiável de atingir uma meta de acurácia. A temperatura controla a aleatoriedade da saída durante a inferência; não altera a acurácia do treinamento.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -540,18 +540,18 @@
       "A": "Conte o número de camadas na rede neural do modelo",
       "B": "Calcule o custo total dos recursos que o modelo usa",
       "C": "Verifique a fidelidade das cores das imagens processadas pelo modelo",
-      "D": "Meça a acurácia (accuracy) do modelo em um conjunto de dados de referência predefinido"
+      "D": "Meça a acurácia (accuracy) do modelo em um conjunto de dados de benchmark (benchmark dataset) predefinido"
     },
-    "explanation": "Medir a acurácia do modelo em um conjunto de dados de referência predefinido permite comparar suas previsões com os rótulos corretos e avaliar a proporção de classificações corretas.\nA quantidade de camadas descreve a arquitetura, não o desempenho da classificação. O custo dos recursos mede despesas. A fidelidade das cores das imagens não indica se o modelo classificou os objetos corretamente.",
+    "explanation": "Medir a acurácia do modelo em um conjunto de dados de benchmark (benchmark dataset) predefinido permite comparar suas previsões com os rótulos corretos e avaliar a proporção de classificações corretas.\nA quantidade de camadas descreve a arquitetura, não o desempenho da classificação. O custo dos recursos mede despesas. A fidelidade das cores das imagens não indica se o modelo classificou os objetos corretamente.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q001": {
     "stem": "Uma empresa de logística usa modelos de ML para prever a demanda a cada trimestre. Um analista prepara um relatório para ajudar as partes interessadas a entender como os modelos treinados chegam às previsões. O que deve incluir para atender às necessidades de transparência e explicabilidade?",
     "options": {
-      "A": "Dados de amostra usados ​​para treinamento",
+      "A": "Dados de amostra usados para treinamento",
       "B": "Tabelas de convergência de modelo",
-      "C": "Gráficos de dependência parcial (PDPs)",
+      "C": "Gráficos de dependência parcial (partial dependence plots, PDPs)",
       "D": "Código fonte usado para treinar o modelo"
     },
     "explanation": "Os gráficos de dependência parcial (partial dependence plots, PDPs) mostram como um ou mais atributos de entrada (features) se relacionam com a previsão do modelo. Assim, ajudam a explicar a influência desses atributos e tornam mais transparente como os modelos treinados chegam às previsões.\nO código-fonte e uma amostra dos dados de treinamento revelam detalhes da implementação e das entradas, mas não explicam como cada atributo influencia as previsões. Tabelas de convergência descrevem o progresso do treinamento, não o comportamento do modelo concluído, portanto não atendem ao requisito de explicabilidade.",
@@ -561,10 +561,10 @@
   "aif-q003": {
     "stem": "Um laboratório de pesquisa precisa classificar amostras genéticas em 20 categorias com base em suas características. A equipe precisa de um algoritmo cuja lógica de decisão possa ser documentada com clareza, mostrando como cada saída é produzida. Qual algoritmo atende a essa necessidade?",
     "options": {
-      "A": "Regressão logística",
-      "B": "Árvores de decisão",
-      "C": "Redes Neurais",
-      "D": "Regressão linear"
+      "A": "Regressão logística (logistic regression)",
+      "B": "Árvores de decisão (decision trees)",
+      "C": "Redes neurais (neural networks)",
+      "D": "Regressão linear (linear regression)"
     },
     "explanation": "Árvores de decisão tornam explícita a lógica interna por meio de regras de divisão legíveis. Isso permite documentar como o modelo parte das características de entrada para chegar a uma das 20 categorias. Essa interpretabilidade atende ao requisito.\nRedes neurais costumam ser menos transparentes, o que dificulta documentar sua lógica interna. Regressão linear prevê valores contínuos, não categorias discretas. Regressão logística pode ser interpretada por seus coeficientes, mas não oferece caminhos de decisão tão fáceis de documentar para muitas classes quanto uma árvore de decisão.",
     "status": "machine-draft",
@@ -574,8 +574,8 @@
     "stem": "Uma equipe treina um modelo que gera imagens de pessoas em diferentes profissões, mas dados desbalanceados distorcem alguns atributos e introduzem viés (bias). Qual técnica pode ajudar a resolver o problema?",
     "options": {
       "A": "Monitore a distribuição de classes após a implantação",
-      "B": "Use aumento de dados (data augmentation) nas classes sub-representadas para equilibrar a amostra",
-      "C": "Treine para mais épocas com base nos dados desequilibrados existentes",
+      "B": "Use aumento de dados (data augmentation) nas classes sub-representadas (underrepresented classes) para equilibrar a amostra",
+      "C": "Treine por mais épocas (epochs) com base nos dados desequilibrados existentes",
       "D": "Aplique uma filtragem de saída mais forte às imagens geradas"
     },
     "explanation": "O aumento de dados (data augmentation) cria exemplos adicionais para classes sub-representadas, ajudando a equilibrar a amostra e reduzir o viés na origem.\nO monitoramento pode detectar o desequilíbrio, mas não o corrige. Treinar por mais épocas com os mesmos dados desbalanceados pode reforçar o viés, e filtrar as saídas não corrige o conjunto de dados usado no treinamento.",
@@ -595,7 +595,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q047": {
-    "stem": "Uma plataforma de mídia pretende usar um grande modelo de linguagem (LLM) para moderar conteúdo e quer avaliar as respostas quanto a viés (bias) e tratamento injusto de grupos específicos. Qual fonte de dados permite essa avaliação com menos esforço administrativo?",
+    "stem": "Uma plataforma de mídia pretende usar um grande modelo de linguagem (large language model, LLM) para moderar conteúdo e quer avaliar as respostas quanto a viés (bias) e tratamento injusto de grupos específicos. Qual fonte de dados permite essa avaliação com menos esforço administrativo?",
     "options": {
       "A": "Registros de moderação",
       "B": "Conteúdo gerado pelo usuário",
@@ -644,14 +644,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q054": {
-    "stem": "Uma empresa desenvolve um aplicativo que cria histórias infantis com Amazon Bedrock e deve manter o conteúdo apropriado para usuários jovens. Qual recurso se encaixa?",
+    "stem": "Uma empresa desenvolve um aplicativo que cria histórias infantis com Amazon Bedrock e precisa manter o conteúdo apropriado para crianças. Qual recurso atende a esse requisito?",
     "options": {
       "A": "Agents for Amazon Bedrock (agentes do Amazon Bedrock)",
       "B": "Amazon Bedrock Guardrails",
       "C": "Amazon Bedrock Prompt Management",
       "D": "Amazon Bedrock playgrounds"
     },
-    "explanation": "O Amazon Bedrock Guardrails aplica filtros de conteúdo e restrições de tópicos às respostas do modelo, ajudando a manter as histórias apropriadas para crianças.\nAgents for Amazon Bedrock orquestra tarefas. O Amazon Bedrock Prompt Management ajuda a criar e gerenciar prompts, e os playgrounds servem para experimentar com modelos. Esses recursos não aplicam os controles de segurança de conteúdo oferecidos pelo Guardrails.",
+    "explanation": "O recurso Amazon Bedrock Guardrails aplica filtros de conteúdo e restrições de tópicos às respostas do modelo, ajudando a manter as histórias apropriadas para crianças.\nO recurso Agents for Amazon Bedrock orquestra tarefas. O Amazon Bedrock Prompt Management ajuda a criar e gerenciar prompts, e os playgrounds servem para experimentar com modelos. Esses recursos não aplicam os controles de segurança de conteúdo oferecidos pelo Guardrails.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -740,7 +740,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q040": {
-    "stem": "Um chatbot criado com um modelo do Amazon SageMaker JumpStart, ajustado por fine-tuning (ajuste fino), precisa atender a várias normas regulatórias. Quais dois recursos ajudam a empresa a demonstrar conformidade?",
+    "stem": "Um chatbot criado com um modelo do Amazon SageMaker JumpStart que passou por ajuste fino (fine-tuning) precisa atender a várias normas regulatórias. Quais dois recursos ajudam a empresa a demonstrar conformidade?",
     "options": {
       "A": "Otimização de custos",
       "B": "Proteção de dados",
@@ -757,10 +757,10 @@
     "options": {
       "A": "Defina o AWS CloudTrail como destino dos logs do modelo",
       "B": "Configure o registro de invocações do modelo no Amazon EventBridge",
-      "C": "Ative o registro de invocações do modelo no Amazon Bedrock",
+      "C": "Ative o registro de invocações do modelo (model invocation logging) no Amazon Bedrock",
       "D": "Defina o AWS Audit Manager como destino dos logs do modelo"
     },
-    "explanation": "Ativar o registro de invocações de modelos no Amazon Bedrock captura e armazena os dados enviados ao modelo e as respostas geradas, permitindo monitorar as invocações.\nO AWS CloudTrail registra chamadas de APIs de gerenciamento, mas não os prompts e as respostas dos modelos. O Amazon EventBridge roteia eventos entre serviços; não é nele que se habilita o registro de invocações do Bedrock. O AWS Audit Manager coleta evidências para auditorias, não dados de invocação.",
+    "explanation": "Ativar o registro de invocações do modelo (model invocation logging) no Amazon Bedrock captura e armazena os dados enviados ao modelo e as respostas geradas, permitindo monitorar as invocações.\nO AWS CloudTrail registra chamadas de APIs de gerenciamento, mas não os prompts e as respostas dos modelos. O Amazon EventBridge roteia eventos entre serviços; não é nele que se habilita o registro de invocações do Bedrock. O AWS Audit Manager coleta evidências para auditorias, não dados de invocação.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
