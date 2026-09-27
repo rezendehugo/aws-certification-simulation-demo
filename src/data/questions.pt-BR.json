@@ -26,9 +26,9 @@
   "aif-q007": {
     "stem": "Uma empresa precisa construir modelos para diversas tarefas novas, mas relacionadas. Em vez de treinar modelos do zero, ela deseja adaptar modelos pré-treinados existentes. Qual estratégia de ML atende a esse requisito?",
     "options": {
-      "A": "Aumentar o número de épocas",
+      "A": "Aumente o número de épocas",
       "B": "Use aprendizado por transferência (transfer learning)",
-      "C": "Diminuir o número de épocas",
+      "C": "Diminua o número de épocas",
       "D": "Use aprendizado não supervisionado (unsupervised learning)"
     },
     "explanation": "O aprendizado por transferência (transfer learning) adapta a uma tarefa nova um modelo que já foi treinado em outra tarefa relacionada, reaproveitando o conhecimento aprendido e reduzindo o esforço em comparação com treinar do zero.\nAumentar ou diminuir o número de épocas altera quantas vezes o modelo percorre os dados de treinamento; isso não adapta, por si só, um modelo pré-treinado a uma nova tarefa. O aprendizado não supervisionado identifica padrões em dados sem rótulos, mas não é a estratégia descrita para reaproveitar um modelo pré-treinado.",
@@ -48,7 +48,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q014": {
-    "stem": "Uma startup está construindo um aplicativo de teste educacional que faz perguntas aos jogadores como: \"Uma sacola contém seis bolinhas vermelhas, quatro verdes e três amarelas. Qual é a probabilidade de tirar uma bolinha verde?\" Qual abordagem satisfaz esse requisito com a MENOS sobrecarga operacional?",
+    "stem": "Uma startup está criando um aplicativo educativo de perguntas e respostas. Ele faz perguntas como: \"Uma sacola contém seis bolinhas vermelhas, quatro verdes e três amarelas. Qual é a probabilidade de tirar uma bolinha verde?\" Qual abordagem atende a esse requisito com a MENOR sobrecarga operacional?",
     "options": {
       "A": "Treine um modelo de regressão com aprendizado supervisionado para prever a probabilidade",
       "B": "Construa um modelo de aprendizado não supervisionado para estimar a densidade de probabilidade",
@@ -72,7 +72,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q016": {
-    "stem": "Uma equipe de suporte de telecomunicações deseja estudar o que os clientes falam durante ligações gravadas e extrair os pontos importantes. Qual solução atende a esses requisitos?",
+    "stem": "Uma equipe de suporte de uma empresa de telecomunicações quer analisar o conteúdo das chamadas telefônicas gravadas e extrair os pontos principais. Qual solução atende a esse objetivo?",
     "options": {
       "A": "Crie rótulos de classificação com o Amazon Comprehend",
       "B": "Crie um chatbot conversacional com o Amazon Lex",
@@ -84,7 +84,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q017": {
-    "stem": "Um varejista acumulou petabytes de registros de clientes sem rótulos ou categorias predefinidas. A empresa quer agrupar esses clientes em segmentos distintos para direcionar promoções personalizadas. Qual abordagem de aprendizado de máquina atende melhor a esse requisito?",
+    "stem": "Uma empresa varejista acumulou petabytes de dados de clientes sem rótulos ou categorias predefinidas. Ela quer agrupar esses clientes em segmentos distintos para direcionar promoções personalizadas. Qual abordagem de aprendizado de máquina atende melhor a esse objetivo?",
     "options": {
       "A": "Aprendizado supervisionado (supervised learning)",
       "B": "Aprendizado não supervisionado (unsupervised learning)",
@@ -108,7 +108,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q027": {
-    "stem": "Uma empresa construiu um modelo de classificação de imagens e deseja que um aplicativo da web o chame para obter previsões em tempo real. A empresa precisa de uma forma totalmente gerenciada de hospedar o modelo e fornecer essas previsões que sejam dimensionadas automaticamente de acordo com a demanda. Qual solução atende a esses requisitos?",
+    "stem": "Uma empresa desenvolveu um modelo de classificação de imagens e quer que um aplicativo web o invoque para gerar previsões em tempo real. Ela precisa de uma solução totalmente gerenciada para hospedar o modelo e ajustar automaticamente a capacidade à demanda. Qual solução atende a esses requisitos?",
     "options": {
       "A": "Implante o modelo com o Amazon SageMaker Serverless Inference",
       "B": "Use o Amazon CloudFront para implantar o modelo",
@@ -175,14 +175,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q010": {
-    "stem": "Um fabricante de dispositivos domésticos inteligentes deseja que seus dispositivos executem inferência de modelo de linguagem no próprio dispositivo, com a menor latência possível. Qual solução atende a esse requisito?",
+    "stem": "Um fabricante de dispositivos domésticos inteligentes quer que os aparelhos executem localmente a inferência de um modelo de linguagem, com a menor latência possível. Qual solução atende a esse requisito?",
     "options": {
       "A": "Implante grandes modelos de linguagem (LLMs) otimizados nos dispositivos de borda",
-      "B": "Implante modelos de linguagem pequena (SLMs) otimizados nos dispositivos de borda",
-      "C": "Chame uma API centralizada de modelo de linguagem pequena (SLM) de forma assíncrona a partir dos dispositivos de borda",
-      "D": "Chame uma API centralizada de modelo de linguagem grande (LLM) de forma assíncrona a partir dos dispositivos de borda"
+      "B": "Implante modelos de linguagem de pequeno porte (SLMs) otimizados nos dispositivos de borda",
+      "C": "Chame uma API centralizada de modelo de linguagem de pequeno porte (SLM) a partir dos dispositivos de borda",
+      "D": "Chame uma API centralizada de grande modelo de linguagem (LLM) a partir dos dispositivos de borda"
     },
-    "explanation": "A implantação de modelos de linguagem pequena (SLMs) otimizados nos dispositivos de borda mantém a inferência local e evita viagens de ida e volta de rede, o que oferece a menor latência possível, e os SLMs são compactos o suficiente para serem executados em hardware de borda restrito.\nA implantação de LLMs em dispositivos de borda é impraticável porque seu tamanho e demandas de computação excedem o hardware de borda típico e aumentariam a latência. Chamar uma API SLM ou LLM centralizada requer comunicação de rede, e as viagens de ida e volta assíncronas adicionam latência em vez de minimizá-la.",
+    "explanation": "Implantar modelos de linguagem de pequeno porte (small language models, SLMs) otimizados nos dispositivos de borda mantém a inferência local e evita a latência da comunicação com um serviço remoto. Esses modelos são compactos o suficiente para executar em hardware de borda com recursos limitados.\nImplantar grandes modelos de linguagem (large language models, LLMs) nesses dispositivos costuma ser inviável porque seu tamanho e suas necessidades computacionais excedem a capacidade do hardware de borda. Chamar uma API centralizada de SLM ou LLM exige comunicação pela rede, o que aumenta a latência em vez de minimizá-la.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -235,14 +235,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q032": {
-    "stem": "Um pequeno estúdio deseja criar um protótipo em Amazon Bedrock com um orçamento apertado e evitar qualquer compromisso de longo prazo. Qual modelo de preços Amazon Bedrock se adapta?",
+    "stem": "Um pequeno estúdio quer criar um protótipo no Amazon Bedrock com orçamento limitado e sem assumir compromissos de longo prazo. Qual modelo de preços do Amazon Bedrock é mais adequado?",
     "options": {
       "A": "Provisioned Throughput (throughput provisionado)",
       "B": "Personalização do modelo",
       "C": "Sob demanda",
       "D": "Instâncias spot"
     },
-    "explanation": "O modelo de preços sob demanda cobra apenas pelo que é usado, sem compromisso inicial ou de longo prazo, o que cabe em um orçamento limitado que precisa de flexibilidade.\nO rendimento provisionado exige o compromisso e o pagamento de um nível de capacidade fixo ao longo do tempo. A personalização do modelo é uma atividade de ajuste fino, não uma opção de preço flexível. As instâncias spot são um conceito de precificação do Amazon EC2 e não um modelo de precificação Amazon Bedrock.",
+    "explanation": "O modelo de preços sob demanda cobra apenas pelo que é usado, sem compromisso inicial ou de longo prazo, atendendo a um orçamento limitado que exige flexibilidade.\nProvisioned Throughput (throughput provisionado) exige o compromisso e o pagamento de um nível de capacidade fixo ao longo do tempo. A personalização do modelo é uma atividade de ajuste fino, não uma opção de preço flexível. Instâncias Spot são uma opção de preço do Amazon EC2, não um modelo de preços do Amazon Bedrock.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -259,14 +259,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q035": {
-    "stem": "Uma empresa de varejo mantém grandes volumes de dados de vendas em um banco de dados. Ela quer um aplicativo que permita que funcionários não técnicos digitem uma pergunta em linguagem simples e a transformem automaticamente em uma consulta SQL. Que tipo de modelo é mais adequado para alimentar esta aplicação?",
+    "stem": "Uma empresa de varejo mantém grandes volumes de dados de vendas em um banco de dados. Ela quer um aplicativo que permita a funcionários sem conhecimento técnico fazer perguntas em linguagem natural e convertê-las automaticamente em consultas SQL. Que tipo de modelo é mais adequado para esse aplicativo?",
     "options": {
       "A": "Rede neural residual (ResNet)",
       "B": "Máquina de vetores de suporte (SVM)",
       "C": "WaveNet",
-      "D": "Transformador pré-treinado generativo (GPT)"
+      "D": "Transformador generativo pré-treinado (generative pre-trained transformer, GPT)"
     },
-    "explanation": "Os transformadores generativos pré-treinados são grandes modelos de linguagem treinados para gerar texto e podem traduzir uma solicitação de linguagem natural em uma consulta SQL estruturada, o que permite que a equipe não técnica recupere dados sem escrever SQL, exatamente como o requisito descreve.\nUma rede neural residual (ResNet) é uma arquitetura profunda construída para reconhecimento de imagens e visão computacional, não para geração de linguagem. Uma máquina de vetores de suporte (SVM) é um algoritmo supervisionado clássico para classificação ou regressão e não pode gerar SQL a partir de texto. WaveNet é um modelo generativo para produzir áudio e fala realistas, portanto é a modalidade errada para converter texto em consultas.",
+    "explanation": "O transformador generativo pré-treinado (generative pre-trained transformer, GPT) é um grande modelo de linguagem (LLM) capaz de converter uma solicitação em linguagem natural em uma consulta SQL estruturada. Assim, funcionários podem consultar os dados sem escrever SQL.\nUma rede neural residual (ResNet) é uma arquitetura usada principalmente em visão computacional, não para geração de linguagem. Uma máquina de vetores de suporte (SVM) é um algoritmo supervisionado para classificação ou regressão; não gera consultas SQL a partir de texto. WaveNet é um modelo generativo especializado em áudio e fala, não em converter perguntas em consultas.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -275,10 +275,10 @@
     "options": {
       "A": "Implante o modelo personalizado em um endpoint Amazon SageMaker AI para inferência em tempo real",
       "B": "Registre o modelo no Amazon SageMaker Model Registry",
-      "C": "Solicite acesso ao modelo personalizado em Amazon Bedrock",
-      "D": "Comprar Provisioned Throughput (throughput provisionado) para o modelo personalizado"
+      "C": "Solicite acesso ao modelo personalizado no Amazon Bedrock",
+      "D": "Compre Provisioned Throughput (throughput provisionado) para o modelo personalizado"
     },
-    "explanation": "Para executar no Amazon Bedrock um modelo personalizado ajustado por fine-tuning, a empresa precisa comprar Provisioned Throughput (throughput provisionado), que reserva capacidade para invocá-lo.\nImplantar o modelo em um endpoint do Amazon SageMaker AI ou registrá-lo no SageMaker Model Registry são fluxos de trabalho do SageMaker, não a forma de disponibilizar um modelo personalizado no Bedrock. A solicitação de acesso se aplica ao acesso a modelos de base, não substitui a configuração de throughput para um modelo personalizado.",
+    "explanation": "Para invocar um modelo personalizado no Amazon Bedrock, a empresa precisa comprar Provisioned Throughput (throughput provisionado), que reserva capacidade para essas invocações.\nImplantar o modelo em um endpoint do Amazon SageMaker AI ou registrá-lo no SageMaker Model Registry são fluxos de trabalho do SageMaker, não a forma de invocar um modelo personalizado no Bedrock. A solicitação de acesso se aplica a modelos de base, não substitui a configuração de throughput exigida para o modelo personalizado.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -290,7 +290,7 @@
       "C": "Rede adversarial generativa (generative adversarial network, GAN)",
       "D": "Rede neural residual"
     },
-    "explanation": "Uma rede adversária generativa (GAN) é construída a partir de duas redes neurais concorrentes, um gerador que cria amostras sintéticas semelhantes aos dados reais e um discriminador que tenta distinguir o real do gerado, e através desta competição aprende a produzir dados sintéticos realistas com base num conjunto de dados existente, que é exatamente o que a empresa precisa.\nXGBoost é um algoritmo de aumento de gradiente para classificação e regressão supervisionadas, não para gerar novos dados. Uma rede neural residual (ResNet) é uma arquitetura convolucional profunda usada principalmente para reconhecimento e classificação de imagens. WaveNet é um modelo generativo, mas é especializado para sintetizar áudio bruto, como fala, em vez de produzir dados sintéticos gerais a partir de um conjunto de dados arbitrário existente.",
+    "explanation": "Uma rede adversarial generativa (generative adversarial network, GAN) tem dois componentes: o gerador cria amostras sintéticas e o discriminador tenta distinguir as amostras reais das geradas. Durante o treinamento, a competição entre eles ajuda o gerador a produzir dados sintéticos semelhantes aos dados existentes.\nXGBoost é um algoritmo de boosting usado em tarefas supervisionadas de classificação e regressão, não para gerar novos dados. Uma rede neural residual (ResNet) é uma arquitetura usada principalmente para reconhecimento e classificação de imagens. WaveNet é um modelo generativo especializado em sintetizar áudio, como fala, e não em gerar dados sintéticos de qualquer tipo a partir de um conjunto arbitrário.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -307,26 +307,26 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q074": {
-    "stem": "Um analista de varejo deseja que gráficos das vendas dos principais produtos por loja no último ano sejam gerados automaticamente. Qual solução AWS atende a essa necessidade?",
+    "stem": "Um analista de varejo quer gerar automaticamente gráficos das vendas dos principais produtos por loja no último ano. Qual solução da AWS atende a essa necessidade?",
     "options": {
       "A": "Amazon Q Developer",
-      "B": "Amazon Q no Amazon QuickSight",
+      "B": "Amazon Q in Amazon QuickSight",
       "C": "Amazon Q in AWS Chatbot",
       "D": "Amazon Q in Amazon EC2"
     },
-    "explanation": "O Amazon Q no Amazon QuickSight permite que os usuários façam perguntas em linguagem natural e criem automaticamente gráficos e visualizações, como o total de vendas dos principais produtos, o que atende aos requisitos.\nO Amazon Q Developer auxilia nas tarefas de codificação. O Amazon Q no AWS Chatbot ajuda a operar recursos da AWS a partir de canais de chat. O Amazon Q no Amazon EC2 fornece orientação sobre EC2. Nenhum deles gera visualizações de dados de negócios.",
+    "explanation": "O Amazon Q in Amazon QuickSight permite que usuários façam perguntas em linguagem natural e gerem gráficos e visualizações automaticamente, como gráficos das vendas dos principais produtos por loja.\nO Amazon Q Developer auxilia em tarefas de desenvolvimento de software. O Amazon Q in AWS Chatbot ajuda a operar recursos da AWS por meio de canais de chat. O Amazon Q in Amazon EC2 fornece orientação sobre o EC2. Essas opções não geram visualizações de dados de negócio.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q077": {
-    "stem": "Um profissional de IA usa um grande modelo de linguagem para escrever textos de marketing. A saída parece plausível e factual, mas na verdade está incorreta. Qual problema o modelo está exibindo?",
+    "stem": "Um profissional de IA usa um grande modelo de linguagem (large language model, LLM) para escrever textos de marketing. A resposta parece plausível e baseada em fatos, mas está incorreta. Qual problema o modelo está apresentando?",
     "options": {
-      "A": "Vazamento de dados",
-      "B": "Alucinação",
-      "C": "Sobreajuste",
-      "D": "Subajuste"
+      "A": "Vazamento de dados (data leakage)",
+      "B": "Alucinação (hallucination)",
+      "C": "Sobreajuste (overfitting)",
+      "D": "Subajuste (underfitting)"
     },
-    "explanation": "Alucinação ocorre quando um grande modelo de linguagem produz conteúdo que parece plausível e factual, mas na verdade é incorreto ou fabricado, o que corresponde ao texto de marketing descrito.\nO vazamento de dados é a exposição não intencional de informações, o overfitting ocorre quando um modelo memoriza os dados de treinamento e generaliza mal, e o underfitting ocorre quando um modelo é simples demais para capturar padrões. Nada disso descreve resultados declarados com segurança, mas falsos.",
+    "explanation": "Uma alucinação (hallucination) ocorre quando um LLM produz conteúdo plausível, mas incorreto ou inventado, como no texto de marketing descrito.\nVazamento de dados (data leakage) é a exposição não intencional de informações. Sobreajuste (overfitting) ocorre quando o modelo se ajusta excessivamente aos dados de treinamento e generaliza mal; subajuste (underfitting) ocorre quando ele não aprende padrões suficientes. Esses conceitos não descrevem a geração de afirmações plausíveis, porém falsas.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -343,14 +343,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q005": {
-    "stem": "Uma agência de viagens usa um modelo de linguagem grande (large language model, LLM) pré-treinado em um assistente de reservas. A empresa quer respostas curtas e em um idioma específico. Qual abordagem melhor orienta as respostas do modelo?",
+    "stem": "Uma agência de viagens usa um grande modelo de linguagem (large language model, LLM) pré-treinado como base de seu assistente de reservas. A empresa precisa que as respostas sejam breves e estejam em um idioma específico. Qual abordagem melhor direciona as respostas do modelo?",
     "options": {
       "A": "Escolha um LLM de tamanho diferente",
-      "B": "Aumentar o valor da temperatura",
-      "C": "Refinar o prompt",
-      "D": "Aumentar o valor de top-k"
+      "B": "Aumente o valor da temperatura",
+      "C": "Refine o prompt",
+      "D": "Aumente o valor de top-k"
     },
-    "explanation": "O refinamento do prompt permite que a empresa indique diretamente o comprimento da resposta necessária e o idioma de destino, para que o modelo retorne respostas breves no idioma escolhido.\nA escolha de um tamanho de modelo diferente altera a capacidade e o custo do modelo, em vez de impor comprimento ou idioma. Aumentar a temperatura adiciona aleatoriedade, tornando a saída menos controlada. Aumentar o valor Top K amplia o conjunto de tokens candidatos, que também não controla o comprimento ou o idioma da resposta.",
+    "explanation": "Refinar o prompt permite especificar diretamente o nível de concisão e o idioma desejados, orientando o modelo a responder de acordo com essas expectativas.\nEscolher um modelo de outro tamanho altera a capacidade e o custo, mas não determina o idioma nem a concisão da resposta. Aumentar a temperatura torna as respostas mais aleatórias e menos previsíveis. Aumentar o valor de top-k amplia o conjunto de tokens que podem ser selecionados, mas também não controla o idioma nem o tamanho da resposta.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -367,14 +367,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q019": {
-    "stem": "Uma empresa usa um modelo de base (foundation model, FM) do Amazon Bedrock em uma ferramenta de busca. Ela quer fazer o ajuste fino (fine-tuning) do modelo com dados próprios para melhorar a acurácia dos resultados. Qual abordagem realiza corretamente esse ajuste?",
+    "stem": "Uma empresa usa um modelo de base (foundation model, FM) do Amazon Bedrock em uma ferramenta de busca. Ela quer fazer o ajuste fino (fine-tuning) do modelo com dados próprios para melhorar a correção dos resultados da busca. Qual abordagem realiza corretamente esse ajuste?",
     "options": {
-      "A": "Comprar Provisioned Throughput (throughput provisionado) para o Amazon Bedrock",
-      "B": "Forneça exemplos rotulados, cada um contendo um campo de prompt e um campo de conclusão",
+      "A": "Compre Provisioned Throughput (throughput provisionado) para o Amazon Bedrock",
+      "B": "Forneça exemplos rotulados, cada um com um campo de prompt e um campo de completion (resposta esperada)",
       "C": "Prepare o conjunto de dados como um arquivo .txt que contém várias linhas de conteúdo .csv",
       "D": "Treine o modelo em periódicos e livros didáticos"
     },
-    "explanation": "O ajuste fino de um modelo em Amazon Bedrock requer um conjunto de dados rotulado no qual cada registro emparelha um prompt de entrada com a conclusão esperada, para que o modelo aprenda o comportamento desejado de entrada para saída a partir dos dados da empresa.\nO rendimento provisionado é uma opção de capacidade e preço para inferência, não um método de ajuste fino. Um arquivo .txt contendo linhas .csv não é o formato de ajuste fino necessário. O treinamento em periódicos e livros didáticos é um conteúdo não estruturado que carece dos pares de prompt e conclusão necessários para o ajuste fino.",
+    "explanation": "O ajuste fino de um modelo no Amazon Bedrock requer dados rotulados em que cada registro associe um prompt de entrada à completion (resposta esperada). Assim, o modelo aprende, com os dados da empresa, o comportamento desejado para cada entrada.\nProvisioned Throughput (throughput provisionado) é uma opção de capacidade e preço para inferência, não um método de ajuste fino. Um arquivo .txt com várias linhas de conteúdo CSV não corresponde ao formato de dados descrito para esse ajuste. Periódicos e livros didáticos, por si só, são conteúdo não estruturado e não fornecem os pares de prompt e completion necessários neste caso.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -403,7 +403,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q025": {
-    "stem": "Uma empresa quer usar um modelo de linguagem grande (large language model, LLM) no Amazon Bedrock para classificar trechos de texto como positivos ou negativos. Qual estratégia de engenharia de prompts (prompt engineering) atende a esse requisito?",
+    "stem": "Uma empresa quer usar um grande modelo de linguagem (large language model, LLM) no Amazon Bedrock para classificar trechos de texto como positivos ou negativos. Qual estratégia de engenharia de prompts (prompt engineering) atende a esse requisito?",
     "options": {
       "A": "Adicione ao prompt uma explicação detalhada da análise de sentimento e de como funcionam os LLMs",
       "B": "Forneça apenas o novo trecho para classificar, sem exemplos nem contexto adicional",
@@ -427,14 +427,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q038": {
-    "stem": "Uma empresa de logística executa um modelo Amazon Titan em Amazon Bedrock e deseja que as respostas do modelo sejam baseadas em seus documentos internos de remessa. Qual solução adiciona esse contexto privado?",
+    "stem": "Uma empresa de logística usa um modelo Amazon Titan no Amazon Bedrock e quer que as respostas considerem as informações de seus documentos internos de remessa. Qual solução adiciona esse contexto privado?",
     "options": {
       "A": "Faça ajuste fino (fine-tuning) do modelo de base nos documentos internos",
-      "B": "Crie uma base de conhecimento do Amazon Bedrock (Knowledge Base) com os documentos internos",
+      "B": "Use o recurso Knowledge Bases for Amazon Bedrock para criar uma base de conhecimento com os documentos internos",
       "C": "Abaixe o valor da temperatura",
       "D": "Mude para um modelo de base maior"
     },
-    "explanation": "Uma base de conhecimento do Amazon Bedrock (Knowledge Base) indexa os documentos internos e recupera trechos relevantes durante cada consulta (RAG). Assim, o Amazon Titan pode responder com base nos dados privados da empresa sem ser treinado nesses documentos.\nO ajuste fino pode adaptar o comportamento do modelo, mas não é a forma mais direta de fornecer contexto atualizado de documentos. Reduzir a temperatura diminui a aleatoriedade; trocar por um modelo maior aumenta a capacidade, mas não dá acesso aos documentos privados.",
+    "explanation": "O recurso Knowledge Bases for Amazon Bedrock indexa os documentos internos e recupera trechos relevantes para cada consulta (RAG). Assim, o Amazon Titan pode responder com base nos dados privados da empresa sem ser treinado nesses documentos.\nO ajuste fino pode adaptar o comportamento do modelo, mas não é a forma mais direta de fornecer contexto atualizado dos documentos. Reduzir a temperatura diminui a aleatoriedade; trocar por um modelo maior aumenta a capacidade, mas não dá acesso aos dados privados.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -451,22 +451,22 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q042": {
-    "stem": "Um centro de suporte implementa um chatbot de modelo de linguagem grande (LLM) para reduzir quantas etapas os agentes realizam ao responder às perguntas dos clientes. Qual métrica de negócios mostra melhor se o chatbot está fazendo a diferença?",
+    "stem": "Um centro de atendimento implementa um chatbot baseado em um grande modelo de linguagem (LLM) para reduzir o número de etapas que os agentes precisam realizar ao responder às dúvidas dos clientes. Qual métrica de negócio indica melhor se o chatbot está gerando impacto?",
     "options": {
       "A": "Responsabilidade social corporativa",
       "B": "Conformidade regulatória",
       "C": "Duração média da chamada",
       "D": "Taxa de engajamento do site"
     },
-    "explanation": "A duração média da chamada reflete diretamente o quanto o chatbot reduz as etapas que os agentes realizam para resolver dúvidas, portanto, o rastreamento mede o impacto do chatbot nos negócios.\nA responsabilidade social corporativa e a conformidade regulatória são preocupações organizacionais não relacionadas à rapidez com que os agentes resolvem as dúvidas dos clientes. A taxa de engajamento do site mede o comportamento do visitante online, não a eficiência do call center.",
+    "explanation": "A duração média das chamadas é um indicador operacional que pode mostrar se os atendimentos estão ficando mais rápidos, em linha com a redução de etapas buscada. Por isso, é uma métrica adequada para avaliar o impacto do chatbot no atendimento.\nResponsabilidade social corporativa e conformidade regulatória não medem a eficiência do atendimento. A taxa de engajamento do site mede o comportamento dos visitantes on-line, não a duração das chamadas no centro de atendimento.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q046": {
-    "stem": "Um fabricante de eletrodomésticos deseja uma interface de bate-papo em seus manuais de produtos em PDF usando modelos de linguagem grande (LLMs) em Amazon Bedrock, com o menor custo. Qual abordagem se adapta melhor?",
+    "stem": "Um fabricante de eletrodomésticos quer oferecer uma interface de conversa sobre os manuais de produtos em PDF usando grandes modelos de linguagem (LLMs) no Amazon Bedrock, com o menor custo. Qual abordagem é mais adequada?",
     "options": {
       "A": "Adicione todos os manuais a cada prompt como contexto",
-      "B": "Carregue os manuais em uma base de conhecimento do Amazon Bedrock (Knowledge Bases for Amazon Bedrock) e recupere apenas os trechos relevantes para cada consulta",
+      "B": "Use o recurso Knowledge Bases for Amazon Bedrock para indexar os manuais e recuperar apenas trechos relevantes em cada consulta",
       "C": "Faça o ajuste fino (fine-tuning) do modelo com os manuais e disponibilize a versão ajustada",
       "D": "Continue o pré-treinamento do modelo de base com o conteúdo dos manuais"
     },
@@ -511,14 +511,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q065": {
-    "stem": "Um aplicativo de notícias executa análise de sentimento com um modelo de linguagem grande (LLM) em Amazon Bedrock e deseja que a mesma entrada produza resultados mais estáveis. Qual parâmetro de inferência deve ser alterado?",
+    "stem": "Um aplicativo de notícias executa análise de sentimento com um grande modelo de linguagem (LLM) no Amazon Bedrock e quer que a mesma entrada produza resultados mais estáveis. Qual parâmetro de inferência deve ser alterado?",
     "options": {
-      "A": "Aumentar o valor da temperatura",
-      "B": "Aumentar o limite máximo de geração",
-      "C": "Diminuir o valor da temperatura",
+      "A": "Aumente o valor da temperatura",
+      "B": "Aumente o limite máximo de geração",
+      "C": "Diminua o valor da temperatura",
       "D": "Reduza o número máximo de tokens de saída"
     },
-    "explanation": "A redução da temperatura reduz a aleatoriedade na seleção do token, tornando as saídas do modelo mais determinísticas e consistentes para a mesma entrada.\nAumentar a temperatura aumenta a aleatoriedade e a variabilidade. Alterar o comprimento máximo de geração ou reduzir o número de tokens de saída afeta apenas o comprimento da resposta, e não a consistência das respostas.",
+    "explanation": "Diminuir a temperatura reduz a aleatoriedade na seleção de tokens e torna as respostas mais determinísticas e consistentes para uma mesma entrada.\nAumentar a temperatura eleva a aleatoriedade e a variabilidade. Alterar o limite máximo de geração ou reduzir o número de tokens de saída afeta o tamanho da resposta, não sua consistência.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -547,26 +547,26 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q001": {
-    "stem": "Uma empresa de logística usa modelos de ML para prever a demanda a cada trimestre. Um analista está preparando um relatório que ajuda as partes interessadas a entender como os modelos treinados alcançam suas previsões. O que o analista deve incluir para satisfazer as necessidades de transparência e explicabilidade?",
+    "stem": "Uma empresa de logística usa modelos de ML para prever a demanda a cada trimestre. Um analista prepara um relatório para ajudar as partes interessadas a entender como os modelos treinados chegam às previsões. O que deve incluir para atender às necessidades de transparência e explicabilidade?",
     "options": {
       "A": "Dados de amostra usados ​​para treinamento",
       "B": "Tabelas de convergência de modelo",
       "C": "Gráficos de dependência parcial (PDPs)",
       "D": "Código fonte usado para treinar o modelo"
     },
-    "explanation": "Os gráficos de dependência parcial (PDPs) mostram como um ou mais recursos de entrada se relacionam com o resultado previsto de um modelo, o que os torna uma forma eficaz de explicar a influência dos recursos e dar transparência às partes interessadas sobre como os modelos treinados alcançam suas previsões.\nO código-fonte usado para treinar o modelo e os dados de treinamento de amostra revelam a implementação e as entradas, mas não explicam como os recursos individuais impulsionam as previsões. As tabelas de convergência de modelos descrevem como o treinamento progrediu em direção a uma solução, e não como o modelo finalizado se comporta, portanto, não atendem ao requisito de explicabilidade.",
+    "explanation": "Os gráficos de dependência parcial (partial dependence plots, PDPs) mostram como um ou mais atributos de entrada (features) se relacionam com a previsão do modelo. Assim, ajudam a explicar a influência desses atributos e tornam mais transparente como os modelos treinados chegam às previsões.\nO código-fonte e uma amostra dos dados de treinamento revelam detalhes da implementação e das entradas, mas não explicam como cada atributo influencia as previsões. Tabelas de convergência descrevem o progresso do treinamento, não o comportamento do modelo concluído, portanto não atendem ao requisito de explicabilidade.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q003": {
-    "stem": "Um laboratório de pesquisa precisa classificar as amostras genéticas em 20 categorias com base em suas características. A equipe requer um algoritmo cuja lógica de decisão interna possa ser claramente documentada para mostrar como produz cada saída. Qual algoritmo atende a essa necessidade?",
+    "stem": "Um laboratório de pesquisa precisa classificar amostras genéticas em 20 categorias com base em suas características. A equipe precisa de um algoritmo cuja lógica de decisão possa ser documentada com clareza, mostrando como cada saída é produzida. Qual algoritmo atende a essa necessidade?",
     "options": {
       "A": "Regressão logística",
       "B": "Árvores de decisão",
       "C": "Redes Neurais",
       "D": "Regressão linear"
     },
-    "explanation": "As árvores de decisão explicitam sua lógica interna por meio de uma série de regras de divisão legíveis, para que a equipe possa documentar exatamente como o modelo passa das características de entrada para uma das 20 categorias de saída. Essa interpretabilidade é a razão pela qual as árvores de decisão atendem ao requisito.\nAs redes neurais são altamente opacas, por isso o seu mecanismo interno é difícil de documentar. A regressão linear prevê um valor contínuo em vez de atribuir categorias discretas, o que não corresponde a um problema de 20 classes. A regressão logística é interpretável através dos seus coeficientes, mas é menos natural para documentar claramente os caminhos de decisão em muitas classes do que uma árvore de decisão.",
+    "explanation": "Árvores de decisão tornam explícita a lógica interna por meio de regras de divisão legíveis. Isso permite documentar como o modelo parte das características de entrada para chegar a uma das 20 categorias. Essa interpretabilidade atende ao requisito.\nRedes neurais costumam ser menos transparentes, o que dificulta documentar sua lógica interna. Regressão linear prevê valores contínuos, não categorias discretas. Regressão logística pode ser interpretada por seus coeficientes, mas não oferece caminhos de decisão tão fáceis de documentar para muitas classes quanto uma árvore de decisão.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -574,11 +574,11 @@
     "stem": "Uma equipe treina um modelo que gera imagens de pessoas em diferentes profissões, mas dados desbalanceados distorcem alguns atributos e introduzem viés (bias). Qual técnica pode ajudar a resolver o problema?",
     "options": {
       "A": "Monitore a distribuição de classes após a implantação",
-      "B": "Aumente a quantidade de exemplos das classes sub-representadas para equilibrar os dados",
+      "B": "Use aumento de dados (data augmentation) nas classes sub-representadas para equilibrar a amostra",
       "C": "Treine para mais épocas com base nos dados desequilibrados existentes",
       "D": "Aplique uma filtragem de saída mais forte às imagens geradas"
     },
-    "explanation": "Aumentar a quantidade de exemplos das classes sub-representadas ajuda a equilibrar os dados e reduzir o viés na origem.\nO monitoramento pode detectar o desequilíbrio, mas não o corrige. Treinar por mais épocas com os mesmos dados desbalanceados pode reforçar o viés, e filtrar as saídas não corrige o conjunto de dados usado no treinamento.",
+    "explanation": "O aumento de dados (data augmentation) cria exemplos adicionais para classes sub-representadas, ajudando a equilibrar a amostra e reduzir o viés na origem.\nO monitoramento pode detectar o desequilíbrio, mas não o corrige. Treinar por mais épocas com os mesmos dados desbalanceados pode reforçar o viés, e filtrar as saídas não corrige o conjunto de dados usado no treinamento.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -595,7 +595,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q047": {
-    "stem": "Uma plataforma de mídia pretende usar um modelo de linguagem grande (LLM) para moderar conteúdo e quer avaliar as saídas quanto a viés (bias) e tratamento injusto de grupos específicos. Qual fonte de dados permite essa avaliação com menos esforço administrativo?",
+    "stem": "Uma plataforma de mídia pretende usar um grande modelo de linguagem (LLM) para moderar conteúdo e quer avaliar as respostas quanto a viés (bias) e tratamento injusto de grupos específicos. Qual fonte de dados permite essa avaliação com menos esforço administrativo?",
     "options": {
       "A": "Registros de moderação",
       "B": "Conteúdo gerado pelo usuário",
@@ -611,7 +611,7 @@
     "options": {
       "A": "Verifique os dados em busca de desequilíbrios ou disparidades entre grupos",
       "B": "Execute o modelo com a maior frequência possível",
-      "C": "Avalie o comportamento do modelo para que a empresa possa explicar suas decisões às partes interessadas",
+      "C": "Avalie o comportamento do modelo para oferecer transparência às partes interessadas",
       "D": "Use a métrica ROUGE para medir a qualidade do texto gerado",
       "E": "Mantenha a latência de inferência dentro dos limites aceitos"
     },
@@ -620,26 +620,26 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q052": {
-    "stem": "Um aluno envia redações copiando texto produzido por uma ferramenta generativa de IA sem atribuição. Que desafio de IA responsável isso ilustra?",
+    "stem": "Um aluno entrega redações com texto copiado de uma ferramenta de IA generativa, sem indicar a origem do conteúdo. Que desafio de IA responsável esse caso ilustra?",
     "options": {
       "A": "Toxicidade",
       "B": "Alucinações",
       "C": "Privacidade",
       "D": "Plágio"
     },
-    "explanation": "Reutilizar resultados generativos de IA como trabalho próprio sem atribuição é plágio, que é uma preocupação reconhecida de IA responsável e de propriedade intelectual.\nA toxicidade refere-se a conteúdos nocivos ou ofensivos, as alucinações são fabricadas, mas com resultados que parecem plausíveis, e a privacidade diz respeito ao tratamento de dados pessoais. Nenhuma delas descreve a cópia do texto gerado e sua apresentação como trabalho original.",
+    "explanation": "Apresentar conteúdo gerado por IA como trabalho próprio, sem atribuição, caracteriza plágio e levanta questões de IA responsável e propriedade intelectual.\nToxicidade diz respeito a conteúdo nocivo ou ofensivo. Alucinações são informações incorretas ou inventadas que podem parecer plausíveis. Privacidade envolve o tratamento de dados pessoais. Nenhum desses conceitos descreve a cópia de texto gerado sem atribuição.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q053": {
-    "stem": "Uma empresa farmacêutica treinará seu próprio modelo de linguagem grande (LLM) com base em dados privados e deseja limitar a pegada de carbono do treinamento. Qual tipo de instância do Amazon EC2 tem o MENOR impacto ambiental para treinamento de LLMs?",
+    "stem": "Uma empresa farmacêutica vai treinar seu próprio grande modelo de linguagem (LLM) com dados privados e quer reduzir a pegada de carbono do treinamento. Qual tipo de instância do Amazon EC2 tem o MENOR impacto ambiental para treinar LLMs?",
     "options": {
       "A": "Instâncias da família P do Amazon EC2",
       "B": "Instâncias da família Trn do Amazon EC2",
       "C": "Instâncias da família G do Amazon EC2",
       "D": "Instâncias da família C do Amazon EC2"
     },
-    "explanation": "As instâncias da série Trn do Amazon EC2 são desenvolvidas pelo AWS Trainium, que foi desenvolvido especificamente para treinamento com eficiência energética de grandes modelos, portanto, tem o menor impacto ambiental das opções listadas.\nA série C são instâncias de CPU de uso geral e otimizadas para computação que não são especializadas para treinamento LLM eficiente. As séries G e P são instâncias de GPU otimizadas para desempenho em vez de eficiência energética, portanto, têm uma pegada ambiental maior para essa carga de trabalho.",
+    "explanation": "As instâncias Trn do Amazon EC2 usam o AWS Trainium, um chip projetado para treinar modelos grandes com eficiência energética. Entre as opções listadas, são as mais adequadas para reduzir o impacto ambiental do treinamento de LLMs.\nAs instâncias C usam CPU e são otimizadas para computação de uso geral, não especificamente para treinar LLMs com eficiência energética. As famílias G e P usam GPUs e priorizam o desempenho; para essa carga de trabalho, têm uma pegada ambiental maior do que a opção Trn apresentada.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -656,14 +656,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q057": {
-    "stem": "Uma loja instalou câmeras e usa um modelo de ML para analisar as filmagens em busca de possível roubo. O modelo sinaliza pessoas de um grupo étnico com muito mais frequência do que outros. Que tipo de viés está influenciando o resultado do modelo?",
+    "stem": "Uma loja instalou câmeras e usa um modelo de ML para analisar as imagens em busca de possíveis furtos. O modelo sinaliza pessoas de um grupo étnico com muito mais frequência do que pessoas de outros grupos. Que tipo de viés influencia os resultados do modelo?",
     "options": {
-      "A": "Viés de medição",
-      "B": "Viés de amostragem",
-      "C": "Viés de confirmação",
-      "D": "Viés do observador"
+      "A": "Viés de medição (measurement bias)",
+      "B": "Viés de amostragem (sampling bias)",
+      "C": "Viés de confirmação (confirmation bias)",
+      "D": "Viés do observador (observer bias)"
     },
-    "explanation": "O viés de amostragem surge quando os dados de treinamento não representam a população completa, o que pode fazer com que um modelo sinalize um grupo étnico com muito mais frequência do que outros. A sinalização distorcida aponta para dados de treinamento que sub-representaram alguns grupos.\nO viés de medição vem de erros sistemáticos na forma como os dados são registrados. O viés de confirmação e o viés do observador estão relacionados à forma como as pessoas interpretam ou rotulam os resultados, e não à representatividade da amostra de treinamento.",
+    "explanation": "O viés de amostragem (sampling bias) ocorre quando os dados de treinamento não representam adequadamente toda a população. Essa sub-representação pode levar o modelo a sinalizar pessoas de um grupo étnico com frequência desproporcional.\nO viés de medição (measurement bias) decorre de erros sistemáticos na coleta ou no registro dos dados. Viés de confirmação (confirmation bias) e viés do observador (observer bias) se relacionam à forma como pessoas interpretam ou rotulam resultados, não à representatividade da amostra de treinamento.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -680,14 +680,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q013": {
-    "stem": "Um banco está criando um aplicativo de IA em Amazon Bedrock. O aplicativo fica em uma VPC que, para satisfazer os reguladores, deve ser isolada de todo o tráfego da Internet. Qual serviço ou recurso da AWS atende a esses requisitos?",
+    "stem": "Um banco está criando um aplicativo de IA no Amazon Bedrock. O aplicativo fica em uma VPC que, para atender aos requisitos regulatórios, deve ser isolada de todo o tráfego da internet. Qual serviço ou recurso da AWS atende a esses requisitos?",
     "options": {
       "A": "Internet gateway (gateway da internet)",
       "B": "Amazon Macie",
       "C": "AWS PrivateLink",
       "D": "Amazon CloudFront"
     },
-    "explanation": "AWS PrivateLink cria conectividade privada entre uma VPC e serviços da AWS, como Amazon Bedrock, para que o tráfego permaneça na rede da AWS e nunca alcance a Internet pública, o que satisfaz o requisito de conformidade sem Internet.\nUm gateway de Internet faz o oposto do que é exigido, fornecendo ao VPC um caminho para a Internet pública. O Amazon Macie descobre e protege dados confidenciais em Amazon S3 e não fornece conectividade privada. Amazon CloudFront é uma rede de entrega de conteúdo que fornece conteúdo pela Internet.",
+    "explanation": "Um endpoint de interface da VPC, fornecido pelo AWS PrivateLink, permite conectar o aplicativo ao Amazon Bedrock sem usar um gateway de internet nem um dispositivo NAT. Para manter a VPC isolada da internet, como pede o enunciado, ela também deve estar sem rotas para a internet pública.\nUm gateway de internet fornece justamente um caminho para a internet pública. O Amazon Macie ajuda a descobrir e proteger dados confidenciais no Amazon S3, mas não fornece conectividade privada. O Amazon CloudFront distribui conteúdo e não cria uma conexão privada entre a VPC e o Amazon Bedrock.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -704,7 +704,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q028": {
-    "stem": "Uma empresa audita regularmente suas operações junto com fornecedores independentes de software (ISVs) e deseja receber um alerta por e-mail sempre que um novo relatório de conformidade de ISV for publicado. Qual serviço AWS atende a esse requisito?",
+    "stem": "Uma empresa audita regularmente suas operações com fornecedores independentes de software (ISVs) e quer receber um alerta por e-mail sempre que um novo relatório de conformidade de um ISV for publicado. Qual serviço da AWS atende a esse requisito?",
     "options": {
       "A": "AWS Data Exchange",
       "B": "AWS Trusted Advisor",
@@ -728,14 +728,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q034": {
-    "stem": "Como uma empresa pode usar grandes modelos de linguagem com segurança em Amazon Bedrock?",
+    "stem": "Como uma empresa pode usar grandes modelos de linguagem (large language models, LLMs) com segurança no Amazon Bedrock?",
     "options": {
       "A": "Configure funções e políticas do IAM seguindo o princípio do menor privilégio (least privilege)",
       "B": "Permitir que o AWS Audit Manager execute trabalhos automáticos de avaliação de modelo",
       "C": "Habilitar trabalhos de avaliação automática de modelo Amazon Bedrock",
       "D": "Use o Amazon CloudWatch Logs para tornar os modelos explicáveis e monitorar viés (bias)"
     },
-    "explanation": "Configurar funções e políticas do IAM com base no princípio do menor privilégio restringe quais usuários e aplicações podem acessar os modelos e as ações do Amazon Bedrock — uma medida fundamental para usar modelos de linguagem grandes com segurança.\nO AWS Audit Manager coleta evidências de conformidade, mas não executa avaliações de modelos. A avaliação de modelos do Amazon Bedrock mede desempenho, não protege o acesso. O Amazon CloudWatch Logs registra atividades, mas não torna modelos explicáveis nem detecta viés.",
+    "explanation": "Configurar funções e políticas do IAM com base no princípio do menor privilégio restringe quais usuários e aplicações podem acessar os modelos e as ações do Amazon Bedrock — uma medida fundamental para usar grandes modelos de linguagem com segurança.\nO AWS Audit Manager coleta evidências de conformidade, mas não executa avaliações de modelos. A avaliação de modelos do Amazon Bedrock mede desempenho, não protege o acesso. O Amazon CloudWatch Logs registra atividades, mas não torna modelos explicáveis nem detecta viés.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -753,26 +753,26 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q061": {
-    "stem": "Um profissional de IA usa um modelo de base do Amazon Bedrock para resumir conversas de suporte e quer registrar as entradas e saídas do modelo para monitoramento. Qual abordagem deve adotar?",
+    "stem": "Um profissional de IA usa um modelo de base do Amazon Bedrock para resumir conversas de suporte e quer registrar os dados enviados ao modelo e as respostas geradas para monitoramento. Qual abordagem deve adotar?",
     "options": {
       "A": "Defina o AWS CloudTrail como destino dos logs do modelo",
       "B": "Configure o registro de invocações do modelo no Amazon EventBridge",
       "C": "Ative o registro de invocações do modelo no Amazon Bedrock",
       "D": "Defina o AWS Audit Manager como destino dos logs do modelo"
     },
-    "explanation": "Ativar o registro de invocação de modelo em Amazon Bedrock captura e armazena os dados de entrada e saída do modelo, que é exatamente o que o profissional precisa para monitorar invocações.\nAWS CloudTrail registra chamadas de API de gerenciamento, mas não as cargas de prompt e resposta do modelo. O Amazon EventBridge roteia eventos entre serviços e não é onde o registro de invocação do Bedrock está habilitado. O AWS Audit Manager coleta evidências de auditoria em vez de dados de invocação.",
+    "explanation": "Ativar o registro de invocações de modelos no Amazon Bedrock captura e armazena os dados enviados ao modelo e as respostas geradas, permitindo monitorar as invocações.\nO AWS CloudTrail registra chamadas de APIs de gerenciamento, mas não os prompts e as respostas dos modelos. O Amazon EventBridge roteia eventos entre serviços; não é nele que se habilita o registro de invocações do Bedrock. O AWS Audit Manager coleta evidências para auditorias, não dados de invocação.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q066": {
-    "stem": "Uma empresa planeja criar um aplicativo com um modelo de linguagem grande (large language model, LLM) no Amazon Bedrock, usando dados de clientes armazenados no Amazon S3. A política exige que cada equipe acesse apenas os registros de seus próprios clientes. Qual solução atende a esse requisito?",
+    "stem": "Uma empresa planeja criar um aplicativo com um grande modelo de linguagem (large language model, LLM) no Amazon Bedrock, usando dados de clientes armazenados no Amazon S3. A política exige que cada equipe acesse apenas os registros de seus próprios clientes. Qual solução atende a esse requisito?",
     "options": {
       "A": "Crie uma função de serviço do Amazon Bedrock com acesso total ao Amazon S3 e, em seguida, funções do IAM por equipe, limitadas às pastas dos clientes de cada equipe",
       "B": "Crie uma função de serviço personalizada do Amazon Bedrock para cada equipe, com acesso apenas aos dados dos clientes dessa equipe",
       "C": "Crie uma função de serviço com acesso ao Amazon S3 e exija que cada solicitação ao Amazon Bedrock informe o cliente",
       "D": "Mascare dados pessoais no Amazon S3 e altere a política do bucket para permitir que as equipes acessem os dados dos clientes"
     },
-    "explanation": "A criação de uma função de serviço personalizada Amazon Bedrock separada para cada equipe, com escopo apenas para os dados do cliente dessa equipe, impõe a política por meio de acesso com privilégios mínimos e evita que as equipes acessem os dados de outras equipes.\nUma única função com acesso total Amazon S3 mais funções IAM por equipe ainda concede amplo acesso à função Bedrock compartilhada, arriscando exposição. Uma função única que depende de as equipes nomearem o cliente depende da cooperação, e não de controles forçados. A redação de dados e a abertura da política de bucket não separam o acesso por equipe.",
+    "explanation": "Crie uma função de serviço do Amazon Bedrock exclusiva para cada equipe, com permissões limitadas aos dados dos clientes dessa equipe. Essa separação aplica o princípio do menor privilégio e impede que uma equipe acesse os dados das demais.\nUma função compartilhada com acesso total ao Amazon S3, mesmo acompanhada de funções do IAM por equipe, ainda dá amplo acesso à função de serviço do Bedrock e pode expor dados. Uma função única que apenas exige que cada solicitação informe o cliente depende da informação fornecida pelo solicitante; não impõe o isolamento de acesso. Mascarar dados pessoais e ampliar o acesso pela política do bucket também não separa os dados por equipe.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },

@@ -26,6 +26,9 @@ The Portuguese edition should teach the concept in natural Brazilian Portuguese 
 | latency | **latência** |
 | feature / feature engineering | **atributo (feature)** / **engenharia de atributos (feature engineering)** when the ML meaning is intended; avoid translating *feature* as *recurso* in this context |
 | large language model (LLM) | **grande modelo de linguagem (large language model, LLM)**; avoid *modelo de linguagem ampla* |
+| small language model (SLM) | **modelo de linguagem de pequeno porte (small language model, SLM)**; keep **SLM** distinct from **LLM** |
+| generative adversarial network (GAN) | **rede adversarial generativa (generative adversarial network, GAN)**; explain generator and discriminator roles in Portuguese |
+| generative pre-trained transformer (GPT) | **transformador generativo pré-treinado (generative pre-trained transformer, GPT)**; retain the English expansion when the acronym is relevant |
 | Feature Store | AWS product name; never translate |
 | Knowledge Bases for Amazon Bedrock | Keep the AWS feature name in English; explain as **base de conhecimento do Amazon Bedrock** |
 | Agents for Amazon Bedrock | Keep the feature name in English; explain as **agentes do Amazon Bedrock** |
@@ -40,6 +43,9 @@ The Portuguese edition should teach the concept in natural Brazilian Portuguese 
 | embeddings | **embeddings (representações vetoriais)**; avoid literal *incorporações* |
 | hallucination | **alucinação (hallucination)** |
 | bias / fairness | **viés (bias)** / **equidade (fairness)**; retain English if the distinction is tested |
+| measurement / sampling bias | **viés de medição (measurement bias)** / **viés de amostragem (sampling bias)**; preserve distinctions between bias sources |
+| data augmentation | **aumento de dados (data augmentation)**; distinguish it from merely collecting more data |
+| partial dependence plot (PDP) | **gráfico de dependência parcial (partial dependence plot, PDP)**; explain that it shows how input features relate to predictions |
 | data leakage | **vazamento de dados (data leakage)** |
 | epoch | **época de treinamento (epoch)** on first use |
 | batch transform | **transformação em lote (batch transform)**; retain English when comparing named inference options |

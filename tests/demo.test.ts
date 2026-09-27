@@ -88,12 +88,13 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q034"].options.D, /Amazon CloudWatch Logs/);
   assert.match(translations["aif-q034"].options.D, /monitorar viés \(bias\)/i);
   assert.match(translations["aif-q049"].stem, /viés \(bias\)/i);
-  assert.match(translations["aif-q050"].explanation, /ajustado por fine-tuning/i);
+  assert.match(translations["aif-q050"].explanation, /invocar um modelo personalizado.*Provisioned Throughput/i);
   assert.match(translations["aif-q069"].explanation, /engenharia de prompts \(prompt engineering\)/i);
   assert.match(translations["aif-q038"].options.B, /Knowledge Base/);
   assert.match(translations["aif-q054"].options.B, /Amazon Bedrock Guardrails/);
   assert.match(translations["aif-q054"].options.C, /Amazon Bedrock Prompt Management/);
   assert.match(translations["aif-q074"].options.A, /Amazon Q Developer/);
+  assert.equal(translations["aif-q074"].options.B, "Amazon Q in Amazon QuickSight");
   assert.match(translations["aif-q080"].stem, /Agents for Amazon Bedrock/);
   assert.match(translations["aif-q064"].options.B, /domain-adaptation fine-tuning/);
   assert.match(translations["aif-q040"].stem, /fine-tuning \(ajuste fino\)/);
@@ -105,14 +106,36 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q020"].options.D, /natural language processing, NLP/);
   assert.match(translations["aif-q002"].stem, /grande modelo de linguagem \(large language model, LLM\)/i);
   assert.doesNotMatch(JSON.stringify(translations), /modelo de linguagem ampla/i);
+  assert.doesNotMatch(JSON.stringify(translations), /modelo de linguagem grande|modelos de linguagem grande|rendimento provisionado/i);
+  assert.match(translations["aif-q010"].explanation, /modelos de linguagem de pequeno porte \(small language models, SLMs\)/i);
+  assert.match(translations["aif-q019"].explanation, /completion \(resposta esperada\)/i);
+  assert.match(translations["aif-q038"].options.B, /Knowledge Bases for Amazon Bedrock/);
+  assert.doesNotMatch(translations["aif-q042"].explanation, /rastreamento mede/i);
+  assert.match(translations["aif-q042"].stem, /chatbot baseado em um grande modelo de linguagem/i);
+  assert.match(translations["aif-q005"].options.B, /^Aumente /);
+  assert.match(translations["aif-q005"].options.C, /^Refine /);
+  assert.match(translations["aif-q005"].options.D, /^Aumente /);
+  assert.match(translations["aif-q007"].options.A, /^Aumente /);
+  assert.match(translations["aif-q007"].options.C, /^Diminua /);
   assert.match(translations["aif-q006"].explanation, /latência quase em tempo real/i);
+  assert.match(translations["aif-q027"].stem, /ajustar automaticamente a capacidade à demanda/i);
+  assert.match(translations["aif-q035"].options.D, /generative pre-trained transformer, GPT/i);
+  assert.match(translations["aif-q055"].explanation, /generative adversarial network, GAN/i);
+  assert.match(translations["aif-q077"].options.B, /Alucinação \(hallucination\)/i);
+  assert.match(translations["aif-q001"].explanation, /atributos de entrada \(features\)/i);
+  assert.match(translations["aif-q016"].stem, /chamadas telefônicas gravadas/i);
+  assert.match(translations["aif-q013"].explanation, /endpoint de interface da VPC.*sem usar um gateway de internet/i);
+  assert.match(translations["aif-q057"].options.B, /Viés de amostragem \(sampling bias\)/i);
+  assert.match(translations["aif-q066"].explanation, /função de serviço do Amazon Bedrock exclusiva para cada equipe/i);
+  assert.match(translations["aif-q037"].options.B, /aumento de dados \(data augmentation\)/i);
+  assert.match(translations["aif-q065"].options.C, /^Diminua o valor da temperatura/);
   assert.match(translations["aif-q457"].options.B, /engenharia de atributos/i);
   assert.match(translations["aif-q457"].options.D, /^Defina /);
 });
 
 test("Portuguese drafts preserve AWS service names and avoid known literal calques", () => {
   const serviceNamePattern = /\b(?:Amazon|AWS)\s+[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}/g;
-  const knownCalques = /engenharia imediata|modelo fundacional|modelos fundacionais|modelo básico|modelos básicos|taxa de transferência|Amazon Personalizar|Cloud Front|Incorporações|\bPNL\b/i;
+  const knownCalques = /engenharia imediata|modelo fundacional|modelos fundacionais|modelo básico|modelos básicos|taxa de transferência|rendimento provisionado|Amazon Personalizar|Cloud Front|Incorporações|\bPNL\b/i;
 
   for (const question of questions) {
     const translation = translations[question.id];
