@@ -79,7 +79,7 @@
       "C": "Converta as gravações de chamadas em texto com o Amazon Transcribe",
       "D": "Extraia informações das gravações com Amazon SageMaker Model Monitor"
     },
-    "explanation": "O Amazon Transcribe converte a fala das gravações de chamadas em texto, que a equipe pode analisar para extrair as principais informações discutidas.\nO Amazon Comprehend analisa texto em busca de insights como classificação, mas precisa de texto em vez de áudio bruto como entrada. O Amazon Lex cria chatbots conversacionais e não transcreve gravações existentes. Amazon SageMaker Model Monitor observa modelos implantados em busca de desvios e não tem nada a ver com transcrição de áudio.",
+    "explanation": "O Amazon Transcribe converte a fala das gravações de chamadas em texto, que a equipe pode analisar para extrair as principais informações discutidas.\nO Amazon Comprehend analisa texto em busca de insights como classificação, mas precisa de texto em vez de áudio bruto como entrada. O Amazon Lex cria chatbots conversacionais e não transcreve gravações existentes. O Amazon SageMaker Model Monitor acompanha modelos implantados e detecta desvios (drift); não transcreve áudio.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -91,7 +91,7 @@
       "C": "Aprendizado por reforço (reinforcement learning)",
       "D": "Aprendizado semissupervisionado (semi-supervised learning)"
     },
-    "explanation": "O aprendizado não supervisionado (unsupervised learning) encontra padrões e agrupamentos em dados sem rótulos, o que o torna adequado para segmentar os clientes descritos.\nO aprendizado supervisionado exige dados rotulados com resultados conhecidos, que não existem neste cenário. O aprendizado por reforço treina um agente por meio de recompensas e penalidades enquanto ele interage com um ambiente; isso não corresponde a agrupar um conjunto estático de clientes. O aprendizado semissupervisionado combina uma pequena quantidade de dados rotulados com dados não rotulados, mas o enunciado não informa que haja exemplos rotulados.",
+    "explanation": "O aprendizado não supervisionado (unsupervised learning) encontra padrões e agrupamentos em dados sem rótulos, o que o torna adequado para segmentar os clientes descritos.\nO aprendizado supervisionado exige dados rotulados com resultados conhecidos, que não existem neste cenário. O aprendizado por reforço treina um agente por meio de recompensas e penalidades enquanto ele interage com um ambiente; isso não corresponde a agrupar um conjunto estático de clientes. O aprendizado semissupervisionado combina uma pequena quantidade de dados rotulados com dados não rotulados, mas neste cenário não há dados rotulados.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -115,7 +115,7 @@
       "C": "Use o Amazon API Gateway para hospedar o modelo e fornecer previsões",
       "D": "Use o AWS Batch para hospedar o modelo e fornecer previsões"
     },
-    "explanation": "Amazon SageMaker Serverless Inference é uma opção totalmente gerenciada que hospeda um modelo e fornece previsões sob demanda enquanto provisiona e dimensiona automaticamente a computação subjacente, para que um aplicativo da web possa chamar o modelo para obter previsões em tempo real sem que a empresa gerencie a capacidade.\nO Amazon CloudFront é uma rede de distribuição de conteúdo que armazena em cache e distribui conteúdo para reduzir a latência e não pode hospedar um modelo de ML nem gerar previsões. O Amazon API Gateway cria e gerencia a camada de API que atende um back-end, mas ele próprio não hospeda um modelo ou executa inferência e ainda precisaria de um serviço de computação por trás dele. O AWS Batch executa trabalhos de computação em lote em computação gerenciada e é adequado para processamento off-line em massa, em vez de fornecer previsões sob demanda de baixa latência para um aplicativo web.",
+    "explanation": "Amazon SageMaker Serverless Inference é uma opção totalmente gerenciada que hospeda um modelo e fornece previsões sob demanda enquanto provisiona e dimensiona automaticamente a computação subjacente, para que um aplicativo da web possa chamar o modelo para obter previsões em tempo real sem que a empresa gerencie a capacidade.\nO Amazon CloudFront é uma rede de distribuição de conteúdo que armazena em cache e distribui conteúdo para reduzir a latência; não pode hospedar um modelo de ML nem gerar previsões. O Amazon API Gateway cria e gerencia uma camada de API que encaminha solicitações a um serviço de back-end, mas não hospeda modelos nem executa inferência por conta própria; ainda seria necessário um serviço de computação por trás da API. O AWS Batch executa tarefas de processamento em lote em uma infraestrutura de computação gerenciada. Ele é adequado para processamento off-line em massa, não para fornecer previsões sob demanda e com baixa latência a um aplicativo web.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -127,7 +127,7 @@
       "C": "Detecção de objetos",
       "D": "Detecção de anomalias"
     },
-    "explanation": "A detecção de objetos é uma técnica de visão computacional que localiza e classifica objetos em uma imagem. Assim, pode identificar cada animal e atribuí-lo a uma categoria sem trabalho manual.\nA detecção de anomalias sinaliza dados que se desviam de padrões normais; não identifica o conteúdo de uma imagem. O reconhecimento de entidades nomeadas (named entity recognition) é uma técnica de processamento de linguagem natural (natural language processing, NLP) que extrai entidades, como nomes e locais, de textos. Inpainting é uma técnica generativa que preenche regiões ausentes ou removidas de uma imagem, não identifica os objetos nela.",
+    "explanation": "A detecção de objetos é uma técnica de visão computacional (computer vision) que localiza e classifica objetos em uma imagem. Assim, pode identificar cada animal e atribuí-lo a uma categoria sem trabalho manual.\nA detecção de anomalias sinaliza dados que se desviam de padrões normais; não identifica o conteúdo de uma imagem. O reconhecimento de entidades nomeadas (named entity recognition) é uma técnica de processamento de linguagem natural (natural language processing, NLP) que extrai entidades, como nomes e locais, de textos. O preenchimento de imagem (inpainting) é uma técnica generativa que preenche regiões ausentes ou removidas de uma imagem; não identifica os objetos nela.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -158,7 +158,7 @@
       "3": "Treinar um robô de armazém para navegar, recompensando movimentos bem-sucedidos e penalizando colisões",
       "4": "Rotular e-mails recebidos como spam ou não spam usando um conjunto de dados de e-mails previamente rotulados"
     },
-    "explanation": "O aprendizado supervisionado para classificação (A) usa exemplos rotulados para atribuir entradas a categorias, como classificar e-mails como spam ou não spam (4). O aprendizado não supervisionado por clustering (B) encontra grupos em dados sem rótulos, como na segmentação de clientes (1). O aprendizado por reforço (C) aprende por tentativa e erro usando recompensas, como no treinamento do robô (3). A regressão supervisionada (D) prevê um valor numérico contínuo, como o preço de venda de uma casa (2).\nA distinção principal está no tipo de resultado e nos dados usados: classificação prevê categorias; regressão, números; ambas usam exemplos rotulados. Clustering procura grupos sem rótulos, enquanto aprendizado por reforço aprende com recompensas. O preço de uma casa é um valor contínuo, portanto corresponde à regressão, não à classificação.",
+    "explanation": "O aprendizado supervisionado para classificação (supervised classification; A) usa exemplos rotulados para atribuir entradas a categorias, como classificar e-mails como spam ou não spam (4). O aprendizado não supervisionado (unsupervised learning) encontra agrupamentos (clustering) em dados sem rótulos, como na segmentação de clientes (1). O aprendizado por reforço (reinforcement learning; C) aprende por tentativa e erro, recebendo recompensas ou penalidades ao interagir com um ambiente, como no treinamento do robô (3). A regressão supervisionada (supervised regression; D) prevê um valor numérico contínuo, como o preço de venda de uma casa (2).\nA distinção principal está no tipo de resultado e nos dados usados: classificação prevê categorias; regressão, números; ambas usam exemplos rotulados. O clustering procura grupos sem rótulos. Já o aprendizado por reforço não depende de um conjunto fixo de exemplos rotulados: aprende com os sinais de recompensa recebidos durante a interação. O preço de uma casa é um valor contínuo, portanto corresponde à regressão, não à classificação.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -302,7 +302,7 @@
       "C": "Embeddings (representações vetoriais)",
       "D": "Modelos"
     },
-    "explanation": "Embeddings são representações vetoriais (listas de números) de objetos ou conceitos, como palavras e frases. No espaço vetorial, itens com significados ou relações semelhantes tendem a ficar próximos, o que ajuda modelos a processar texto.\nTokens são unidades em que o texto é dividido; parâmetros são valores aprendidos pelo modelo durante o treinamento; e modelos são os sistemas treinados. Nenhum desses termos designa as representações vetoriais descritas no enunciado.",
+    "explanation": "Embeddings são representações vetoriais numéricas de objetos e conceitos, como palavras e frases. No espaço vetorial, itens semelhantes ficam próximos uns dos outros, o que ajuda modelos de IA e de processamento de linguagem natural (NLP) a capturar relações e significado e a processar texto.\nTokens são unidades em que o texto é dividido; parâmetros são valores aprendidos pelo modelo durante o treinamento; e modelos são os sistemas treinados. Nenhum desses termos designa as representações vetoriais descritas no enunciado.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -362,7 +362,7 @@
       "C": "Geração de imagens sintéticas com um modelo de base do Amazon Bedrock",
       "D": "Rotulagem automatizada por aprendizado ativo com Amazon SageMaker Ground Truth"
     },
-    "explanation": "A validação humana com o Amazon SageMaker Ground Truth Plus encaminha rótulos a revisores especializados, que podem verificá-los e corrigi-los. Isso melhora a qualidade das anotações e reduz erros.\nO Amazon Rekognition Custom Labels automatiza a rotulagem, mas, sem revisão humana, pode propagar erros. Gerar imagens sintéticas com um modelo do Amazon Bedrock cria dados artificiais, mas não valida rótulos de imagens reais. A rotulagem por aprendizado ativo no Amazon SageMaker Ground Truth reduz o esforço, mas não garante a mesma qualidade de uma revisão especializada.",
+    "explanation": "A validação humana com o Amazon SageMaker Ground Truth Plus encaminha os rótulos a revisores especializados, que os verificam e corrigem. Isso gera anotações mais confiáveis e reduz erros.\nO Amazon Rekognition Custom Labels automatiza a rotulagem, mas, sem revisão humana, pode propagar erros. Gerar imagens sintéticas com um modelo do Amazon Bedrock cria dados artificiais, mas não valida rótulos de imagens reais. A rotulagem por aprendizado ativo no Amazon SageMaker Ground Truth reduz o esforço, mas não garante a mesma qualidade de uma revisão especializada.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -410,7 +410,7 @@
       "C": "Inclua no prompt alguns trechos de exemplo rotulados como positivos ou negativos (few-shot prompting)",
       "D": "Inclua o novo trecho junto com exemplos de tarefas não relacionadas, como resumir ou traduzir"
     },
-    "explanation": "Incluir alguns trechos de exemplo rotulados como positivos ou negativos é uma estratégia de few-shot prompting: ela mostra ao modelo o padrão de classificação esperado e pode melhorar o desempenho ao classificar um novo trecho.\nUma explicação geral sobre análise de sentimento ou LLMs não demonstra o formato específico de saída desejado. Fornecer apenas o novo trecho é uma abordagem zero-shot e depende do conhecimento prévio do modelo. Exemplos de tarefas não relacionadas, como resumo ou tradução, demonstram um padrão irrelevante para classificar sentimento.",
+    "explanation": "Incluir alguns trechos de exemplo rotulados como positivos ou negativos é uma estratégia de few-shot prompting: ela mostra ao modelo o padrão de classificação esperado e pode melhorar a acurácia ao classificar um novo trecho.\nUma explicação geral sobre análise de sentimento ou LLMs não demonstra o formato específico de saída desejado. Fornecer apenas o novo trecho é uma abordagem zero-shot e depende do conhecimento prévio do modelo. Exemplos de tarefas não relacionadas, como resumo ou tradução, demonstram um padrão irrelevante para classificar sentimento.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -470,7 +470,7 @@
       "C": "Faça o ajuste fino (fine-tuning) do modelo com os manuais e disponibilize a versão ajustada",
       "D": "Continue o pré-treinamento do modelo de base com o conteúdo dos manuais"
     },
-    "explanation": "Uma base de conhecimento do Amazon Bedrock recupera apenas os trechos relevantes para cada pergunta. Assim, o modelo recebe o contexto necessário sem enviar os manuais inteiros a cada consulta nem exigir treinamento adicional.\nIncluir todos os manuais em cada prompt aumenta o consumo de tokens. O ajuste fino gera custos de treinamento e pode precisar ser repetido quando os manuais mudam. Continuar o pré-treinamento com todo o conteúdo é mais caro e desnecessário para uma interface de perguntas e respostas.",
+    "explanation": "Uma base de conhecimento do Amazon Bedrock recupera apenas os trechos relevantes para cada pergunta. Essa geração aumentada por recuperação (retrieval-augmented generation, RAG) fornece o contexto necessário sem enviar os manuais inteiros a cada consulta nem exigir treinamento adicional.\nIncluir todos os manuais em cada prompt aumenta o consumo de tokens. O ajuste fino gera custos de treinamento e pode precisar ser repetido quando os manuais mudam. Continuar o pré-treinamento com todo o conteúdo é mais caro e desnecessário para uma interface de perguntas e respostas.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -566,7 +566,7 @@
       "C": "Redes neurais (neural networks)",
       "D": "Regressão linear (linear regression)"
     },
-    "explanation": "Árvores de decisão tornam explícita a lógica interna por meio de regras de divisão legíveis. Isso permite documentar como o modelo parte das características de entrada para chegar a uma das 20 categorias. Essa interpretabilidade atende ao requisito.\nRedes neurais costumam ser menos transparentes, o que dificulta documentar sua lógica interna. Regressão linear prevê valores contínuos, não categorias discretas. Regressão logística pode ser interpretada por seus coeficientes, mas não oferece caminhos de decisão tão fáceis de documentar para muitas classes quanto uma árvore de decisão.",
+    "explanation": "Árvores de decisão tornam explícita a lógica interna por meio de regras de divisão legíveis. Isso permite documentar como o modelo parte das características de entrada para chegar a uma das 20 categorias. Essa interpretabilidade atende ao requisito.\nRedes neurais costumam ter uma lógica interna pouco transparente, o que dificulta documentar seu funcionamento. Regressão linear prevê valores contínuos, não categorias discretas. Regressão logística pode ser interpretada por seus coeficientes, mas não oferece caminhos de decisão tão fáceis de documentar para muitas classes quanto uma árvore de decisão.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -723,7 +723,7 @@
       "C": "Criar um aplicativo com base em um modelo de base (foundation model, FM) de terceiros",
       "D": "Usar um aplicativo empresarial de terceiros com recursos de IA generativa integrados"
     },
-    "explanation": "Construir e treinar um modelo do zero com base nos dados de propriedade da empresa dá à empresa controle total sobre os dados, treinamento, implantação e proteções, de modo que ela carrega a maior responsabilidade pela segurança.\nO ajuste fino de um FM de terceiros, a construção de um aplicativo em um FM de terceiros e o uso de um aplicativo de fornecedor com IA generativa incorporada transferem porções crescentes de responsabilidade para o provedor, de modo que concedem menos propriedade à empresa.",
+    "explanation": "Construir e treinar um modelo do zero com base nos dados da própria empresa dá a ela controle total sobre os dados, o treinamento, a implantação e as proteções; por isso, ela assume a maior responsabilidade pela segurança.\nNos outros cenários — ajustar um FM de terceiros, criar um aplicativo sobre esse FM ou usar um aplicativo de fornecedor com IA generativa integrada — uma parcela cada vez maior da responsabilidade fica com o provedor, e não com a empresa.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
