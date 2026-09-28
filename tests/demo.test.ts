@@ -245,6 +245,7 @@ test("Portuguese responsible-AI explanation separates bias assessment from mitig
 });
 
 test("Portuguese interpretability and explainability items retain exam-term anchors", () => {
+  assert.match(translations["aif-q001"].stem, /transparência \(transparency\) e explicabilidade \(explainability\)/i);
   assert.match(translations["aif-q003"].explanation, /interpretabilidade \(interpretability\)/i);
   assert.match(translations["aif-q039"].stem, /transparente \(transparent\) e explicável \(explainable\)/i);
   assert.equal(translations["aif-q003"].status, "machine-draft");

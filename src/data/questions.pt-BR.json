@@ -547,7 +547,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q001": {
-    "stem": "Uma empresa de logística usa modelos de aprendizado de máquina (machine learning, ML) para prever a demanda a cada trimestre. Um analista prepara um relatório para ajudar as partes interessadas a entender como os modelos treinados chegam às previsões. O que deve incluir para atender às necessidades de transparência e explicabilidade?",
+    "stem": "Uma empresa de logística usa modelos de aprendizado de máquina (machine learning, ML) para prever a demanda a cada trimestre. Um analista prepara um relatório para ajudar as partes interessadas a entender como os modelos treinados chegam às previsões. O que deve incluir para atender às necessidades de transparência (transparency) e explicabilidade (explainability)?",
     "options": {
       "A": "Dados de amostra usados para treinamento",
       "B": "Tabelas de convergência de modelo",
