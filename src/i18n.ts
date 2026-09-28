@@ -103,7 +103,7 @@ const pt: Record<keyof typeof en, string> = {
   submitBody: "Questões não respondidas contam como incorretas. As respostas não poderão ser alteradas.",
   keepWorking: "Continuar respondendo",
   submitNow: "Finalizar agora",
-  confidence: "Confiança",
+  confidence: "Sua confiança na resposta",
   low: "Baixa",
   medium: "Média",
   high: "Alta",

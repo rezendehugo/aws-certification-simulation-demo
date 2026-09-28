@@ -85,6 +85,12 @@ describe("public Lite demo release checks", () => {
     cy.contains("button", "Remover marcação").should("be.visible");
   });
 
+  it("makes clear that confidence is the learner's self-rating", () => {
+    cy.get(".preferences select").eq(0).select("pt-BR");
+    cy.contains("button", "Iniciar simulado").click();
+    cy.get(".actionbar label").should("contain.text", "Sua confiança na resposta");
+  });
+
   it("teaches the SSE-KMS permission distinction without raw markup", () => {
     cy.get(".preferences select").eq(0).select("pt-BR");
     cy.contains("button", "Iniciar simulado").click();
