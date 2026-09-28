@@ -308,6 +308,15 @@ test("Portuguese embeddings question distinguishes text tokens from vector repre
   assert.equal(translation.status, "machine-draft");
 });
 
+test("Portuguese guidance distinguishes inference temperature and top-p from model training", () => {
+  assert.match(portugueseGuide, /temperatura.*parâmetros de inferência.*não o treinamento.*temperatura física/i);
+  assert.match(portugueseGuide, /top-p.*probabilidade cumulativa/i);
+  assert.match(portugueseGuide, /faixas e efeitos exatos variam por modelo/i);
+  assert.match(translations["aif-q065"].explanation, /parâmetro de inferência temperatura/i);
+  assert.match(translations["aif-q065"].explanation, /tende a tornar as respostas mais determinísticas/i);
+  assert.equal(translations["aif-q065"].status, "machine-draft");
+});
+
 test("Portuguese expands ML in every standalone translated question", () => {
   for (const [questionId, translation] of Object.entries(translations)) {
     const localizedText = [

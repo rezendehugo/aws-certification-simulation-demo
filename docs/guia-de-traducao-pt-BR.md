@@ -38,6 +38,7 @@ A versão em português deve explicar o conceito com naturalidade para quem estu
 | few-shot prompting | **few-shot prompting (prompts com poucos exemplos)**; o modelo recebe alguns pares de entrada e saída ou exemplos rotulados antes de responder a uma nova entrada |
 | embeddings | **embeddings (representações vetoriais)** |
 | token | **token**; unidade de significado que pode corresponder a uma palavra, parte de palavra ou sinal de pontuação. Preserve o termo cobrado em inglês e não confunda o token textual com o vetor numérico produzido por um embedding. |
+| inference temperature / top-p | **temperatura** e **top-p** são parâmetros de inferência que afetam a amostragem dos próximos tokens, não o treinamento do modelo nem uma temperatura física. Temperatura mais baixa tende a favorecer tokens de maior probabilidade e respostas mais determinísticas; *top-p* limita a amostragem aos candidatos cuja probabilidade cumulativa atinge o limiar definido. Faixas e efeitos exatos variam por modelo; os dois parâmetros não são sinônimos. |
 | benchmark dataset | **conjunto de dados de referência (benchmark dataset)** |
 | Provisioned Throughput | Manter **Provisioned Throughput (throughput provisionado)**; não usar *taxa de transferência* |
 | data leakage / data augmentation | **vazamento de dados (data leakage)** / **aumento de dados (data augmentation)** |
@@ -49,6 +50,8 @@ Na documentação da AWS em PT-BR, *recall* aparece como **recuperação** no t�
 Não confunda **alucinação** com sobreajuste ou subajuste: alucinação é uma saída plausível, mas incorreta ou inventada; sobreajuste e subajuste descrevem como o modelo aprende e generaliza a partir dos dados.
 
 Para **drift**, mantenha o termo em inglês junto à forma em português na primeira menção. No Amazon SageMaker Model Monitor, a documentação da AWS em PT-BR usa **desvio** e **oscilações** para mudanças monitoradas na qualidade dos dados ou do modelo. Prefira o tipo específico quando o cenário o informar: desvio nos dados, na qualidade do modelo, no viés ou na atribuição de atributos. Não troque automaticamente *drift* por “anomalia”: uma anomalia pontual e uma mudança em relação a uma linha de base ao longo do tempo não são a mesma coisa. Consulte [monitoramento da qualidade de dados e modelos com o Amazon SageMaker Model Monitor](https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/model-monitor.html).
+
+Para **temperatura** e **top-p**, preserve os nomes usados nos parâmetros de inferência e explique o efeito sobre a seleção do próximo token. Uma temperatura menor favorece saídas mais determinísticas, mas não garante repetição idêntica em todo modelo; consulte os [parâmetros de inferência do Amazon Bedrock](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/inference-parameters.html) para os efeitos e intervalos específicos.
 
 ## Revisão e transparência
 

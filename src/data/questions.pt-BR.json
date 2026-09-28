@@ -518,7 +518,7 @@
       "C": "Diminua o valor da temperatura",
       "D": "Reduza o número máximo de tokens de saída"
     },
-    "explanation": "Diminuir a temperatura reduz a aleatoriedade na seleção de tokens e torna as respostas mais determinísticas e consistentes para uma mesma entrada.\nAumentar a temperatura eleva a aleatoriedade e a variabilidade. Alterar o limite máximo de geração ou reduzir o número de tokens de saída afeta o tamanho da resposta, não sua consistência.",
+    "explanation": "Diminuir o parâmetro de inferência temperatura reduz a aleatoriedade na seleção de tokens e tende a tornar as respostas mais determinísticas e consistentes para uma mesma entrada.\nAumentar a temperatura eleva a aleatoriedade e a variabilidade. Alterar o limite máximo de geração ou reduzir o número de tokens de saída afeta o tamanho da resposta, não sua consistência.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
