@@ -226,6 +226,12 @@ test("Portuguese image-labeling item tracks the Ground Truth Plus end-of-support
   assert.equal(translations["aif-q008"].status, "machine-draft");
 });
 
+test("Portuguese epoch explanation distinguishes learning more from overfitting", () => {
+  assert.match(translations["aif-q041"].explanation, /pode melhorar a acurácia enquanto ele ainda está subajustado \(underfitting\)/i);
+  assert.match(translations["aif-q041"].explanation, /dados de validação.*acurácia no treinamento continuar subindo, mas a de validação cair.*sobreajustado \(overfitting\)/i);
+  assert.equal(translations["aif-q041"].status, "machine-draft");
+});
+
 test("Portuguese drafts preserve AWS service names and avoid known literal calques", () => {
   const serviceNamePattern = /\b(?:Amazon|AWS)\s+[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}/g;
   const knownCalques = /engenharia imediata|modelo fundacional|modelos fundacionais|modelo básico|modelos básicos|taxa de transferência|rendimento provisionado|Amazon Personalizar|Cloud Front|incorporaç[aã]|\bPNL\b/i;

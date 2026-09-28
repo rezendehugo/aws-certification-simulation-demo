@@ -78,4 +78,6 @@ Para o formato dos conjuntos de dados de ajuste fino, consulte a documentação 
 
 Para explicar tokens, consulte a [terminologia básica do Amazon Bedrock](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/key-definitions.html), que distingue palavras inteiras, partes de palavras e pontuação como possíveis unidades de token.
 
+Ao explicar o efeito de épocas adicionais, diferencie o aumento de desempenho no conjunto de treinamento da capacidade de generalização. Compare as curvas de treinamento e validação: acurácia de treinamento crescente acompanhada de queda na validação pode indicar sobreajuste, conforme o exemplo da AWS sobre [curvas de treinamento e validação](https://docs.aws.amazon.com/sagemaker/latest/dg/train-valid-curve.html).
+
 Para o vocabulário de explicabilidade, compare o guia da AWS sobre [interpretabilidade de modelos de ML](https://docs.aws.amazon.com/pt_br/prescriptive-guidance/latest/ml-model-interpretability/welcome.html) com a documentação do [SageMaker Clarify sobre explicabilidade](https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/clarify-model-explainability.html). A própria orientação da AWS ressalta que não há uma definição padrão única para explicação de modelos.

@@ -84,3 +84,5 @@ When a translation error may change the correct answer, treat it as a high-prior
 - [Amazon SageMaker Feature Store documentation](https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/feature-store.html)
 - [Amazon Bedrock Provisioned Throughput prerequisites](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/prov-thru-prereq.html)
 - [Cohere Embed v4 multimodal embeddings](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-parameters-embed-v4.html)
+
+When explaining the effect of more training epochs, distinguish improvement on training data from generalization. Compare training and validation curves: training accuracy rising while validation accuracy falls can indicate overfitting. See AWS's example on [training and validation curves](https://docs.aws.amazon.com/sagemaker/latest/dg/train-valid-curve.html).

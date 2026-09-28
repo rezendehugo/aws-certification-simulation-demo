@@ -446,7 +446,7 @@
       "C": "Aumentar o número de épocas (epochs)",
       "D": "Aumentar o parâmetro de temperatura"
     },
-    "explanation": "Aumentar o número de épocas (epochs) permite que o modelo percorra os dados de treinamento mais vezes, o que pode melhorar a acurácia até o limite desejado.\nDiminuir o número de épocas reduz o treinamento e pode prejudicar a acurácia. O tamanho do lote influencia a dinâmica do treinamento e o uso de memória, mas não é uma forma direta e confiável de atingir uma meta de acurácia. A temperatura controla a aleatoriedade da saída durante a inferência; não altera a acurácia do treinamento.",
+    "explanation": "Aumentar o número de épocas (epochs) faz o modelo percorrer os dados de treinamento mais vezes e pode melhorar a acurácia enquanto ele ainda está subajustado (underfitting). Para confirmar que a melhora se generaliza, acompanhe o desempenho em dados de validação: se a acurácia no treinamento continuar subindo, mas a de validação cair, o modelo pode estar sobreajustado (overfitting).\nDiminuir o número de épocas reduz o treinamento e pode prejudicar a acurácia. O tamanho do lote influencia a dinâmica do treinamento e o uso de memória, mas não é uma forma direta e confiável de atingir uma meta de acurácia. A temperatura controla a aleatoriedade da saída durante a inferência; não altera a acurácia do treinamento.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
