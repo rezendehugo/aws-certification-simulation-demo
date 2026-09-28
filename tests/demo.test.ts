@@ -211,6 +211,9 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
 
 test("Portuguese call-transcription item preserves the source limitation and tracks its ambiguity", () => {
   assert.match(translations["aif-q016"].explanation, /Amazon Transcribe converte a fala.*em texto/i);
+  assert.match(translations["aif-q016"].explanation, /desvios \(drift\)/i);
+  assert.match(portugueseGuide, /data drift.*desvio nos dados/s);
+  assert.match(portugueseGuide, /uma anomalia pontual.*mudança em relação a uma linha de base/s);
   assert.match(portugueseGuide, /aif-q016.*Amazon Transcribe padrão/s);
   assert.match(portugueseGuide, /análise manual da transcrição basta ou se a intenção.*Call Analytics/s);
   assert.match(englishGuide, /aif-q016.*standard Amazon Transcribe/s);

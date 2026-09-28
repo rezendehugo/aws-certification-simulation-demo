@@ -22,6 +22,7 @@ A versão em português deve explicar o conceito com naturalidade para quem estu
 | accuracy / precision / recall | **acurácia (accuracy)** / **precisão (precision)** / **revocação (recall)** |
 | bias / fairness | **viés (bias)** / **equidade (fairness)**; não trate os dois conceitos como sinônimos |
 | bias assessment / mitigation / transparency | Diferencie **avaliar ou detectar viés**, **mitigá-lo** (intervir para reduzi-lo) e **transparência** (tornar comportamento e limites visíveis). Avaliar e comunicar, por si só, não elimina o viés. |
+| data drift / model-quality drift | **desvio nos dados (data drift)** / **desvio na qualidade do modelo (model-quality drift)**; mantenha explícito o que está mudando e, quando relevante, em relação a qual linha de base. Não confunda uma mudança ao longo do tempo com uma anomalia pontual. |
 | interpretability / explainability | **interpretabilidade (interpretability)** / **explicabilidade (explainability)**; como distinção editorial, a primeira descreve quão compreensível é a lógica do modelo, e a segunda, a produção de razões para suas previsões. O uso pode se sobrepor; preserve a palavra da fonte em vez de impor uma separação universal. |
 | root mean squared error (RMSE) | **raiz do erro quadrático médio (RMSE)**; preserve a ordem natural em português |
 | machine learning (ML) | **aprendizado de máquina (machine learning, ML)** |
@@ -44,6 +45,8 @@ A versão em português deve explicar o conceito com naturalidade para quem estu
 | least privilege | **princípio do menor privilégio (least privilege)** |
 
 Não confunda **alucinação** com sobreajuste ou subajuste: alucinação é uma saída plausível, mas incorreta ou inventada; sobreajuste e subajuste descrevem como o modelo aprende e generaliza a partir dos dados.
+
+Para **drift**, mantenha o termo em inglês junto à forma em português na primeira menção. No Amazon SageMaker Model Monitor, a documentação da AWS em PT-BR usa **desvio** e **oscilações** para mudanças monitoradas na qualidade dos dados ou do modelo. Prefira o tipo específico quando o cenário o informar: desvio nos dados, na qualidade do modelo, no viés ou na atribuição de atributos. Não troque automaticamente *drift* por “anomalia”: uma anomalia pontual e uma mudança em relação a uma linha de base ao longo do tempo não são a mesma coisa. Consulte [monitoramento da qualidade de dados e modelos com o Amazon SageMaker Model Monitor](https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/model-monitor.html).
 
 ## Revisão e transparência
 
