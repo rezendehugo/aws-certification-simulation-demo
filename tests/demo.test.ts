@@ -174,6 +174,7 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q030"].explanation, /parcela cada vez maior da responsabilidade fica com o provedor/i);
   assert.doesNotMatch(translations["aif-q030"].explanation, /menos propriedade à empresa/i);
   assert.match(translations["aif-q063"].explanation, /itens semelhantes ficam próximos/i);
+  assert.match(translations["aif-q063"].explanation, /Tokens são unidades de texto.*palavra inteira.*parte de uma palavra.*sinal de pontuação/i);
   assert.match(translations["aif-q063"].explanation, /processamento de linguagem natural \(NLP\)/i);
   assert.match(translations["aif-q008"].explanation, /revisores especializados, que os verificam e corrigem/i);
   assert.match(translations["aif-q025"].explanation, /melhorar a acurácia ao classificar/i);

@@ -44,6 +44,7 @@ The Portuguese edition should teach the concept in natural Brazilian Portuguese 
 | Provisioned Throughput (Amazon Bedrock) | Keep the product term **Provisioned Throughput (throughput provisionado)**; avoid *taxa de transferência*, which can imply network bandwidth |
 | inpainting | **preenchimento de imagem (inpainting)** |
 | embeddings | Prefer **embeddings (representações vetoriais)** on first use to preserve exam mapping. AWS Portuguese docs sometimes use **incorporação**; if used, pair it with *embeddings* so learners can recognize the English term. |
+| token | Keep **token**; define it as a unit of meaning that may be a word, part of a word, or punctuation mark. |
 | hallucination | **alucinação (hallucination)** |
 | overfitting | **sobreajuste (overfitting)**; good performance on training data but poor generalization to new data |
 | underfitting | **subajuste (underfitting)**; fails to learn useful patterns and performs poorly even on training data |

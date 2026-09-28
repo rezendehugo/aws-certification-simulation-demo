@@ -33,6 +33,7 @@ A versão em português deve explicar o conceito com naturalidade para quem estu
 | system prompt | **prompt do sistema (system prompt)**; contém instruções ou contexto para o modelo, distintos da solicitação individual do usuário |
 | few-shot prompting | **few-shot prompting (prompts com poucos exemplos)**; o modelo recebe alguns pares de entrada e saída ou exemplos rotulados antes de responder a uma nova entrada |
 | embeddings | **embeddings (representações vetoriais)** |
+| token | **token**; unidade de significado que pode ser uma palavra, parte de palavra ou sinal de pontuação; preserve o termo cobrado em inglês |
 | benchmark dataset | **conjunto de dados de referência (benchmark dataset)** |
 | Provisioned Throughput | Manter **Provisioned Throughput (throughput provisionado)**; não usar *taxa de transferência* |
 | data leakage / data augmentation | **vazamento de dados (data leakage)** / **aumento de dados (data augmentation)** |
@@ -64,3 +65,5 @@ O item `aif-q029` deve ser entendido como uma questão sobre orientação do com
 As traduções são material comunitário de estudo, não traduções oficiais da AWS. Veja também o [guia completo em inglês](pt-BR-translation-guide.md) e as instruções de [contribuição](../CONTRIBUTING.md).
 
 Para o formato dos conjuntos de dados de ajuste fino, consulte a documentação da AWS sobre [preparação de dados para fine-tuning de modelos no Amazon Bedrock](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-customization-prepare.html), que descreve `completion` como a saída esperada.
+
+Para explicar tokens, consulte a [terminologia básica do Amazon Bedrock](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/key-definitions.html), que distingue palavras inteiras, partes de palavras e pontuação como possíveis unidades de token.
