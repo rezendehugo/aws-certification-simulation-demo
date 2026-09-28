@@ -302,7 +302,7 @@
       "C": "Embeddings (representações vetoriais)",
       "D": "Modelos"
     },
-    "explanation": "Embeddings são representações vetoriais numéricas de objetos e conceitos, como palavras e frases. No espaço vetorial, itens semelhantes ficam próximos uns dos outros, o que ajuda modelos de IA e de processamento de linguagem natural (NLP) a capturar relações e significado e a processar texto.\nTokens são unidades de texto que o modelo interpreta ou prevê como uma unidade de significado; podem corresponder a uma palavra inteira, a parte de uma palavra ou a um sinal de pontuação. Parâmetros são valores aprendidos pelo modelo durante o treinamento, e modelos são os sistemas treinados. Nenhum desses termos designa as representações vetoriais descritas no enunciado.",
+    "explanation": "Embeddings são representações vetoriais numéricas de objetos e conceitos, como palavras e frases. No espaço vetorial, itens semelhantes ficam próximos uns dos outros, o que ajuda modelos de IA e de processamento de linguagem natural (NLP) a capturar relações e significado e a processar texto.\nTokens são unidades de texto que o modelo interpreta ou prevê como uma unidade de significado; podem corresponder a uma palavra inteira, a parte de uma palavra ou a um sinal de pontuação. Um token não é, por si só, a representação vetorial de um objeto ou conceito descrita no enunciado: essa é a função dos embeddings. Parâmetros são valores aprendidos pelo modelo durante o treinamento, e modelos são os sistemas treinados.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },

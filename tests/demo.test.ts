@@ -298,6 +298,16 @@ test("Portuguese translation guidance distinguishes accuracy, precision and reca
   assert.match(portugueseGuide, /recuperação.*revocação.*padroniza/s);
 });
 
+test("Portuguese embeddings question distinguishes text tokens from vector representations", () => {
+  const question = questions.find((item) => item.id === "aif-q063")!;
+  const translation = translations[question.id];
+  assert.deepEqual(question.correctAnswer, ["C"]);
+  assert.match(translation.explanation, /tokens são unidades de texto.*unidade de significado/i);
+  assert.match(translation.explanation, /Um token não é, por si só, a representação vetorial.*essa é a função dos embeddings/i);
+  assert.match(portugueseGuide, /não confunda o token textual com o vetor numérico produzido por um embedding/i);
+  assert.equal(translation.status, "machine-draft");
+});
+
 test("Portuguese expands ML in every standalone translated question", () => {
   for (const [questionId, translation] of Object.entries(translations)) {
     const localizedText = [

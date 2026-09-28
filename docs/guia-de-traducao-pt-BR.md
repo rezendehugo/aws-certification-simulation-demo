@@ -37,7 +37,7 @@ A versão em português deve explicar o conceito com naturalidade para quem estu
 | system prompt | **prompt do sistema (system prompt)**; contém instruções ou contexto para o modelo, distintos da solicitação individual do usuário |
 | few-shot prompting | **few-shot prompting (prompts com poucos exemplos)**; o modelo recebe alguns pares de entrada e saída ou exemplos rotulados antes de responder a uma nova entrada |
 | embeddings | **embeddings (representações vetoriais)** |
-| token | **token**; unidade de significado que pode ser uma palavra, parte de palavra ou sinal de pontuação; preserve o termo cobrado em inglês |
+| token | **token**; unidade de significado que pode corresponder a uma palavra, parte de palavra ou sinal de pontuação. Preserve o termo cobrado em inglês e não confunda o token textual com o vetor numérico produzido por um embedding. |
 | benchmark dataset | **conjunto de dados de referência (benchmark dataset)** |
 | Provisioned Throughput | Manter **Provisioned Throughput (throughput provisionado)**; não usar *taxa de transferência* |
 | data leakage / data augmentation | **vazamento de dados (data leakage)** / **aumento de dados (data augmentation)** |
