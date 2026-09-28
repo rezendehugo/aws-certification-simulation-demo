@@ -21,6 +21,7 @@ A versão em português deve explicar o conceito com naturalidade para quem estu
 | --- | --- |
 | accuracy / precision / recall | **acurácia (accuracy)** / **precisão (precision)** / **revocação (recall)** |
 | bias / fairness | **viés (bias)** / **equidade (fairness)**; não trate os dois conceitos como sinônimos |
+| bias assessment / mitigation / transparency | Diferencie **avaliar ou detectar viés**, **mitigá-lo** (intervir para reduzi-lo) e **transparência** (tornar comportamento e limites visíveis). Avaliar e comunicar, por si só, não elimina o viés. |
 | interpretability / explainability | **interpretabilidade (interpretability)** / **explicabilidade (explainability)**; como distinção editorial, a primeira descreve quão compreensível é a lógica do modelo, e a segunda, a produção de razões para suas previsões. O uso pode se sobrepor; preserve a palavra da fonte em vez de impor uma separação universal. |
 | root mean squared error (RMSE) | **raiz do erro quadrático médio (RMSE)**; preserve a ordem natural em português |
 | machine learning (ML) | **aprendizado de máquina (machine learning, ML)** |

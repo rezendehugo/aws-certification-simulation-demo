@@ -232,6 +232,13 @@ test("Portuguese epoch explanation distinguishes learning more from overfitting"
   assert.equal(translations["aif-q041"].status, "machine-draft");
 });
 
+test("Portuguese responsible-AI explanation separates bias assessment from mitigation", () => {
+  assert.match(translations["aif-q049"].explanation, /identificar problemas de representatividade.*contribuir para o viés/i);
+  assert.match(translations["aif-q049"].explanation, /Transparência, por si só, não reduz o viés/i);
+  assert.match(translations["aif-q049"].explanation, /resultados da avaliação devem orientar eventuais correções/i);
+  assert.equal(translations["aif-q049"].status, "machine-draft");
+});
+
 test("Portuguese drafts preserve AWS service names and avoid known literal calques", () => {
   const serviceNamePattern = /\b(?:Amazon|AWS)\s+[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}/g;
   const knownCalques = /engenharia imediata|modelo fundacional|modelos fundacionais|modelo básico|modelos básicos|taxa de transferência|rendimento provisionado|Amazon Personalizar|Cloud Front|incorporaç[aã]|\bPNL\b/i;

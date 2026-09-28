@@ -615,7 +615,7 @@
       "D": "Use a métrica ROUGE para medir a qualidade do texto gerado",
       "E": "Mantenha a latência de inferência dentro dos limites aceitos"
     },
-    "explanation": "Verificar desequilíbrios ou disparidades nos dados ajuda a revelar e reduzir vieses que poderiam prejudicar alguns candidatos. Avaliar o comportamento do modelo permite explicar suas decisões e oferecer transparência às partes interessadas. As duas ações ajudam a limitar o viés.\nExecutar o modelo com frequência e manter a latência dentro de limites são preocupações operacionais, não medidas contra viés. A métrica ROUGE compara texto gerado com texto de referência, por exemplo, na avaliação de resumos; ela não detecta viés.",
+    "explanation": "Verificar desequilíbrios ou disparidades nos dados ajuda a identificar problemas de representatividade que podem contribuir para o viés. Avaliar o comportamento do modelo permite examinar os resultados e oferecer transparência às partes interessadas. Transparência, por si só, não reduz o viés; os resultados da avaliação devem orientar eventuais correções.\nExecutar o modelo com frequência e manter a latência dentro de limites são preocupações operacionais, não medidas contra viés. A métrica ROUGE compara texto gerado com texto de referência, por exemplo, na avaliação de resumos; ela não detecta viés.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
