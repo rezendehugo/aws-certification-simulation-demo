@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import rawQuestions from "../src/data/questions.json" with { type: "json" };
 import rawTranslations from "../src/data/questions.pt-BR.json" with { type: "json" };
@@ -10,6 +11,8 @@ import type { Question, QuestionTranslations } from "../src/types.ts";
 
 const questions = rawQuestions as unknown as Question[];
 const translations = rawTranslations as unknown as QuestionTranslations;
+const portugueseGuide = readFileSync(new URL("../docs/guia-de-traducao-pt-BR.md", import.meta.url), "utf8");
+const englishGuide = readFileSync(new URL("../docs/pt-BR-translation-guide.md", import.meta.url), "utf8");
 
 test("fixed mock has the exam allocation", () => {
   assert.equal(questions.length, 65);
@@ -204,6 +207,15 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q061"].explanation, /model invocation logging/i);
   assert.match(translations["aif-q457"].options.B, /engenharia de atributos/i);
   assert.match(translations["aif-q457"].options.D, /^Defina /);
+});
+
+test("Portuguese call-transcription item preserves the source limitation and tracks its ambiguity", () => {
+  assert.match(translations["aif-q016"].explanation, /Amazon Transcribe converte a fala.*em texto/i);
+  assert.match(portugueseGuide, /aif-q016.*Amazon Transcribe padrão/s);
+  assert.match(portugueseGuide, /análise manual da transcrição basta ou se a intenção.*Call Analytics/s);
+  assert.match(englishGuide, /aif-q016.*standard Amazon Transcribe/s);
+  assert.match(englishGuide, /whether manual analysis of a transcript is sufficient/s);
+  assert.equal(translations["aif-q016"].status, "machine-draft");
 });
 
 test("Portuguese drafts preserve AWS service names and avoid known literal calques", () => {
