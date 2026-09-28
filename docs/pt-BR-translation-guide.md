@@ -46,6 +46,7 @@ The Portuguese edition should teach the concept in natural Brazilian Portuguese 
 | hallucination | **alucinação (hallucination)** |
 | overfitting | **sobreajuste (overfitting)**; good performance on training data but poor generalization to new data |
 | underfitting | **subajuste (underfitting)**; fails to learn useful patterns and performs poorly even on training data |
+| underrepresented classes | **classes pouco representadas (underrepresented classes)**; avoid the unnecessary calque *classes sub-representadas* |
 | bias / fairness | **viés (bias)** / **equidade (fairness)**; retain English if the distinction is tested |
 | measurement / sampling bias | **viés de medição (measurement bias)** / **viés de amostragem (sampling bias)**; preserve distinctions between bias sources |
 | data augmentation | **aumento de dados (data augmentation)**; distinguish it from merely collecting more data |

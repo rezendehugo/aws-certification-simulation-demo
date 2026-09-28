@@ -26,9 +26,11 @@ A versão em português deve explicar o conceito com naturalidade para quem estu
 | fine-tuning | **ajuste fino (fine-tuning)** |
 | overfitting | **sobreajuste (overfitting)**: bom desempenho nos dados de treinamento, mas generalização ruim para dados novos |
 | underfitting | **subajuste (underfitting)**: dificuldade para aprender os padrões, com desempenho ruim até nos dados de treinamento |
+| underrepresented classes | **classes pouco representadas (underrepresented classes)**; evite o decalque desnecessário *classes sub-representadas* |
 | completion (em dados de fine-tuning) | Manter o nome do campo **completion** e explicar como **saída esperada**; não restringir a tradução a “resposta” |
 | prompt engineering / prompt injection | **engenharia de prompts (prompt engineering)** / **prompt injection (injeção de prompt)** |
 | system prompt | **prompt do sistema (system prompt)**; contém instruções ou contexto para o modelo, distintos da solicitação individual do usuário |
+| few-shot prompting | **few-shot prompting (prompts com poucos exemplos)**; o modelo recebe alguns pares de entrada e saída ou exemplos rotulados antes de responder a uma nova entrada |
 | embeddings | **embeddings (representações vetoriais)** |
 | benchmark dataset | **conjunto de dados de referência (benchmark dataset)** |
 | Provisioned Throughput | Manter **Provisioned Throughput (throughput provisionado)**; não usar *taxa de transferência* |
@@ -47,6 +49,8 @@ Não altere IDs das opções nem a chave de resposta ao traduzir. Se o texto-fon
 ### Pendência conhecida na fonte
 
 O item `aif-q009` diz que os objetos do Amazon S3 usam chaves gerenciadas pelo S3 (**SSE-S3**), mas a resposta e a explicação pressupõem permissão para descriptografar uma chave. A documentação da AWS distingue SSE-S3 de SSE-KMS; a permissão `kms:Decrypt` se aplica ao segundo caso. Essa inconsistência precisa ser resolvida na fonte antes de qualquer tradução ser aprovada. Consulte as orientações de [permissões do S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/troubleshoot-403-errors.html) e de [permissões para Knowledge Bases do Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-permissions.html).
+
+O item `aif-q029` deve ser entendido como uma questão sobre orientação do comportamento do modelo, não como uma recomendação de segurança suficiente. Instruções no prompt do sistema podem ajudar a delimitar o comportamento, mas não garantem resistência à injeção de prompt nem confidencialidade do próprio prompt. A explicação em português explicita esse limite e recomenda salvaguardas adicionais, em linha com a documentação da AWS sobre [segurança contra injeção de prompt](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/prompt-injection.html) e [detecção de ataques com o Amazon Bedrock Guardrails](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/guardrails-prompt-attack.html). A resposta original permanece intacta; a tradução continua como `machine-draft` até revisão humana.
 
 ## Como contribuir
 

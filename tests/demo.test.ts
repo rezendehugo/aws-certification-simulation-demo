@@ -159,6 +159,8 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q029"].stem, /induzam o agente a executar.*revelem suas instruções/i);
   assert.match(translations["aif-q029"].options.C, /prompt do sistema \(system prompt\).*template de prompt \(prompt template\)/i);
   assert.match(translations["aif-q029"].explanation, /prompt do sistema \(system prompt\)/i);
+  assert.match(translations["aif-q029"].explanation, /não garante que o modelo resistirá.*nem mantém as instruções internas em segredo/i);
+  assert.match(translations["aif-q029"].explanation, /Amazon Bedrock Guardrails/);
   assert.match(translations["aif-q080"].options.B, /foundation model, FM/i);
   assert.match(translations["aif-q080"].explanation, /^O recurso Agents for Amazon Bedrock automatiza/);
   assert.match(translations["aif-q016"].explanation, /desvios \(drift\)/i);
@@ -183,7 +185,8 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q049"].stem, /novos solicitantes de crédito/);
   assert.doesNotMatch(translations["aif-q049"].stem, /candidatos/);
   assert.match(translations["aif-q003"].options.B, /árvores de decisão \(decision trees\)/i);
-  assert.match(translations["aif-q037"].options.B, /underrepresented classes/i);
+  assert.match(translations["aif-q037"].options.B, /classes pouco representadas \(underrepresented classes\)/i);
+  assert.match(translations["aif-q037"].explanation, /classes pouco representadas/i);
   assert.match(translations["aif-q037"].options.C, /épocas \(epochs\)/i);
   assert.match(translations["aif-q047"].stem, /large language model, LLM/i);
   assert.match(translations["aif-q054"].stem, /conteúdo apropriado para crianças/i);

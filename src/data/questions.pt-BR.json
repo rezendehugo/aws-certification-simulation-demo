@@ -422,7 +422,7 @@
       "C": "Inclua no prompt do sistema (system prompt), usando um template de prompt (prompt template), instruções para o modelo reconhecer e recusar tentativas de manipulação",
       "D": "Reduza o comprimento máximo de saída em cada solicitação"
     },
-    "explanation": "Instruções no prompt do sistema (system prompt), incluídas em um template de prompt, podem orientar o modelo a reconhecer e recusar tentativas de manipulação, reduzindo diretamente o risco de prompt injection (injeção de prompt) e de exposição das instruções internas.\nAumentar a temperatura ou o top-p altera a aleatoriedade da amostragem, e reduzir o limite de saída apenas encurta as respostas; nenhuma dessas mudanças instrui o modelo a resistir a tentativas de manipulação.",
+    "explanation": "Entre as alternativas, incluir instruções no prompt do sistema (system prompt), por meio de um template de prompt, é a estratégia de engenharia de prompts que mais diretamente orienta o modelo a reconhecer e recusar tentativas de manipulação, como prompt injection (injeção de prompt).\nIsso não garante que o modelo resistirá a esses ataques nem mantém as instruções internas em segredo. Em uma aplicação real, o prompt não deve ser a única proteção: combine-o com salvaguardas como validação de entrada e detecção de ataques com o Amazon Bedrock Guardrails. Aumentar a temperatura ou o top-p altera a aleatoriedade da amostragem; reduzir o limite de saída apenas encurta as respostas.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -574,11 +574,11 @@
     "stem": "Uma equipe treina um modelo que gera imagens de pessoas em diferentes profissões, mas dados desbalanceados distorcem alguns atributos e introduzem viés (bias). Qual técnica pode ajudar a resolver o problema?",
     "options": {
       "A": "Monitore a distribuição de classes após a implantação",
-      "B": "Use aumento de dados (data augmentation) nas classes sub-representadas (underrepresented classes) para equilibrar a amostra",
+      "B": "Use aumento de dados (data augmentation) nas classes pouco representadas (underrepresented classes) para equilibrar a amostra",
       "C": "Treine por mais épocas (epochs) com base nos dados desequilibrados existentes",
       "D": "Aplique uma filtragem de saída mais forte às imagens geradas"
     },
-    "explanation": "O aumento de dados (data augmentation) cria exemplos adicionais para classes sub-representadas, ajudando a equilibrar a amostra e reduzir o viés na origem.\nO monitoramento pode detectar o desequilíbrio, mas não o corrige. Treinar por mais épocas com os mesmos dados desbalanceados pode reforçar o viés, e filtrar as saídas não corrige o conjunto de dados usado no treinamento.",
+    "explanation": "O aumento de dados (data augmentation) cria exemplos adicionais para classes pouco representadas, ajudando a equilibrar a amostra e reduzir o viés na origem.\nO monitoramento pode detectar o desequilíbrio, mas não o corrige. Treinar por mais épocas com os mesmos dados desbalanceados pode reforçar o viés, e filtrar as saídas não corrige o conjunto de dados usado no treinamento.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
