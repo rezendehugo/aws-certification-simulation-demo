@@ -21,6 +21,7 @@ The Portuguese edition should teach the concept in natural Brazilian Portuguese 
 | accuracy | **acurácia (accuracy)**; do not use *precisão* when it means correctness across all predictions |
 | precision | **precisão (precision)**; positive predictive value |
 | recall | **revocação (recall)**; retain *recall* in parentheses |
+| root mean squared error (RMSE) | **raiz do erro quadrático médio (RMSE)**; preserve the natural Portuguese word order |
 | machine learning (ML) | **aprendizado de máquina (ML)** |
 | inference | **inferência**; retain *inference* when contrasting AWS inference modes |
 | latency | **latência** |

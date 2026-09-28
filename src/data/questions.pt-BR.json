@@ -4,7 +4,7 @@
     "options": {
       "A": "Erro absoluto médio (MAE)",
       "B": "Número de épocas de treinamento",
-      "C": "Erro quadrático médio raiz (RMSE)",
+      "C": "Raiz do erro quadrático médio (RMSE)",
       "D": "Acurácia (accuracy)"
     },
     "explanation": "A acurácia (accuracy) é a proporção de previsões corretas entre todas as previsões. Portanto, ela mede diretamente a parcela das imagens que o modelo classificou corretamente.\nA raiz do erro quadrático médio (root mean squared error, RMSE) e o erro absoluto médio (mean absolute error, MAE) são métricas de regressão: medem diferenças entre valores numéricos previstos e observados, não a proporção de classificações corretas. O número de épocas de treinamento (epochs) é uma configuração do processo de treinamento, não uma métrica de avaliação.",

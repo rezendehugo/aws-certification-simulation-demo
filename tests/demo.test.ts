@@ -65,6 +65,7 @@ test("Portuguese drafts cover the entire mock without changing answer identity",
 
 test("Portuguese keeps exam-critical distinctions and AWS product names recognizable", () => {
   assert.equal(translations["aif-q004"].options.D, "Acurácia (accuracy)");
+  assert.equal(translations["aif-q004"].options.C, "Raiz do erro quadrático médio (RMSE)");
   assert.match(translations["aif-q004"].explanation, /acurácia \(accuracy\)/i);
   assert.match(translations["aif-q025"].stem, /engenharia de prompts \(prompt engineering\)/i);
   assert.equal(translations["aif-q031"].options.B, "Preenchimento de imagem (inpainting)");

@@ -20,6 +20,7 @@ A versão em português deve explicar o conceito com naturalidade para quem estu
 | Termo em inglês | Forma recomendada em PT-BR |
 | --- | --- |
 | accuracy / precision / recall | **acurácia (accuracy)** / **precisão (precision)** / **revocação (recall)** |
+| root mean squared error (RMSE) | **raiz do erro quadrático médio (RMSE)**; preserve a ordem natural em português |
 | machine learning (ML) | **aprendizado de máquina (machine learning, ML)** |
 | feature / feature engineering | **atributo (feature)** / **engenharia de atributos (feature engineering)** no contexto de ML |
 | foundation model (FM) | **modelo de base (foundation model, FM)** |
