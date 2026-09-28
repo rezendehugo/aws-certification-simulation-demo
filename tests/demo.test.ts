@@ -191,6 +191,8 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q037"].explanation, /classes pouco representadas/i);
   assert.match(translations["aif-q037"].options.C, /épocas \(epochs\)/i);
   assert.match(translations["aif-q047"].stem, /large language model, LLM/i);
+  assert.match(translations["aif-q047"].stem, /viés \(bias\) e equidade \(fairness\).*tratamento injusto/i);
+  assert.equal(translations["aif-q047"].options.C, "Conjuntos de dados de referência (benchmark datasets)");
   assert.match(translations["aif-q054"].stem, /conteúdo apropriado para crianças/i);
   assert.match(translations["aif-q061"].options.C, /model invocation logging/i);
   assert.match(translations["aif-q061"].explanation, /model invocation logging/i);

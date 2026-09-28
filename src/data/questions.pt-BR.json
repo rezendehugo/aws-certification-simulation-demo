@@ -595,11 +595,11 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q047": {
-    "stem": "Uma plataforma de mídia pretende usar um grande modelo de linguagem (large language model, LLM) para moderar conteúdo e quer avaliar as respostas quanto a viés (bias) e tratamento injusto de grupos específicos. Qual fonte de dados permite essa avaliação com menos esforço administrativo?",
+    "stem": "Uma plataforma de mídia pretende usar um grande modelo de linguagem (large language model, LLM) para moderar conteúdo e quer avaliar as respostas quanto a viés (bias) e equidade (fairness), especialmente para detectar tratamento injusto de grupos específicos. Qual fonte de dados permite essa avaliação com menos esforço administrativo?",
     "options": {
       "A": "Registros de moderação",
       "B": "Conteúdo gerado pelo usuário",
-      "C": "Conjuntos de dados de benchmark (benchmark datasets)",
+      "C": "Conjuntos de dados de referência (benchmark datasets)",
       "D": "Diretrizes de moderação de conteúdo interno"
     },
     "explanation": "Conjuntos de dados de benchmark são coleções padronizadas, selecionadas para avaliar modelos quanto a viés (bias) e equidade (fairness). Eles permitem comparar os resultados de forma consistente, com pouco esforço administrativo.\nConteúdo gerado por usuários e registros de moderação exigiriam rotulagem e revisão manual e não oferecem uma referência consistente para avaliar equidade. Diretrizes internas de moderação são documentos de política, não conjuntos de dados para medir viés nas saídas.",
