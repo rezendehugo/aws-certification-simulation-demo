@@ -187,6 +187,8 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q049"].stem, /novos solicitantes de crédito/);
   assert.doesNotMatch(translations["aif-q049"].stem, /candidatos/);
   assert.match(translations["aif-q003"].options.B, /árvores de decisão \(decision trees\)/i);
+  assert.match(translations["aif-q003"].explanation, /interpretabilidade atende ao requisito/i);
+  assert.match(translations["aif-q039"].explanation, /transparência e a explicabilidade/i);
   assert.match(translations["aif-q037"].options.B, /classes pouco representadas \(underrepresented classes\)/i);
   assert.match(translations["aif-q037"].explanation, /classes pouco representadas/i);
   assert.match(translations["aif-q037"].options.C, /épocas \(epochs\)/i);

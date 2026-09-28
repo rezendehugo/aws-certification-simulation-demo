@@ -21,6 +21,7 @@ A versão em português deve explicar o conceito com naturalidade para quem estu
 | --- | --- |
 | accuracy / precision / recall | **acurácia (accuracy)** / **precisão (precision)** / **revocação (recall)** |
 | bias / fairness | **viés (bias)** / **equidade (fairness)**; não trate os dois conceitos como sinônimos |
+| interpretability / explainability | **interpretabilidade (interpretability)** / **explicabilidade (explainability)**; como distinção editorial, a primeira descreve quão compreensível é a lógica do modelo, e a segunda, a produção de razões para suas previsões. O uso pode se sobrepor; preserve a palavra da fonte em vez de impor uma separação universal. |
 | root mean squared error (RMSE) | **raiz do erro quadrático médio (RMSE)**; preserve a ordem natural em português |
 | machine learning (ML) | **aprendizado de máquina (machine learning, ML)** |
 | feature / feature engineering | **atributo (feature)** / **engenharia de atributos (feature engineering)** no contexto de ML |
@@ -70,3 +71,5 @@ As traduções são material comunitário de estudo, não traduções oficiais d
 Para o formato dos conjuntos de dados de ajuste fino, consulte a documentação da AWS sobre [preparação de dados para fine-tuning de modelos no Amazon Bedrock](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-customization-prepare.html), que descreve `completion` como a saída esperada.
 
 Para explicar tokens, consulte a [terminologia básica do Amazon Bedrock](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/key-definitions.html), que distingue palavras inteiras, partes de palavras e pontuação como possíveis unidades de token.
+
+Para o vocabulário de explicabilidade, compare o guia da AWS sobre [interpretabilidade de modelos de ML](https://docs.aws.amazon.com/pt_br/prescriptive-guidance/latest/ml-model-interpretability/welcome.html) com a documentação do [SageMaker Clarify sobre explicabilidade](https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/clarify-model-explainability.html). A própria orientação da AWS ressalta que não há uma definição padrão única para explicação de modelos.
