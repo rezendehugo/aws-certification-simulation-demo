@@ -67,6 +67,14 @@ describe("public Lite demo release checks", () => {
     cy.get(".badges").should("not.contain.text", "1.3");
   });
 
+  it("labels a flagged question as one to revisit in Portuguese", () => {
+    cy.get(".preferences select").eq(0).select("pt-BR");
+    cy.contains("button", "Iniciar simulado").click();
+    cy.contains("button", "Marcar para revisão").click();
+    cy.get(".summary").contains("dt", "Marcadas para revisão").parent().should("contain.text", "1");
+    cy.contains("button", "Remover marcação").should("be.visible");
+  });
+
   it("teaches the SSE-KMS permission distinction without raw markup", () => {
     cy.get(".preferences select").eq(0).select("pt-BR");
     cy.contains("button", "Iniciar simulado").click();
