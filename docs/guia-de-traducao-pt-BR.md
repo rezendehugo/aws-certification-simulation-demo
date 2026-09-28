@@ -55,6 +55,8 @@ O item `aif-q009` diz que os objetos do Amazon S3 usam chaves gerenciadas pelo S
 
 O item `aif-q029` deve ser entendido como uma questão sobre orientação do comportamento do modelo, não como uma recomendação de segurança suficiente. Instruções no prompt do sistema podem ajudar a delimitar o comportamento, mas não garantem resistência à injeção de prompt nem confidencialidade do próprio prompt. A explicação em português explicita esse limite e recomenda salvaguardas adicionais, em linha com a documentação da AWS sobre [segurança contra injeção de prompt](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/prompt-injection.html) e [detecção de ataques com o Amazon Bedrock Guardrails](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/guardrails-prompt-attack.html). A resposta original permanece intacta; a tradução continua como `machine-draft` até revisão humana.
 
+O item `aif-q039` usa o Amazon SageMaker Clarify como exemplo de explicabilidade. A documentação atual informa que o Clarify não está aberto a novos clientes; confirme a pertinência desse item com o guia de exame vigente antes de apresentá-lo como recomendação atual de serviço. A tradução preserva a resposta da fonte, mas a explicação especifica que o Amazon Macie descobre dados confidenciais e monitora riscos de dados no S3 — ele não criptografa os dados de treinamento conforme a alternativa sugere. Consulte a documentação de [explicabilidade do modelo com Clarify](https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/clarify-model-explainability.html) e [o que é Amazon Macie](https://docs.aws.amazon.com/pt_br/macie/latest/user/what-is-macie.html).
+
 ## Como contribuir
 
 1. Escolha uma questão e compare-a com o registro correspondente em `src/data/questions.json`.

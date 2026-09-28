@@ -590,7 +590,7 @@
       "C": "Gere métricas, relatórios e exemplos de explicações com o Amazon SageMaker Clarify",
       "D": "Colete mais dados e adicione rótulos personalizados com o Amazon Rekognition"
     },
-    "explanation": "O Amazon SageMaker Clarify apoia a transparência e a explicabilidade ao produzir métricas, relatórios e exemplos que ajudam a entender como um modelo toma decisões.\nO Amazon Inspector verifica vulnerabilidades de software, e o Amazon Macie ajuda a proteger dados confidenciais; nenhum dos dois explica o comportamento de um modelo. Coletar mais dados e adicionar rótulos com o Amazon Rekognition trata da rotulagem de imagens, não da explicabilidade do modelo.",
+    "explanation": "O Amazon SageMaker Clarify apoia a transparência e a explicabilidade ao produzir métricas, relatórios e exemplos que ajudam a entender como um modelo toma decisões.\nO Amazon Inspector verifica vulnerabilidades de software. O Amazon Macie descobre dados confidenciais e ajuda a monitorar riscos em buckets do Amazon S3, mas não gera explicações sobre decisões do modelo nem criptografa os dados de treinamento como sugere a alternativa. Coletar mais dados e adicionar rótulos com o Amazon Rekognition trata da rotulagem de imagens, não da explicabilidade do modelo.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
