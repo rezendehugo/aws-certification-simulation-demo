@@ -62,6 +62,18 @@ describe("public Lite demo release checks", () => {
     cy.get(".question-card").should("contain.text", "já tem permissão para ler objetos");
   });
 
+  it("separates human label review from retired service availability", () => {
+    cy.get(".preferences select").eq(0).select("pt-BR");
+    cy.contains("button", "Iniciar simulado").click();
+    cy.get('button[aria-label="Questão 30"]').click();
+    cy.get('.answers input[type="radio"]').eq(1).check({ force: true });
+    cy.contains("button", "Finalizar simulado").click();
+    cy.get('[role="dialog"]').within(() => cy.contains("button", "Finalizar agora").click());
+    cy.contains(".review button", "Questão 30").click();
+    cy.get(".review").should("contain.text", "conceito avaliado é a revisão humana");
+    cy.get(".review").should("contain.text", "encerrou o suporte a esse serviço");
+  });
+
   it("localizes accessible ordering controls in Portuguese", () => {
     cy.get(".preferences select").eq(0).select("pt-BR");
     cy.contains("button", "Iniciar simulado").click();

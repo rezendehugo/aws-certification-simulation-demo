@@ -220,6 +220,8 @@ test("Portuguese call-transcription item preserves the source limitation and tra
 
 test("Portuguese image-labeling item tracks the Ground Truth Plus end-of-support notice", () => {
   assert.match(translations["aif-q008"].options.B, /Amazon SageMaker Ground Truth Plus/);
+  assert.match(translations["aif-q008"].explanation, /conceito avaliado é a revisão humana/i);
+  assert.match(translations["aif-q008"].explanation, /encerrou o suporte a esse serviço e deixou de aceitar novos clientes no Ground Truth/i);
   assert.match(portugueseGuide, /aif-q008.*Ground Truth Plus/s);
   assert.match(portugueseGuide, /encerrou o suporte ao Ground Truth Plus em 30 de junho de 2026/s);
   assert.match(englishGuide, /aif-q008.*Amazon SageMaker Ground Truth Plus/s);
