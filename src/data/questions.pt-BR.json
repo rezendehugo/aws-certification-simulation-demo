@@ -501,12 +501,12 @@
   "aif-q064": {
     "stem": "O chatbot de uma empresa de biotecnologia responde a perguntas sobre artigos densos de pesquisa clínica, mas continua tendo dificuldade com a terminologia especializada mesmo após vários ajustes nos prompts. O que pode melhorá-lo?",
     "options": {
-      "A": "Use prompts few-shot com exemplos de pares de perguntas e respostas",
+      "A": "Inclua no prompt alguns pares de perguntas e respostas como exemplos (few-shot prompting)",
       "B": "Aplique ajuste fino com adaptação de domínio (domain-adaptation fine-tuning) usando o corpus especializado",
       "C": "Adicione uma etapa de geração aumentada por recuperação (retrieval-augmented generation, RAG) baseada nos artigos",
       "D": "Abaixe a temperatura para tornar as respostas mais focadas"
     },
-    "explanation": "O ajuste fino com adaptação de domínio treina o modelo usando um corpus especializado para que ele aprenda melhor a terminologia clínica, enfrentando a dificuldade com termos técnicos densos.\nPrompts few-shot e uma temperatura mais baixa influenciam as respostas, mas não ensinam vocabulário novo. Uma etapa de RAG recupera trechos relevantes, porém o modelo ainda pode ter dificuldade para interpretar termos especializados que não aprendeu.",
+    "explanation": "A resposta esperada pela fonte é o ajuste fino com adaptação de domínio (domain-adaptation fine-tuning), que treina o próprio modelo usando um corpus especializado. Porém, o item não deixa claro se a necessidade é adaptar o modelo ou fornecer contexto documental na hora de responder. A AWS recomenda RAG quando o objetivo é disponibilizar fatos, termos ou conhecimento de domínio que o modelo ainda não conhece; por isso, a alternativa C também pode ser defensável conforme o requisito.\nO few-shot prompting apresenta exemplos no próprio prompt, e uma temperatura mais baixa altera a aleatoriedade das respostas; nenhum deles recupera o conteúdo dos artigos nem treina o modelo. Mantenha o gabarito herdado da fonte como rascunho, mas revise a questão antes de tratá-la como tendo uma única resposta inequívoca.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },

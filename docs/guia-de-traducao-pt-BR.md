@@ -58,6 +58,8 @@ O item `aif-q029` deve ser entendido como uma questão sobre orientação do com
 
 O item `aif-q039` usa o Amazon SageMaker Clarify como exemplo de explicabilidade. A documentação atual informa que o Clarify não está aberto a novos clientes; confirme a pertinência desse item com o guia de exame vigente antes de apresentá-lo como recomendação atual de serviço. A tradução preserva a resposta da fonte, mas a explicação especifica que o Amazon Macie descobre dados confidenciais e monitora riscos de dados no S3 — ele não criptografa os dados de treinamento conforme a alternativa sugere. Consulte a documentação de [explicabilidade do modelo com Clarify](https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/clarify-model-explainability.html) e [o que é Amazon Macie](https://docs.aws.amazon.com/pt_br/macie/latest/user/what-is-macie.html).
 
+O item `aif-q064` apresenta uma ambiguidade de requisito: a resposta herdada favorece ajuste fino com adaptação de domínio, mas a alternativa RAG também pode atender à dificuldade com terminologia presente nos artigos. A AWS recomenda RAG quando o objetivo é fornecer fatos, terminologia ou conhecimento de domínio que o modelo ainda não conhece. A tradução preserva a identidade da resposta, explicita a ambiguidade e mantém o item como `machine-draft` até revisão da fonte. Consulte a orientação da AWS sobre [quando usar RAG em vez de ajuste fino](https://docs.aws.amazon.com/pt_br/nova/latest/userguide/fine-tune-prepare-data-understanding.html) e [como as bases de conhecimento fornecem contexto por recuperação](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/kb-how-it-works.html).
+
 ## Como contribuir
 
 1. Escolha uma questão e compare-a com o registro correspondente em `src/data/questions.json`.

@@ -100,7 +100,10 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q074"].options.A, /Amazon Q Developer/);
   assert.equal(translations["aif-q074"].options.B, "Amazon Q in Amazon QuickSight");
   assert.match(translations["aif-q080"].stem, /Agents for Amazon Bedrock/);
+  assert.match(translations["aif-q064"].options.A, /Inclua no prompt.*pares de perguntas e respostas.*few-shot prompting/i);
   assert.match(translations["aif-q064"].options.B, /domain-adaptation fine-tuning/);
+  assert.match(translations["aif-q064"].explanation, /a AWS recomenda RAG.*o modelo ainda não conhece/i);
+  assert.match(translations["aif-q064"].explanation, /alternativa C também pode ser defensável/i);
   assert.match(translations["aif-q040"].stem, /ajuste fino \(fine-tuning\)/);
   assert.match(translations["aif-q078"].stem, /fine-tuning/);
   assert.match(translations["aif-q069"].options.B, /retrieval-augmented generation/);
