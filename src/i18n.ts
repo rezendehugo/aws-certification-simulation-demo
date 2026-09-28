@@ -141,7 +141,7 @@ const pt: Record<keyof typeof en, string> = {
   domain: "Domínio",
   score: "Pontuação",
   source: "Fonte",
-  readiness: "Referência de estudo: 80%",
+  readiness: "Meta indicativa de acertos: 80%",
   allAnswered: "Todas as questões respondidas",
   menu: "Questões",
   summary: "Resumo da sessão",

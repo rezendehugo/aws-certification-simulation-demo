@@ -306,7 +306,7 @@ test("result excludes hidden unscored items", () => {
 
 test("locale dictionaries have identical keys", () => {
   assert.deepEqual(Object.keys(dictionaries.en).sort(), Object.keys(dictionaries["pt-BR"]).sort());
-  assert.equal(dictionaries["pt-BR"].readiness, "Referência de estudo: 80%");
+  assert.equal(dictionaries["pt-BR"].readiness, "Meta indicativa de acertos: 80%");
   assert.match(dictionaries["pt-BR"].legalIndependent, /marcas comerciais da Amazon\.com, Inc\./);
   assert.match(dictionaries["pt-BR"].legalAttribution, /Direitos autorais © 2026/);
 });

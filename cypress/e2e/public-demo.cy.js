@@ -103,8 +103,8 @@ describe("public Lite demo release checks", () => {
   it("passes accessibility checks on welcome, simulation, and results", () => {
     for (const theme of ["light", "dark", "system"]) {
       for (const locale of [
-        { value: "en", start: "Start simulation", submit: "Submit", submitNow: "Submit now" },
-        { value: "pt-BR", start: "Iniciar simulado", submit: "Finalizar simulado", submitNow: "Finalizar agora" },
+        { value: "en", start: "Start simulation", submit: "Submit", submitNow: "Submit now", readiness: "Readiness target: 80%" },
+        { value: "pt-BR", start: "Iniciar simulado", submit: "Finalizar simulado", submitNow: "Finalizar agora", readiness: "Meta indicativa de acertos: 80%" },
       ]) {
         cy.visit("/", { onBeforeLoad: (window) => window.localStorage.clear() });
         cy.get(".preferences select").eq(0).select(locale.value);
@@ -117,6 +117,7 @@ describe("public Lite demo release checks", () => {
 
         cy.contains("button", locale.submit).click();
         cy.get('[role="dialog"]').within(() => cy.contains("button", locale.submitNow).click());
+        cy.get(".focus").should("contain.text", locale.readiness);
         auditAccessibility();
       }
     }
