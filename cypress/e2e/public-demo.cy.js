@@ -52,6 +52,15 @@ describe("public Lite demo release checks", () => {
     cy.get(".badges").should("not.contain.text", "1.3");
   });
 
+  it("localizes accessible ordering controls in Portuguese", () => {
+    cy.get(".preferences select").eq(0).select("pt-BR");
+    cy.contains("button", "Iniciar simulado").click();
+    cy.get('button[aria-label="Questão 12"]').click();
+    cy.get('button[aria-label="Mover para cima"]').should("be.visible");
+    cy.get('button[aria-label="Mover para baixo"]').should("be.visible");
+    cy.get('button[aria-label="Move up"]').should("not.exist");
+  });
+
   it("downloads personal reports without exporting an answer key", () => {
     cy.get(".preferences select").eq(0).select("pt-BR");
     cy.contains("button", "Iniciar simulado").click();
@@ -68,7 +77,7 @@ describe("public Lite demo release checks", () => {
 
     cy.contains("button", "Exportar resumo de estudo para IA").click();
     cy.readFile("cypress/downloads/aif-c01-study-brief.md", { timeout: 10000 }).then((content) => {
-      expect(content).to.contain("Pontuação bruta de prática da demonstração");
+      expect(content).to.contain("Percentual bruto de acertos neste simulado; não equivale à pontuação em escala da AWS.");
       expect(content).to.contain("Fundamentos de IA e ML");
       expect(content).to.contain("- Nenhuma");
       expect(content).not.to.match(/Domínio\s+1\b|Objective\s+1\.3|\bEvidence\b|\bNone\b/i);
@@ -78,11 +87,15 @@ describe("public Lite demo release checks", () => {
 
   it("shows the independent-use and source-license notices in both locales", () => {
     cy.contains("footer.public-notice", "Independent study resource").should("be.visible");
+    cy.contains("footer.public-notice", "MIT License").should("be.visible");
     cy.contains("footer.public-notice a", "View source and license")
       .should("have.attr", "href", "https://github.com/nastaso/cloudcertprep");
 
     cy.get(".preferences select").eq(0).select("pt-BR");
     cy.contains("footer.public-notice", "Material de estudo independente").should("be.visible");
+    cy.contains("footer.public-notice", "marcas comerciais da Amazon.com, Inc.").should("be.visible");
+    cy.contains("footer.public-notice", "Licença MIT").should("be.visible");
+    cy.contains("footer.public-notice", "Direitos autorais © 2026 Alex Santonastaso.").should("be.visible");
     cy.contains("footer.public-notice a", "Ver código-fonte e licença").should("be.visible");
   });
 

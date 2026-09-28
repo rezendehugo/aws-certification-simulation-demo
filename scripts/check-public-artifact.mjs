@@ -62,6 +62,7 @@ const allowedSourceFiles = new Set([
   "cypress/e2e/public-demo.cy.js",
   "cypress/support/e2e.js",
   "docs/pt-BR-translation-guide.md",
+  "docs/guia-de-traducao-pt-BR.md",
   "eslint.config.mjs",
   "index.html",
   "package-lock.json",

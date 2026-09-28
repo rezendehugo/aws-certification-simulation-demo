@@ -8,7 +8,7 @@ const prompts: Record<Locale, string> = {
 
 const reportNotes: Record<Locale, string> = {
   en: "Raw static-demo practice score; not an AWS scaled score.",
-  "pt-BR": "Pontuação bruta de prática da demonstração; não é uma pontuação escalonada da AWS.",
+  "pt-BR": "Percentual bruto de acertos neste simulado; não equivale à pontuação em escala da AWS.",
 };
 
 export function markdownReport(

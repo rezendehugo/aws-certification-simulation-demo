@@ -38,11 +38,14 @@ The Portuguese edition should teach the concept in natural Brazilian Portuguese 
 | fine-tuning | **ajuste fino (fine-tuning)** |
 | prompt / prompt engineering | **prompt** / **engenharia de prompts (prompt engineering)** |
 | prompt injection | **prompt injection (injeção de prompt)**; do not translate *prompt* as *imediato* |
-| few-shot / zero-shot | **few-shot (com exemplos)** / **zero-shot (sem exemplos)**; retain exam terms on first mention |
+| system prompt | **prompt do sistema (system prompt)**; instructions or context for the model, distinct from an individual user's request |
+| few-shot / zero-shot | **few-shot (com poucos exemplos)** / **zero-shot (sem exemplos)**; retain exam terms on first mention |
 | Provisioned Throughput (Amazon Bedrock) | Keep the product term **Provisioned Throughput (throughput provisionado)**; avoid *taxa de transferência*, which can imply network bandwidth |
 | inpainting | **preenchimento de imagem (inpainting)** |
 | embeddings | Prefer **embeddings (representações vetoriais)** on first use to preserve exam mapping. AWS Portuguese docs sometimes use **incorporação**; if used, pair it with *embeddings* so learners can recognize the English term. |
 | hallucination | **alucinação (hallucination)** |
+| overfitting | **sobreajuste (overfitting)**; good performance on training data but poor generalization to new data |
+| underfitting | **subajuste (underfitting)**; fails to learn useful patterns and performs poorly even on training data |
 | bias / fairness | **viés (bias)** / **equidade (fairness)**; retain English if the distinction is tested |
 | measurement / sampling bias | **viés de medição (measurement bias)** / **viés de amostragem (sampling bias)**; preserve distinctions between bias sources |
 | data augmentation | **aumento de dados (data augmentation)**; distinguish it from merely collecting more data |
@@ -53,7 +56,7 @@ The Portuguese edition should teach the concept in natural Brazilian Portuguese 
 | real-time / asynchronous / serverless inference | **inferência em tempo real / assíncrona / sem servidor**; retain English mode names when useful for exam mapping |
 | Internet gateway | **Internet gateway (gateway da internet)** when referring to the AWS networking feature |
 | least privilege | **princípio do menor privilégio (least privilege)** |
-| benchmark dataset | **conjunto de dados de benchmark (benchmark dataset)** |
+| benchmark dataset | **conjunto de dados de referência (benchmark dataset)** |
 | top-k / top-p | Keep the parameter names **top-k** and **top-p**; explain their effect in Portuguese |
 | domain-adaptation fine-tuning | **ajuste fino com adaptação de domínio (domain-adaptation fine-tuning)** |
 

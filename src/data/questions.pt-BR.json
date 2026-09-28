@@ -12,7 +12,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q006": {
-    "stem": "Uma empresa executa um pipeline de ML em produção no Amazon SageMaker AI. As solicitações podem conter cargas úteis de até 1 GB e levar até uma hora para serem processadas; a empresa precisa de latência quase em tempo real. Qual modalidade de inferência do SageMaker AI atende a esses requisitos?",
+    "stem": "Uma empresa executa um pipeline de aprendizado de máquina (machine learning, ML) em produção no Amazon SageMaker AI. As solicitações podem conter cargas úteis de até 1 GB e levar até uma hora para serem processadas; a empresa precisa de latência quase em tempo real. Qual modalidade de inferência do SageMaker AI atende a esses requisitos?",
     "options": {
       "A": "Inferência em tempo real (real-time inference)",
       "B": "Transformação em lote (batch transform)",
@@ -24,7 +24,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q007": {
-    "stem": "Uma empresa precisa construir modelos para diversas tarefas novas, mas relacionadas. Em vez de treinar modelos do zero, ela deseja adaptar modelos pré-treinados existentes. Qual estratégia de ML atende a esse requisito?",
+    "stem": "Uma empresa precisa construir modelos para diversas tarefas novas, mas relacionadas. Em vez de treinar modelos do zero, ela deseja adaptar modelos pré-treinados existentes. Qual estratégia de aprendizado de máquina (machine learning, ML) atende a esse requisito?",
     "options": {
       "A": "Aumente o número de épocas",
       "B": "Use aprendizado por transferência (transfer learning)",
@@ -36,14 +36,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q011": {
-    "stem": "Uma empresa está desenvolvendo um modelo de ML com o Amazon SageMaker e precisa compartilhar e gerenciar atributos (features) usados no desenvolvimento de modelos entre várias equipes. Qual recurso do SageMaker atende a esse requisito?",
+    "stem": "Uma empresa está desenvolvendo um modelo de aprendizado de máquina (machine learning, ML) com o Amazon SageMaker e precisa compartilhar e gerenciar atributos (features) usados no desenvolvimento de modelos entre várias equipes. Qual recurso do SageMaker atende a esse requisito?",
     "options": {
       "A": "Amazon SageMaker Data Wrangler",
       "B": "Amazon SageMaker Feature Store",
       "C": "Amazon SageMaker Clarify",
       "D": "Amazon SageMaker Model Cards"
     },
-    "explanation": "O Amazon SageMaker Feature Store centraliza o armazenamento, o compartilhamento e a reutilização de atributos (features) de machine learning, permitindo que várias equipes os gerenciem e reutilizem no desenvolvimento de modelos.\nO Amazon SageMaker Data Wrangler prepara e transforma dados; o Amazon SageMaker Clarify ajuda a detectar viés e a avaliar a explicabilidade; e o Amazon SageMaker Model Cards documenta informações sobre modelos. Esses recursos não têm como finalidade principal compartilhar atributos entre equipes.",
+    "explanation": "O Amazon SageMaker Feature Store centraliza o armazenamento, o compartilhamento e a reutilização de atributos (features) de aprendizado de máquina (machine learning), permitindo que várias equipes os gerenciem e reutilizem no desenvolvimento de modelos.\nO Amazon SageMaker Data Wrangler prepara e transforma dados; o Amazon SageMaker Clarify ajuda a detectar viés e a avaliar a explicabilidade; e o Amazon SageMaker Model Cards documenta informações sobre modelos. Esses recursos não têm como finalidade principal compartilhar atributos entre equipes.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -55,7 +55,7 @@
       "C": "Use aprendizado por reforço (reinforcement learning) para treinar um modelo que retorne a probabilidade",
       "D": "Escreva um código simples que calcule a probabilidade usando regras aritméticas básicas"
     },
-    "explanation": "A probabilidade pode ser calculada dividindo o número de resultados favoráveis pelo total de resultados. Algumas linhas de código com operações aritméticas fornecem a resposta exata, sem dados para coletar, modelo para treinar ou endpoint para hospedar — a menor sobrecarga operacional.\nAs outras três opções de aprendizado de máquina exigiriam um fluxo de coleta de dados, treinamento, ajuste e hospedagem desnecessário para um problema cuja resposta pode ser calculada diretamente. A regressão supervisionada apenas estimaria um valor conhecido; o aprendizado não supervisionado procura padrões em dados sem rótulos, o que é irrelevante quando a fórmula já é conhecida; e o aprendizado por reforço trata de decisões sequenciais guiadas por recompensas, não de uma questão aritmética estática.",
+    "explanation": "A probabilidade pode ser calculada dividindo o número de resultados favoráveis pelo total de resultados. Algumas linhas de código com operações aritméticas fornecem a resposta exata, sem precisar coletar dados nem treinar e implantar um modelo — a menor sobrecarga operacional.\nAs outras três opções de aprendizado de máquina exigiriam um fluxo de coleta de dados, treinamento, ajuste e hospedagem desnecessário para um problema cuja resposta pode ser calculada diretamente. A regressão supervisionada apenas estimaria um valor conhecido; o aprendizado não supervisionado procura padrões em dados sem rótulos, o que é irrelevante quando a fórmula já é conhecida; e o aprendizado por reforço trata de decisões sequenciais guiadas por recompensas, não de uma questão aritmética estática.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -115,7 +115,7 @@
       "C": "Use o Amazon API Gateway para hospedar o modelo e fornecer previsões",
       "D": "Use o AWS Batch para hospedar o modelo e fornecer previsões"
     },
-    "explanation": "Amazon SageMaker Serverless Inference é uma opção totalmente gerenciada que hospeda um modelo e fornece previsões sob demanda enquanto provisiona e dimensiona automaticamente a computação subjacente, para que um aplicativo da web possa chamar o modelo para obter previsões em tempo real sem que a empresa gerencie a capacidade.\nO Amazon CloudFront é uma rede de distribuição de conteúdo que armazena em cache e distribui conteúdo para reduzir a latência; não pode hospedar um modelo de ML nem gerar previsões. O Amazon API Gateway cria e gerencia uma camada de API que encaminha solicitações a um serviço de back-end, mas não hospeda modelos nem executa inferência por conta própria; ainda seria necessário um serviço de computação por trás da API. O AWS Batch executa tarefas de processamento em lote em uma infraestrutura de computação gerenciada. Ele é adequado para processamento off-line em massa, não para fornecer previsões sob demanda e com baixa latência a um aplicativo web.",
+    "explanation": "Amazon SageMaker Serverless Inference é totalmente gerenciado: hospeda o modelo, fornece previsões sob demanda e ajusta automaticamente a capacidade de computação. Assim, o aplicativo web pode obter previsões sem que a empresa gerencie essa capacidade.\nO Amazon CloudFront distribui conteúdo, mas não hospeda modelos nem gera previsões. O Amazon API Gateway encaminha solicitações a um serviço de back-end; não hospeda modelos nem executa inferência por conta própria. O AWS Batch executa tarefas em lote e é indicado para processamento off-line, não para previsões sob demanda com baixa latência.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -132,7 +132,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q457": {
-    "stem": "Uma equipe de uma empresa de logística está desenvolvendo um modelo de aprendizado de máquina (ML) para prever atrasos nas entregas. Organize as etapas do ciclo de vida de desenvolvimento de ML na ordem correta, da primeira à última.",
+    "stem": "Uma equipe de uma empresa de logística está desenvolvendo um modelo de aprendizado de máquina (machine learning, ML) para prever atrasos nas entregas. Organize as etapas do ciclo de vida de desenvolvimento de ML na ordem correta, da primeira à última.",
     "options": {
       "A": "Treine o modelo no conjunto de dados preparado para aprender padrões que preveem atrasos",
       "B": "Faça a engenharia de atributos e limpe os dados coletados para preparar o conjunto de dados para o treinamento",
@@ -190,7 +190,7 @@
     "stem": "Uma equipe de engenharia de uma fintech planeja adotar o Amazon Q Developer para entregar funcionalidades mais rapidamente. Como o Amazon Q Developer pode ajudar a equipe?",
     "options": {
       "A": "Execute um aplicativo sem provisionar ou gerenciar servidores",
-      "B": "Converta arquivos de áudio em documentos de texto usando modelos de ML",
+      "B": "Converta arquivos de áudio em documentos de texto usando modelos de aprendizado de máquina (machine learning, ML)",
       "C": "Gere trechos de código e mostre referências às fontes e informações sobre as licenças de código aberto correspondentes",
       "D": "Habilite comandos de voz para codificação e pesquisa em linguagem natural"
     },
@@ -273,7 +273,7 @@
   "aif-q050": {
     "stem": "Uma empresa usa um modelo de base (base model) do Amazon Bedrock para resumir contratos e treinou um modelo personalizado para melhorar a qualidade. O que deve fazer para usar esse modelo personalizado no Amazon Bedrock?",
     "options": {
-      "A": "Implante o modelo personalizado em um endpoint Amazon SageMaker AI para inferência em tempo real",
+      "A": "Implante o modelo personalizado em um endpoint do Amazon SageMaker AI para inferência em tempo real",
       "B": "Registre o modelo no Amazon SageMaker Model Registry",
       "C": "Solicite acesso ao modelo personalizado no Amazon Bedrock",
       "D": "Compre Provisioned Throughput (throughput provisionado) para o modelo personalizado"
@@ -326,7 +326,7 @@
       "C": "Sobreajuste (overfitting)",
       "D": "Subajuste (underfitting)"
     },
-    "explanation": "Uma alucinação (hallucination) ocorre quando um LLM produz conteúdo plausível, mas incorreto ou inventado, como no texto de marketing descrito.\nVazamento de dados (data leakage) é a exposição não intencional de informações. Sobreajuste (overfitting) ocorre quando o modelo se ajusta excessivamente aos dados de treinamento e generaliza mal; subajuste (underfitting) ocorre quando ele não aprende padrões suficientes. Esses conceitos não descrevem a geração de afirmações plausíveis, porém falsas.",
+    "explanation": "Uma alucinação (hallucination) ocorre quando um LLM produz conteúdo plausível, mas incorreto ou inventado, como no texto de marketing descrito.\nVazamento de dados (data leakage) é a exposição não intencional de informações. Sobreajuste (overfitting) ocorre quando o modelo se ajusta excessivamente aos dados de treinamento e tem bom desempenho neles, mas generaliza mal para dados novos. Subajuste (underfitting) ocorre quando o modelo não aprende padrões suficientes e tem desempenho ruim até nos dados de treinamento. Esses conceitos não descrevem a geração de afirmações plausíveis, porém falsas.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -370,11 +370,11 @@
     "stem": "Uma empresa usa um modelo de base (foundation model, FM) do Amazon Bedrock em uma ferramenta de busca. Ela quer fazer o ajuste fino (fine-tuning) do modelo com dados próprios para melhorar a correção dos resultados da busca. Qual abordagem realiza corretamente esse ajuste?",
     "options": {
       "A": "Compre Provisioned Throughput (throughput provisionado) para o Amazon Bedrock",
-      "B": "Forneça exemplos rotulados, cada um com um campo de prompt e um campo de completion (resposta esperada)",
+      "B": "Forneça exemplos rotulados, cada um com um campo de prompt e um campo de completion (saída esperada)",
       "C": "Prepare o conjunto de dados como um arquivo .txt que contém várias linhas de conteúdo .csv",
       "D": "Treine o modelo em periódicos e livros didáticos"
     },
-    "explanation": "O ajuste fino de um modelo no Amazon Bedrock requer dados rotulados em que cada registro associe um prompt de entrada à completion (resposta esperada). Assim, o modelo aprende, com os dados da empresa, o comportamento desejado para cada entrada.\nProvisioned Throughput (throughput provisionado) é uma opção de capacidade e preço para inferência, não um método de ajuste fino. Um arquivo .txt com várias linhas de conteúdo CSV não corresponde ao formato de dados descrito para esse ajuste. Periódicos e livros didáticos, por si só, são conteúdo não estruturado e não fornecem os pares de prompt e completion necessários neste caso.",
+    "explanation": "O ajuste fino de um modelo no Amazon Bedrock requer dados rotulados em que cada registro associe um prompt de entrada à completion (saída esperada). Assim, o modelo aprende, com os dados da empresa, o comportamento desejado para cada entrada.\nProvisioned Throughput (throughput provisionado) é uma opção de capacidade e preço para inferência, não um método de ajuste fino. Um arquivo .txt com várias linhas de conteúdo CSV não corresponde ao formato de dados descrito para esse ajuste. Periódicos e livros didáticos, por si só, são conteúdo não estruturado e não fornecem os pares de prompt e completion necessários neste caso.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -419,10 +419,10 @@
     "options": {
       "A": "Aumente a temperatura do modelo para que as respostas variem mais",
       "B": "Aumente o valor de top-p para ampliar a amostragem de tokens",
-      "C": "Adicione instruções de sistema a um template de prompt (prompt template) para orientar o modelo a reconhecer e recusar tentativas de manipulação",
+      "C": "Inclua no prompt do sistema (system prompt), usando um template de prompt (prompt template), instruções para o modelo reconhecer e recusar tentativas de manipulação",
       "D": "Reduza o comprimento máximo de saída em cada solicitação"
     },
-    "explanation": "Instruções de sistema em um template de prompt podem orientar o modelo a reconhecer e recusar tentativas de manipulação, reduzindo diretamente o risco de prompt injection (injeção de prompt) e de exposição das instruções internas.\nAumentar a temperatura ou o top-p altera a aleatoriedade da amostragem, e reduzir o limite de saída apenas encurta as respostas; nenhuma dessas mudanças instrui o modelo a resistir a tentativas de manipulação.",
+    "explanation": "Instruções no prompt do sistema (system prompt), incluídas em um template de prompt, podem orientar o modelo a reconhecer e recusar tentativas de manipulação, reduzindo diretamente o risco de prompt injection (injeção de prompt) e de exposição das instruções internas.\nAumentar a temperatura ou o top-p altera a aleatoriedade da amostragem, e reduzir o limite de saída apenas encurta as respostas; nenhuma dessas mudanças instrui o modelo a resistir a tentativas de manipulação.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -439,7 +439,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q041": {
-    "stem": "Uma equipe de ML está treinando um modelo de base (foundation model, FM) e quer elevar sua acurácia (accuracy) até um limite definido. O que deve fazer?",
+    "stem": "Uma equipe de aprendizado de máquina (machine learning, ML) está treinando um modelo de base (foundation model, FM) e quer elevar sua acurácia (accuracy) até um limite definido. O que deve fazer?",
     "options": {
       "A": "Diminuir o número de épocas (epochs)",
       "B": "Diminuir o tamanho do lote",
@@ -540,19 +540,19 @@
       "A": "Conte o número de camadas na rede neural do modelo",
       "B": "Calcule o custo total dos recursos que o modelo usa",
       "C": "Verifique a fidelidade das cores das imagens processadas pelo modelo",
-      "D": "Meça a acurácia (accuracy) do modelo em um conjunto de dados de benchmark (benchmark dataset) predefinido"
+      "D": "Meça a acurácia (accuracy) do modelo em um conjunto de dados de referência (benchmark dataset) predefinido"
     },
-    "explanation": "Medir a acurácia do modelo em um conjunto de dados de benchmark (benchmark dataset) predefinido permite comparar suas previsões com os rótulos corretos e avaliar a proporção de classificações corretas.\nA quantidade de camadas descreve a arquitetura, não o desempenho da classificação. O custo dos recursos mede despesas. A fidelidade das cores das imagens não indica se o modelo classificou os objetos corretamente.",
+    "explanation": "Medir a acurácia do modelo em um conjunto de dados de referência (benchmark dataset) predefinido permite comparar suas previsões com os rótulos corretos e avaliar a proporção de classificações corretas.\nA quantidade de camadas descreve a arquitetura, não o desempenho da classificação. O custo dos recursos mede despesas. A fidelidade das cores das imagens não indica se o modelo classificou os objetos corretamente.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q001": {
-    "stem": "Uma empresa de logística usa modelos de ML para prever a demanda a cada trimestre. Um analista prepara um relatório para ajudar as partes interessadas a entender como os modelos treinados chegam às previsões. O que deve incluir para atender às necessidades de transparência e explicabilidade?",
+    "stem": "Uma empresa de logística usa modelos de aprendizado de máquina (machine learning, ML) para prever a demanda a cada trimestre. Um analista prepara um relatório para ajudar as partes interessadas a entender como os modelos treinados chegam às previsões. O que deve incluir para atender às necessidades de transparência e explicabilidade?",
     "options": {
       "A": "Dados de amostra usados para treinamento",
       "B": "Tabelas de convergência de modelo",
       "C": "Gráficos de dependência parcial (partial dependence plots, PDPs)",
-      "D": "Código fonte usado para treinar o modelo"
+      "D": "Código-fonte usado para treinar o modelo"
     },
     "explanation": "Os gráficos de dependência parcial (partial dependence plots, PDPs) mostram como um ou mais atributos de entrada (features) se relacionam com a previsão do modelo. Assim, ajudam a explicar a influência desses atributos e tornam mais transparente como os modelos treinados chegam às previsões.\nO código-fonte e uma amostra dos dados de treinamento revelam detalhes da implementação e das entradas, mas não explicam como cada atributo influencia as previsões. Tabelas de convergência descrevem o progresso do treinamento, não o comportamento do modelo concluído, portanto não atendem ao requisito de explicabilidade.",
     "status": "machine-draft",
@@ -607,7 +607,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q049": {
-    "stem": "Um credor está construindo uma solução generativa de IA que oferece descontos a novos candidatos com base em regras de negócios. Para usar o modelo de forma responsável e limitar o viés (bias) que poderia prejudicar alguns clientes, quais são as duas ações que a empresa deve tomar?",
+    "stem": "Um credor está construindo uma solução generativa de IA que oferece descontos a novos solicitantes de crédito com base em regras de negócio. Para usar o modelo de forma responsável e limitar o viés (bias) que poderia prejudicar alguns clientes, quais são as duas ações que a empresa deve tomar?",
     "options": {
       "A": "Verifique os dados em busca de desequilíbrios ou disparidades entre grupos",
       "B": "Execute o modelo com a maior frequência possível",
@@ -656,7 +656,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q057": {
-    "stem": "Uma loja instalou câmeras e usa um modelo de ML para analisar as imagens em busca de possíveis furtos. O modelo sinaliza pessoas de um grupo étnico com muito mais frequência do que pessoas de outros grupos. Que tipo de viés influencia os resultados do modelo?",
+    "stem": "Uma loja instalou câmeras e usa um modelo de aprendizado de máquina (machine learning, ML) para analisar as imagens em busca de possíveis furtos. O modelo sinaliza pessoas de um grupo étnico com muito mais frequência do que pessoas de outros grupos. Que tipo de viés influencia os resultados do modelo?",
     "options": {
       "A": "Viés de medição (measurement bias)",
       "B": "Viés de amostragem (sampling bias)",

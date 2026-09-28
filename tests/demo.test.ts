@@ -69,6 +69,8 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q025"].stem, /engenharia de prompts \(prompt engineering\)/i);
   assert.equal(translations["aif-q031"].options.B, "Preenchimento de imagem (inpainting)");
   assert.match(translations["aif-q011"].options.B, /Amazon SageMaker Feature Store/);
+  assert.match(translations["aif-q011"].stem, /aprendizado de máquina \(machine learning, ML\)/i);
+  assert.match(translations["aif-q011"].explanation, /atributos \(features\) de aprendizado de máquina \(machine learning\)/i);
   assert.match(translations["aif-q011"].options.A, /Amazon SageMaker Data Wrangler/);
   assert.match(translations["aif-q011"].options.C, /Amazon SageMaker Clarify/);
   assert.match(translations["aif-q011"].options.D, /Amazon SageMaker Model Cards/);
@@ -109,7 +111,10 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.doesNotMatch(JSON.stringify(translations), /modelo de linguagem ampla/i);
   assert.doesNotMatch(JSON.stringify(translations), /modelo de linguagem grande|modelos de linguagem grande|rendimento provisionado/i);
   assert.match(translations["aif-q010"].explanation, /modelos de linguagem de pequeno porte \(small language models, SLMs\)/i);
-  assert.match(translations["aif-q019"].explanation, /completion \(resposta esperada\)/i);
+  assert.match(translations["aif-q019"].options.B, /completion \(saída esperada\)/i);
+  assert.match(translations["aif-q019"].explanation, /completion \(saída esperada\)/i);
+  assert.match(translations["aif-q014"].explanation, /sem precisar coletar dados nem treinar e implantar um modelo/i);
+  assert.match(translations["aif-q050"].options.A, /endpoint do Amazon SageMaker AI/i);
   assert.match(translations["aif-q038"].options.B, /Knowledge Bases for Amazon Bedrock/);
   assert.doesNotMatch(translations["aif-q042"].explanation, /rastreamento mede/i);
   assert.match(translations["aif-q042"].stem, /chatbot baseado em um grande modelo de linguagem/i);
@@ -123,6 +128,9 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q035"].options.D, /generative pre-trained transformer, GPT/i);
   assert.match(translations["aif-q055"].explanation, /generative adversarial network, GAN/i);
   assert.match(translations["aif-q077"].options.B, /Alucinação \(hallucination\)/i);
+  assert.match(translations["aif-q077"].explanation, /sobreajuste \(overfitting\).*generaliza mal para dados novos/i);
+  assert.match(translations["aif-q077"].explanation, /subajuste \(underfitting\).*desempenho ruim até nos dados de treinamento/i);
+  assert.match(translations["aif-q077"].explanation, /alucinação \(hallucination\).*plausível.*incorreto/i);
   assert.match(translations["aif-q001"].explanation, /atributos de entrada \(features\)/i);
   assert.match(translations["aif-q016"].stem, /chamadas telefônicas gravadas/i);
   assert.match(translations["aif-q013"].explanation, /endpoint de interface da VPC.*sem usar um gateway de internet/i);
@@ -149,6 +157,8 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q029"].options.B, /top-p/);
   assert.doesNotMatch(translations["aif-q029"].options.B, /P superior/i);
   assert.match(translations["aif-q029"].stem, /induzam o agente a executar.*revelem suas instruções/i);
+  assert.match(translations["aif-q029"].options.C, /prompt do sistema \(system prompt\).*template de prompt \(prompt template\)/i);
+  assert.match(translations["aif-q029"].explanation, /prompt do sistema \(system prompt\)/i);
   assert.match(translations["aif-q080"].options.B, /foundation model, FM/i);
   assert.match(translations["aif-q080"].explanation, /^O recurso Agents for Amazon Bedrock automatiza/);
   assert.match(translations["aif-q016"].explanation, /desvios \(drift\)/i);
@@ -167,8 +177,11 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q458"].explanation, /não depende de um conjunto fixo de exemplos rotulados/i);
   assert.match(translations["aif-q024"].options.A, /^Teste e aprimore o prompt/);
   assert.match(translations["aif-q041"].options.C, /épocas \(epochs\)/i);
-  assert.match(translations["aif-q070"].options.D, /benchmark dataset/i);
+  assert.match(translations["aif-q070"].options.D, /conjunto de dados de referência \(benchmark dataset\)/i);
   assert.match(translations["aif-q001"].options.C, /partial dependence plots, PDPs/i);
+  assert.equal(translations["aif-q001"].options.D, "Código-fonte usado para treinar o modelo");
+  assert.match(translations["aif-q049"].stem, /novos solicitantes de crédito/);
+  assert.doesNotMatch(translations["aif-q049"].stem, /candidatos/);
   assert.match(translations["aif-q003"].options.B, /árvores de decisão \(decision trees\)/i);
   assert.match(translations["aif-q037"].options.B, /underrepresented classes/i);
   assert.match(translations["aif-q037"].options.C, /épocas \(epochs\)/i);
@@ -207,6 +220,20 @@ test("Portuguese drafts preserve AWS service names and avoid known literal calqu
   }
 });
 
+test("Portuguese expands ML in every standalone translated question", () => {
+  for (const [questionId, translation] of Object.entries(translations)) {
+    const localizedText = [
+      translation.stem,
+      ...Object.values(translation.options),
+      translation.explanation,
+      ...Object.values(translation.matchChoices ?? {}),
+    ].join(" ");
+    if (/\bML\b/.test(localizedText)) {
+      assert.match(localizedText, /machine learning/i, `${questionId} should expand ML`);
+    }
+  }
+});
+
 test("selection, ordering and matching use exact scoring", () => {
   assert.equal(answersEqual({ type: "multiple_response", correctAnswer: ["A", "C"] } as never, ["C", "A"]), true);
   assert.equal(answersEqual({ type: "ordering", correctAnswer: ["A", "B"] } as never, ["B", "A"]), false);
@@ -225,6 +252,9 @@ test("result excludes hidden unscored items", () => {
 
 test("locale dictionaries have identical keys", () => {
   assert.deepEqual(Object.keys(dictionaries.en).sort(), Object.keys(dictionaries["pt-BR"]).sort());
+  assert.equal(dictionaries["pt-BR"].readiness, "Referência de estudo: 80%");
+  assert.match(dictionaries["pt-BR"].legalIndependent, /marcas comerciais da Amazon\.com, Inc\./);
+  assert.match(dictionaries["pt-BR"].legalAttribution, /Direitos autorais © 2026/);
 });
 
 test("learner-facing Portuguese reports use domain names and localized empty states", () => {
@@ -242,6 +272,7 @@ test("learner-facing Portuguese reports use domain names and localized empty sta
 
   assert.match(markdown, /Fundamentos de IA e ML/);
   assert.match(markdown, /Questões para revisar/);
+  assert.match(markdown, /Percentual bruto de acertos neste simulado; não equivale à pontuação em escala da AWS/);
   assert.match(markdown, /- Nenhuma/);
   assert.doesNotMatch(markdown, /Domínio\s+1\b|Objective\s+1\.3|\bEvidence\b|\bNone\b/);
   assert.equal(json.domainScores[0]?.domain, "Fundamentos de IA e ML");
