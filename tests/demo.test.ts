@@ -247,6 +247,18 @@ test("Portuguese sampling-bias explanation states the missing premise", () => {
   assert.equal(translations["aif-q057"].status, "machine-draft");
 });
 
+test("S3 encryption question aligns its keyed KMS permission with SSE-KMS", () => {
+  const source = questions.find((question) => question.id === "aif-q009")!;
+  const translation = translations["aif-q009"];
+  assert.match(source.stem, /already has permission to read objects.*SSE-KMS/);
+  assert.match(source.explanation, /kms:Decrypt permission.*S3 read permissions/);
+  assert.match(translation.stem, /já tem permissão para ler objetos.*SSE-KMS/);
+  assert.match(translation.options.C, /kms:Decrypt/);
+  assert.match(translation.explanation, /kms:Decrypt.*além das permissões de leitura no Amazon S3/);
+  assert.deepEqual(source.correctAnswer, ["C"]);
+  assert.equal(translation.status, "machine-draft");
+});
+
 test("Portuguese drafts preserve AWS service names and avoid known literal calques", () => {
   const serviceNamePattern = /\b(?:Amazon|AWS)\s+[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}/g;
   const knownCalques = /engenharia imediata|modelo fundacional|modelos fundacionais|modelo básico|modelos básicos|taxa de transferência|rendimento provisionado|Amazon Personalizar|Cloud Front|incorporaç[aã]|\bPNL\b/i;

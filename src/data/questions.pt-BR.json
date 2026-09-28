@@ -668,14 +668,14 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q009": {
-    "stem": "Uma startup executa um chatbot baseado em um modelo de base (foundation model, FM) do Amazon Bedrock. O chatbot precisa ler arquivos em um bucket do Amazon S3 protegido por chaves gerenciadas pelo Amazon S3 (SSE-S3), mas todas as tentativas falham. O que resolverá o problema?",
+    "stem": "Uma startup executa um chatbot baseado em um modelo de base (foundation model, FM) do Amazon Bedrock. A função de serviço do Amazon Bedrock já tem permissão para ler objetos em um bucket do Amazon S3, mas as leituras falham em objetos criptografados com chaves do AWS KMS (SSE-KMS). Qual permissão adicional resolverá o problema?",
     "options": {
       "A": "Use engenharia de prompts (prompt engineering) para dizer ao modelo onde buscar os dados no Amazon S3",
       "B": "Remova os dados confidenciais dos arquivos no Amazon S3",
-      "C": "Conceda à função do IAM assumida pelo Amazon Bedrock permissão para descriptografar os objetos com a chave correta",
+      "C": "Conceda à função do IAM assumida pelo Amazon Bedrock a permissão kms:Decrypt para a chave correta",
       "D": "Atualize a política de bucket do S3 para permitir acesso público aos dados pela Internet"
     },
-    "explanation": "A falha de leitura é um problema de permissões: a função do IAM assumida pelo Amazon Bedrock precisa ter autorização para acessar e descriptografar os objetos. Conceder a permissão necessária para a chave correta resolve a falha.\nAlterar o prompt não concede acesso a dados criptografados. Remover dados confidenciais não resolve a falta de permissão de descriptografia e inviabiliza o uso pretendido dos dados. Tornar o bucket público é uma mudança insegura e ainda não concede à função a permissão de descriptografia necessária.",
+    "explanation": "Com SSE-KMS, a função de serviço do Amazon Bedrock precisa da permissão kms:Decrypt para usar a chave do AWS KMS, além das permissões de leitura no Amazon S3. Como o enunciado informa que o acesso aos objetos no S3 já está autorizado, conceder a permissão KMS que falta resolve a falha de descriptografia.\nAlterar o prompt não concede acesso a dados criptografados. Remover dados confidenciais não corrige a falta de permissão KMS e impede o uso pretendido dos dados. Tornar o bucket público é uma mudança insegura e não concede à função permissão para usar a chave SSE-KMS.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },

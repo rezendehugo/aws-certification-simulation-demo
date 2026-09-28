@@ -53,6 +53,15 @@ describe("public Lite demo release checks", () => {
     cy.get(".badges").should("not.contain.text", "1.3");
   });
 
+  it("teaches the SSE-KMS permission distinction without raw markup", () => {
+    cy.get(".preferences select").eq(0).select("pt-BR");
+    cy.contains("button", "Iniciar simulado").click();
+    cy.get('button[aria-label="Questão 56"]').click();
+    cy.get(".question-card h1").should("contain.text", "SSE-KMS");
+    cy.get(".answers").should("contain.text", "kms:Decrypt").and("not.contain.text", "`");
+    cy.get(".question-card").should("contain.text", "já tem permissão para ler objetos");
+  });
+
   it("localizes accessible ordering controls in Portuguese", () => {
     cy.get(".preferences select").eq(0).select("pt-BR");
     cy.contains("button", "Iniciar simulado").click();
