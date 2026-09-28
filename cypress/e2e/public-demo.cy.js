@@ -48,6 +48,15 @@ describe("public Lite demo release checks", () => {
       .and("not.contain.text", "relatório fica salvo");
   });
 
+  it("explains the public demo's exam-security limitation in clear Portuguese", () => {
+    cy.get(".preferences select").eq(0).select("pt-BR");
+    cy.get(".welcome section .eyebrow").should("have.text", "Demonstração interativa");
+    cy.get(".welcome aside p")
+      .should("contain.text", "O gabarito faz parte dos arquivos desta demonstração")
+      .and("contain.text", "pode ser consultado no navegador")
+      .and("not.contain.text", "versão estática");
+  });
+
   it("supports keyboard navigation and records a response", () => {
     cy.contains("button", "Start simulation").click();
     cy.get("body").type("a");
