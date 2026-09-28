@@ -34,6 +34,20 @@ describe("public Lite demo release checks", () => {
     }
   });
 
+  it("accurately describes browser-local progress and locally generated reports in both languages", () => {
+    cy.get(".preferences select").eq(0).select("en");
+    cy.get(".welcome section > p").first()
+      .should("contain.text", "are saved in this browser")
+      .and("contain.text", "Reports are generated on this device when you download them")
+      .and("not.contain.text", "report remain");
+
+    cy.get(".preferences select").eq(0).select("pt-BR");
+    cy.get(".welcome section > p").first()
+      .should("contain.text", "ficam salvos localmente neste navegador")
+      .and("contain.text", "O relatório é gerado no próprio dispositivo quando você o baixa")
+      .and("not.contain.text", "relatório fica salvo");
+  });
+
   it("supports keyboard navigation and records a response", () => {
     cy.contains("button", "Start simulation").click();
     cy.get("body").type("a");
