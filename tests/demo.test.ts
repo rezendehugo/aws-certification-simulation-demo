@@ -218,6 +218,14 @@ test("Portuguese call-transcription item preserves the source limitation and tra
   assert.equal(translations["aif-q016"].status, "machine-draft");
 });
 
+test("Portuguese image-labeling item tracks the Ground Truth Plus end-of-support notice", () => {
+  assert.match(translations["aif-q008"].options.B, /Amazon SageMaker Ground Truth Plus/);
+  assert.match(portugueseGuide, /aif-q008.*Ground Truth Plus/s);
+  assert.match(portugueseGuide, /encerrou o suporte ao Ground Truth Plus em 30 de junho de 2026/s);
+  assert.match(englishGuide, /aif-q008.*Amazon SageMaker Ground Truth Plus/s);
+  assert.equal(translations["aif-q008"].status, "machine-draft");
+});
+
 test("Portuguese drafts preserve AWS service names and avoid known literal calques", () => {
   const serviceNamePattern = /\b(?:Amazon|AWS)\s+[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}/g;
   const knownCalques = /engenharia imediata|modelo fundacional|modelos fundacionais|modelo básico|modelos básicos|taxa de transferência|rendimento provisionado|Amazon Personalizar|Cloud Front|incorporaç[aã]|\bPNL\b/i;
