@@ -136,7 +136,7 @@ const pt: Record<keyof typeof en, string> = {
   arrange: "Organize todos os itens na ordem correta.",
   match: "Associe todos os itens.",
   confirmReset: "Excluir a tentativa salva e começar novamente?",
-  ready: "Uma preparação focada para a certificação AWS AI Practitioner",
+  ready: "Prepare-se com foco para a certificação AWS Certified AI Practitioner.",
   readyBody: "Faça um simulado completo no formato da prova. O cronômetro, suas respostas e as questões marcadas para revisão ficam salvos localmente neste navegador. O relatório é gerado no próprio dispositivo quando você o baixa.",
   domain: "Domínio",
   score: "Pontuação",

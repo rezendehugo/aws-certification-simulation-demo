@@ -51,6 +51,7 @@ describe("public Lite demo release checks", () => {
   it("explains the public demo's exam-security limitation in clear Portuguese", () => {
     cy.get(".preferences select").eq(0).select("pt-BR");
     cy.get(".welcome section .eyebrow").should("have.text", "Demonstração interativa");
+    cy.get(".welcome h1").should("have.text", "Prepare-se com foco para a certificação AWS Certified AI Practitioner.");
     cy.get(".welcome aside p")
       .should("contain.text", "O gabarito faz parte dos arquivos desta demonstração")
       .and("contain.text", "pode ser consultado no navegador")
