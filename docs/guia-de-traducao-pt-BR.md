@@ -10,7 +10,7 @@ A versão em português deve explicar o conceito com naturalidade para quem estu
 - Preserve sem alterações nomes de serviços, produtos, recursos, APIs e certificações da AWS, como **Amazon SageMaker Feature Store**, **Amazon Bedrock**, **Amazon S3** e **AIF-C01**.
 - Na primeira menção, escreva o termo em português seguido do termo de prova em inglês quando isso ajudar o reconhecimento: **aprendizado de máquina (machine learning, ML)**, **grande modelo de linguagem (large language model, LLM)**.
 - Não traduza *large* como *amplo*: para *large language model*, use **grande modelo de linguagem**. Mantenha **LLM** distinto de **SLM** (*small language model*, modelo de linguagem de pequeno porte).
-- Distinga métricas com cuidado: **acurácia (accuracy)** é a proporção geral de previsões corretas; **precisão (precision)** é o valor preditivo positivo; **revocação (recall)** deve vir acompanhada de *recall* quando necessário para evitar ambiguidade.
+- Distinga métricas pelo conjunto usado no denominador: **acurácia (accuracy)** considera todas as previsões; **precisão (precision)** pergunta quantas previsões positivas estavam corretas; **revocação (recall)** pergunta quantos casos positivos reais foram encontrados. Preserve *precision* e *recall* em inglês na primeira menção para não confundir métricas com nomes próximos em português.
 - Preserve termos de prova em inglês quando uma tradução direta for rara, ambígua ou puder misturar conceitos. Por exemplo: **embeddings (representações vetoriais)**, **prompt injection (injeção de prompt)**, **few-shot (com poucos exemplos)** e **zero-shot (sem exemplos)**.
 - Mantenha quantidades, unidades, negações e qualificadores como *least*, *most* e *near real-time*. Não enfraqueça um distrator nem torne a resposta correta mais óbvia.
 - Na explicação, diga por que a opção correta atende ao cenário e por que cada alternativa não atende. Não acrescente afirmações sem suporte nem atualize silenciosamente o nome de um serviço citado na fonte.
@@ -19,7 +19,7 @@ A versão em português deve explicar o conceito com naturalidade para quem estu
 
 | Termo em inglês | Forma recomendada em PT-BR |
 | --- | --- |
-| accuracy / precision / recall | **acurácia (accuracy)** / **precisão (precision)** / **revocação (recall)** |
+| accuracy / precision / recall | **acurácia (accuracy)**: proporção de previsões corretas no total; **precisão (precision)**: entre as previsões positivas, proporção que é positiva de fato (TP / (TP + FP)); **revocação (recall)**: entre os casos positivos reais, proporção identificada corretamente (TP / (TP + FN)). |
 | bias / fairness | **viés (bias)** / **equidade (fairness)**; não trate os dois conceitos como sinônimos |
 | bias assessment / mitigation / transparency | Diferencie **avaliar ou detectar viés**, **mitigá-lo** (intervir para reduzi-lo) e **transparência** (tornar comportamento e limites visíveis). Avaliar e comunicar, por si só, não elimina o viés. |
 | data drift / model-quality drift | **desvio nos dados (data drift)** / **desvio na qualidade do modelo (model-quality drift)**; mantenha explícito o que está mudando e, quando relevante, em relação a qual linha de base. Não confunda uma mudança ao longo do tempo com uma anomalia pontual. |
@@ -43,6 +43,8 @@ A versão em português deve explicar o conceito com naturalidade para quem estu
 | data leakage / data augmentation | **vazamento de dados (data leakage)** / **aumento de dados (data augmentation)** |
 | real-time / asynchronous inference | **inferência em tempo real** / **inferência assíncrona**; manter o inglês ao comparar modalidades |
 | least privilege | **princípio do menor privilégio (least privilege)** |
+
+Na documentação da AWS em PT-BR, *recall* aparece como **recuperação** no título de uma página e como **revocação** no corpo e na API. Este guia padroniza **revocação (recall)** e mantém *recall* visível, pois os nomes em português variam entre materiais. Consulte [Escolher entre precisão e recuperação](https://docs.aws.amazon.com/pt_br/glue/latest/dg/machine-learning-precision-recall-tradeoff.html) e a [API de machine learning do AWS Glue](https://docs.aws.amazon.com/pt_br/glue/latest/dg/aws-glue-api-machine-learning-api.html).
 
 Não confunda **alucinação** com sobreajuste ou subajuste: alucinação é uma saída plausível, mas incorreta ou inventada; sobreajuste e subajuste descrevem como o modelo aprende e generaliza a partir dos dados.
 

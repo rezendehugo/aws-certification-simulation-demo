@@ -291,6 +291,13 @@ test("Portuguese drafts preserve AWS service names and avoid known literal calqu
   }
 });
 
+test("Portuguese translation guidance distinguishes accuracy, precision and recall by denominator", () => {
+  assert.match(portugueseGuide, /acurácia \(accuracy\).*todas as previsões/s);
+  assert.match(portugueseGuide, /precisão \(precision\).*TP \/ \(TP \+ FP\)/s);
+  assert.match(portugueseGuide, /revocação \(recall\).*TP \/ \(TP \+ FN\)/s);
+  assert.match(portugueseGuide, /recuperação.*revocação.*padroniza/s);
+});
+
 test("Portuguese expands ML in every standalone translated question", () => {
   for (const [questionId, translation] of Object.entries(translations)) {
     const localizedText = [
