@@ -3,6 +3,7 @@ import { Results } from "./components/Results";
 import { Simulation } from "./components/Simulation";
 import { TopBar } from "./components/TopBar";
 import { Welcome } from "./components/Welcome";
+import { PublicNotice } from "./components/PublicNotice";
 import questionsData from "./data/questions.json";
 import portugueseTranslations from "./data/questions.pt-BR.json";
 import { localizeQuestion } from "./domain/localization";
@@ -33,6 +34,13 @@ export function App() {
 
   useEffect(() => {
     document.documentElement.lang = locale;
+    document.title = locale === "pt-BR" ? "Simulado AWS Certified AI Practitioner (AIF-C01)" : "AIF-C01 Simulation Demo";
+    document.querySelector('meta[name="description"]')?.setAttribute(
+      "content",
+      locale === "pt-BR"
+        ? "Simulado independente em português brasileiro para a certificação AWS Certified AI Practitioner."
+        : "Free bilingual AWS AI Practitioner simulation demo.",
+    );
     saveLocale(locale);
   }, [locale]);
 
@@ -128,6 +136,7 @@ export function App() {
           />
         )
       )}
+      <PublicNotice locale={locale} />
     </>
   );
 }

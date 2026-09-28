@@ -1,0 +1,94 @@
+# Guia de tradução para português brasileiro
+
+## Objetivo editorial
+
+A versão em português deve explicar o conceito com naturalidade para quem estuda no Brasil e, ao mesmo tempo, ajudar a reconhecer os termos em inglês usados nas provas e na documentação da AWS. Não fazemos tradução palavra por palavra: a correção conceitual e a preservação da distinção avaliada vêm primeiro.
+
+## Como traduzir
+
+- Use português brasileiro natural: **aprendizado de máquina**, **usuário**, **registro**. Evite formas do português europeu, como *aprendizagem* quando o sentido for *machine learning* e *registo*.
+- Preserve sem alterações nomes de serviços, produtos, recursos, APIs e certificações da AWS, como **Amazon SageMaker Feature Store**, **Amazon Bedrock**, **Amazon S3** e **AIF-C01**.
+- Na primeira menção, escreva o termo em português seguido do termo de prova em inglês quando isso ajudar o reconhecimento: **aprendizado de máquina (machine learning, ML)**, **grande modelo de linguagem (large language model, LLM)**.
+- Não traduza *large* como *amplo*: para *large language model*, use **grande modelo de linguagem**. Mantenha **LLM** distinto de **SLM** (*small language model*, modelo de linguagem de pequeno porte).
+- Distinga métricas pelo conjunto usado no denominador: **acurácia (accuracy)** considera todas as previsões; **precisão (precision)** pergunta quantas previsões positivas estavam corretas; **revocação (recall)** pergunta quantos casos positivos reais foram encontrados. Preserve *precision* e *recall* em inglês na primeira menção para não confundir métricas com nomes próximos em português.
+- Preserve termos de prova em inglês quando uma tradução direta for rara, ambígua ou puder misturar conceitos. Por exemplo: **embeddings (representações vetoriais)**, **prompt injection (injeção de prompt)**, **few-shot (com poucos exemplos)** e **zero-shot (sem exemplos)**.
+- Mantenha quantidades, unidades, negações e qualificadores como *least*, *most* e *near real-time*. Não enfraqueça um distrator nem torne a resposta correta mais óbvia.
+- Na explicação, diga por que a opção correta atende ao cenário e por que cada alternativa não atende. Não acrescente afirmações sem suporte nem atualize silenciosamente o nome de um serviço citado na fonte.
+
+## Glossário inicial
+
+| Termo em inglês | Forma recomendada em PT-BR |
+| --- | --- |
+| accuracy / precision / recall | **acurácia (accuracy)**: proporção de previsões corretas no total; **precisão (precision)**: entre as previsões positivas, proporção que é positiva de fato (TP / (TP + FP)); **revocação (recall)**: entre os casos positivos reais, proporção identificada corretamente (TP / (TP + FN)). |
+| bias / fairness | **viés (bias)** / **equidade (fairness)**; não trate os dois conceitos como sinônimos |
+| bias assessment / mitigation / transparency | Diferencie **avaliar ou detectar viés**, **mitigá-lo** (intervir para reduzi-lo) e **transparência** (tornar comportamento e limites visíveis). Avaliar e comunicar, por si só, não elimina o viés. |
+| data drift / model-quality drift | **desvio nos dados (data drift)** / **desvio na qualidade do modelo (model-quality drift)**; mantenha explícito o que está mudando e, quando relevante, em relação a qual linha de base. Não confunda uma mudança ao longo do tempo com uma anomalia pontual. |
+| interpretability / explainability | **interpretabilidade (interpretability)** / **explicabilidade (explainability)**; como distinção editorial, a primeira descreve quão compreensível é a lógica do modelo, e a segunda, a produção de razões para suas previsões. O uso pode se sobrepor; preserve a palavra da fonte em vez de impor uma separação universal. |
+| root mean squared error (RMSE) | **raiz do erro quadrático médio (RMSE)**; preserve a ordem natural em português |
+| machine learning (ML) | **aprendizado de máquina (machine learning, ML)** |
+| feature / feature engineering | **atributo (feature)** / **engenharia de atributos (feature engineering)** no contexto de ML |
+| foundation model (FM) | **modelo de base (foundation model, FM)** |
+| fine-tuning | **ajuste fino (fine-tuning)** |
+| overfitting | **sobreajuste (overfitting)**: bom desempenho nos dados de treinamento, mas generalização ruim para dados novos |
+| underfitting | **subajuste (underfitting)**: dificuldade para aprender os padrões, com desempenho ruim até nos dados de treinamento |
+| underrepresented classes | **classes pouco representadas (underrepresented classes)**; evite o decalque desnecessário *classes sub-representadas* |
+| completion (em dados de fine-tuning) | Manter o nome do campo **completion** e explicar como **saída esperada**; não restringir a tradução a “resposta” |
+| prompt engineering / prompt injection | **engenharia de prompts (prompt engineering)** / **prompt injection (injeção de prompt)** |
+| system prompt | **prompt do sistema (system prompt)**; contém instruções ou contexto para o modelo, distintos da solicitação individual do usuário |
+| few-shot prompting | **few-shot prompting (prompts com poucos exemplos)**; o modelo recebe alguns pares de entrada e saída ou exemplos rotulados antes de responder a uma nova entrada |
+| embeddings | **embeddings (representações vetoriais)** |
+| token | **token**; unidade de significado que pode corresponder a uma palavra, parte de palavra ou sinal de pontuação. Preserve o termo cobrado em inglês e não confunda o token textual com o vetor numérico produzido por um embedding. |
+| inference temperature / top-p | **temperatura** e **top-p** são parâmetros de inferência que afetam a amostragem dos próximos tokens, não o treinamento do modelo nem uma temperatura física. Temperatura mais baixa tende a favorecer tokens de maior probabilidade e respostas mais determinísticas; *top-p* limita a amostragem aos candidatos cuja probabilidade cumulativa atinge o limiar definido. Faixas e efeitos exatos variam por modelo; os dois parâmetros não são sinônimos. |
+| benchmark dataset | **conjunto de dados de referência (benchmark dataset)** |
+| Provisioned Throughput | Manter **Provisioned Throughput (throughput provisionado)**; não usar *taxa de transferência* |
+| data leakage / data augmentation | **vazamento de dados (data leakage)** / **aumento de dados (data augmentation)** |
+| real-time / asynchronous inference | **inferência em tempo real** / **inferência assíncrona**; manter o inglês ao comparar modalidades |
+| least privilege | **princípio do menor privilégio (least privilege)** |
+
+Na documentação da AWS em PT-BR, *recall* aparece como **recuperação** no título de uma página e como **revocação** no corpo e na API. Este guia padroniza **revocação (recall)** e mantém *recall* visível, pois os nomes em português variam entre materiais. Consulte [Escolher entre precisão e recuperação](https://docs.aws.amazon.com/pt_br/glue/latest/dg/machine-learning-precision-recall-tradeoff.html) e a [API de machine learning do AWS Glue](https://docs.aws.amazon.com/pt_br/glue/latest/dg/aws-glue-api-machine-learning-api.html).
+
+Não confunda **alucinação** com sobreajuste ou subajuste: alucinação é uma saída plausível, mas incorreta ou inventada; sobreajuste e subajuste descrevem como o modelo aprende e generaliza a partir dos dados.
+
+Para **drift**, mantenha o termo em inglês junto à forma em português na primeira menção. No Amazon SageMaker Model Monitor, a documentação da AWS em PT-BR usa **desvio** e **oscilações** para mudanças monitoradas na qualidade dos dados ou do modelo. Prefira o tipo específico quando o cenário o informar: desvio nos dados, na qualidade do modelo, no viés ou na atribuição de atributos. Não troque automaticamente *drift* por “anomalia”: uma anomalia pontual e uma mudança em relação a uma linha de base ao longo do tempo não são a mesma coisa. Consulte [monitoramento da qualidade de dados e modelos com o Amazon SageMaker Model Monitor](https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/model-monitor.html).
+
+Para **temperatura** e **top-p**, preserve os nomes usados nos parâmetros de inferência e explique o efeito sobre a seleção do próximo token. Uma temperatura menor favorece saídas mais determinísticas, mas não garante repetição idêntica em todo modelo; consulte os [parâmetros de inferência do Amazon Bedrock](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/inference-parameters.html) para os efeitos e intervalos específicos.
+
+## Revisão e transparência
+
+Uma tradução só pode passar de `machine-draft` para `human-reviewed` depois que uma pessoa comparar o enunciado completo, todas as opções e a explicação com a fonte em inglês. A revisão deve informar o nome real de quem revisou e a data em formato ISO. Alterações assistidas por ferramentas continuam como rascunho até essa conferência humana. Use `aws-verified` somente se a própria AWS tiver verificado a tradução — consultar documentação da AWS não equivale a essa verificação.
+
+Não altere IDs das opções nem a chave de resposta ao traduzir. Se o texto-fonte parecer tecnicamente inconsistente, registre a questão e peça esclarecimento; não “corrija” silenciosamente a resposta.
+
+### Pendência conhecida na fonte
+
+O item `aif-q009` da fonte original diz que os objetos usam SSE-S3, mas o gabarito pressupõe permissão KMS para descriptografia. A documentação da AWS distingue SSE-S3, com chaves gerenciadas pelo serviço Amazon S3, de SSE-KMS, que requer `kms:Decrypt`. Nesta cópia derivada, o enunciado foi ajustado para SSE-KMS e esclarece que o acesso de leitura ao S3 já está concedido; a resposta C foi preservada e agora nomeia a permissão necessária. Essa é uma adaptação local explícita, divergente da fonte upstream, não uma tradução verificada pela AWS. Mantenha a tradução em `machine-draft` até uma pessoa revisar as duas versões. Consulte a documentação de [criptografia das fontes de dados do Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/encryption-kb.html) e de [permissões KMS para SSE-KMS no S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html).
+
+O item `aif-q008` recomenda o Amazon SageMaker Ground Truth Plus para obter rótulos de alta qualidade. A AWS informa que encerrou o suporte ao Ground Truth Plus em 30 de junho de 2026 e que o Ground Truth deixou de aceitar novos clientes em 30 de julho de 2026. A explicação em PT-BR esclarece que o conceito avaliado é a revisão humana e que esses nomes refletem a questão de origem, não uma recomendação disponível para novas contas. Preserve a identidade da resposta, mantenha a tradução como `machine-draft` e peça ao responsável pela fonte que a reconcilie com a revisão do guia de exame pretendida antes da aprovação. Consulte o [aviso de encerramento de suporte do SageMaker AI](https://aws.amazon.com/sagemaker/ai/features/) e o [guia oficial AIF-C01](https://docs.aws.amazon.com/pdfs/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.pdf).
+
+O item `aif-q016` pede análise de chamadas gravadas e extração dos pontos principais, mas a resposta indicada cita apenas a conversão do áudio em texto pelo Amazon Transcribe padrão. A transcrição permite uma análise posterior; sozinha, não realiza extração automatizada de pontos-chave. O Amazon Transcribe Call Analytics oferece insights pós-chamada separados, como problemas, resultados e ações, além de resumo generativo opcional. É preciso esclarecer se a análise manual da transcrição basta ou se a intenção é avaliar o Call Analytics. Mantenha a tradução como `machine-draft` e não altere a resposta original sem corrigir a fonte. Consulte a documentação de [análise pós-chamada do Amazon Transcribe](https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-batch.html) e de [resumo de chamadas](https://docs.aws.amazon.com/transcribe/latest/dg/tca-enable-summarization.html).
+
+O item `aif-q029` deve ser entendido como uma questão sobre orientação do comportamento do modelo, não como uma recomendação de segurança suficiente. Instruções no prompt do sistema podem ajudar a delimitar o comportamento, mas não garantem resistência à injeção de prompt nem confidencialidade do próprio prompt. A explicação em português explicita esse limite e recomenda salvaguardas adicionais, em linha com a documentação da AWS sobre [segurança contra injeção de prompt](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/prompt-injection.html) e [detecção de ataques com o Amazon Bedrock Guardrails](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/guardrails-prompt-attack.html). A resposta original permanece intacta; a tradução continua como `machine-draft` até revisão humana.
+
+O item `aif-q039` usa o Amazon SageMaker Clarify como exemplo de explicabilidade. A documentação atual informa que o Clarify não está aberto a novos clientes; confirme a pertinência desse item com o guia de exame vigente antes de apresentá-lo como recomendação atual de serviço. A tradução preserva a resposta da fonte, mas a explicação especifica que o Amazon Macie descobre dados confidenciais e monitora riscos de dados no S3 — ele não criptografa os dados de treinamento conforme a alternativa sugere. Consulte a documentação de [explicabilidade do modelo com Clarify](https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/clarify-model-explainability.html) e [o que é Amazon Macie](https://docs.aws.amazon.com/pt_br/macie/latest/user/what-is-macie.html).
+
+O item `aif-q064` apresenta uma ambiguidade de requisito: a resposta herdada favorece ajuste fino com adaptação de domínio, mas a alternativa RAG também pode atender à dificuldade com terminologia presente nos artigos. A AWS recomenda RAG quando o objetivo é fornecer fatos, terminologia ou conhecimento de domínio que o modelo ainda não conhece. A tradução preserva a identidade da resposta, explicita a ambiguidade e mantém o item como `machine-draft` até revisão da fonte. Consulte a orientação da AWS sobre [quando usar RAG em vez de ajuste fino](https://docs.aws.amazon.com/pt_br/nova/latest/userguide/fine-tune-prepare-data-understanding.html) e [como as bases de conhecimento fornecem contexto por recuperação](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/kb-how-it-works.html).
+
+## Como contribuir
+
+1. Escolha uma questão e compare-a com o registro correspondente em `src/data/questions.json`.
+2. Confira este guia e, para terminologia AWS, a documentação oficial em português brasileiro.
+3. Verifique se a tradução preserva a diferença avaliada, os nomes de serviços, as quantidades, o sentido de cada distrator e a chave de resposta.
+4. Registre a revisão humana apenas depois de verificar enunciado, todas as opções e explicação.
+5. Execute `npm run check` e descreva quais questões foram revisadas.
+
+As traduções são material comunitário de estudo, não traduções oficiais da AWS. Veja também o [guia completo em inglês](pt-BR-translation-guide.md) e as instruções de [contribuição](../CONTRIBUTING.md).
+
+Para o formato dos conjuntos de dados de ajuste fino, consulte a documentação da AWS sobre [preparação de dados para fine-tuning de modelos no Amazon Bedrock](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-customization-prepare.html), que descreve `completion` como a saída esperada.
+
+Para explicar tokens, consulte a [terminologia básica do Amazon Bedrock](https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/key-definitions.html), que distingue palavras inteiras, partes de palavras e pontuação como possíveis unidades de token.
+
+No item `aif-q057`, uma diferença de resultados entre grupos não identifica sozinha a causa do viés. Viés de amostragem pressupõe sub-representação na amostra; erros sistemáticos de coleta ou registro podem caracterizar viés de medição. Como o enunciado original não descreve a amostra nem a coleta, preserve o gabarito como interpretação da fonte, explicite a premissa e mantenha a tradução em rascunho até a questão ser esclarecida. A AWS descreve tanto sub-representação quanto rótulos enviesados como possíveis fontes de viés nos dados de treinamento em sua documentação sobre [viés pré-treinamento](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-data-bias.html).
+
+Ao explicar o efeito de épocas adicionais, diferencie o aumento de desempenho no conjunto de treinamento da capacidade de generalização. Compare as curvas de treinamento e validação: acurácia de treinamento crescente acompanhada de queda na validação pode indicar sobreajuste, conforme o exemplo da AWS sobre [curvas de treinamento e validação](https://docs.aws.amazon.com/sagemaker/latest/dg/train-valid-curve.html).
+
+Para o vocabulário de explicabilidade, compare o guia da AWS sobre [interpretabilidade de modelos de ML](https://docs.aws.amazon.com/pt_br/prescriptive-guidance/latest/ml-model-interpretability/welcome.html) com a documentação do [SageMaker Clarify sobre explicabilidade](https://docs.aws.amazon.com/pt_br/sagemaker/latest/dg/clarify-model-explainability.html). A própria orientação da AWS ressalta que não há uma definição padrão única para explicação de modelos.

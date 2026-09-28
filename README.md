@@ -54,9 +54,13 @@ Before proposing a change:
 
 ```bash
 npm run check
+npm run check:pages-boundary
+npm run e2e
+npm audit --audit-level=high
+npm run sbom
 ```
 
-The check runs strict TypeScript validation, content/scoring tests, linting, and a production build. GitHub Pages deploys automatically from `main`.
+The required checks run strict TypeScript validation, content/scoring tests, linting, an artifact disclosure scan, browser/accessibility checks, dependency audit, and a license inventory. Main-branch deployments wait for human approval in the `github-pages` environment; pull requests never publish the site.
 
 ## Roadmap
 

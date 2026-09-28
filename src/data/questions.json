@@ -1743,7 +1743,7 @@
     "domainId": 5,
     "objective": "5.1",
     "type": "multiple_choice",
-    "stem": "A startup runs a chatbot built on an Amazon Bedrock foundation model (FM). The chatbot needs to read files in an Amazon S3 bucket that is protected with Amazon S3 managed keys (SSE-S3), yet every attempt to read them fails. What will resolve the issue?",
+    "stem": "A startup runs a chatbot built on an Amazon Bedrock foundation model (FM). The Amazon Bedrock service role already has permission to read objects in an Amazon S3 bucket, but reads fail for objects encrypted with AWS KMS keys (SSE-KMS). What additional permission will resolve the issue?",
     "options": [
       {
         "id": "A",
@@ -1765,7 +1765,7 @@
     "correctAnswer": [
       "C"
     ],
-    "explanation": "The read failures are a permissions problem: the IAM role that Amazon Bedrock assumes must be allowed to access and decrypt the encrypted objects, so granting it permission to decrypt the data with the correct key resolves the access failure.\nPrompt engineering cannot grant access to encrypted data. Removing sensitive data does not address the missing decrypt permission and defeats the purpose of using the data. Opening the bucket to the public internet is an insecure change that still does not give the role decrypt permission.",
+    "explanation": "With SSE-KMS, the Amazon Bedrock service role needs the kms:Decrypt permission on the KMS key, in addition to its Amazon S3 read permissions. Because the role already has S3 object access, granting the missing KMS permission resolves the encryption-related failure.\nPrompt engineering cannot grant access to encrypted data. Removing sensitive data does not address the missing decrypt permission and defeats the purpose of using the data. Opening the bucket to the public internet is an insecure change and does not grant the role permission to decrypt SSE-KMS objects.",
     "scored": true,
     "source": "https://github.com/nastaso/cloudcertprep/blob/3ec8a763268d244c99664fed4f23f2b759099408/src/data/aif-c01/domain5.json"
   },
