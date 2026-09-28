@@ -11,7 +11,7 @@ describe("public Lite demo release checks", () => {
     for (const theme of ["light", "dark", "system"]) {
       for (const locale of [
         { value: "en", lang: "en", start: "Start simulation", title: "AIF-C01 Simulation Demo", minutes: "minutes", domains: "domains", source: "Source & attribution" },
-        { value: "pt-BR", lang: "pt-BR", start: "Iniciar simulado", title: "Simulado AWS Certified AI Practitioner (AIF-C01)", minutes: "minutos", domains: "domínios", source: "Código-fonte e atribuição" },
+        { value: "pt-BR", lang: "pt-BR", start: "Iniciar simulado", title: "Simulado AWS Certified AI Practitioner (AIF-C01)", minutes: "minutos", questions: "Questões", domains: "domínios", source: "Código-fonte e créditos" },
       ]) {
         cy.get(".preferences select").eq(0).select(locale.value);
         cy.get(".preferences select").eq(1).select(theme);
@@ -24,6 +24,7 @@ describe("public Lite demo release checks", () => {
         cy.title().should("equal", locale.title);
         cy.contains("button", locale.start).should("be.visible");
         cy.get(".facts").contains(locale.minutes).should("be.visible");
+        if (locale.questions) cy.get(".facts").contains(locale.questions).should("be.visible");
         cy.get(".facts").contains(locale.domains).should("be.visible");
         cy.get(".welcome aside").contains(locale.source).should("be.visible");
         if (locale.value === "pt-BR") {
@@ -64,8 +65,8 @@ describe("public Lite demo release checks", () => {
   it("downloads personal reports without exporting an answer key", () => {
     cy.get(".preferences select").eq(0).select("pt-BR");
     cy.contains("button", "Iniciar simulado").click();
-    cy.contains("button", "Entregar").click();
-    cy.get('[role="dialog"]').within(() => cy.contains("button", "Entregar agora").click());
+    cy.contains("button", "Finalizar simulado").click();
+    cy.get('[role="dialog"]').within(() => cy.contains("button", "Finalizar agora").click());
 
     cy.contains("button", "Exportar JSON").click();
     cy.readFile("cypress/downloads/aif-c01-result.json", { timeout: 10000 }).then((content) => {
@@ -75,7 +76,7 @@ describe("public Lite demo release checks", () => {
       expect(JSON.stringify(content)).not.to.match(/correctAnswer|answerKey|"answers"|AWS_SECRET_ACCESS_KEY/i);
     });
 
-    cy.contains("button", "Exportar resumo de estudo para IA").click();
+    cy.contains("button", "Exportar resumo de estudo para usar com IA").click();
     cy.readFile("cypress/downloads/aif-c01-study-brief.md", { timeout: 10000 }).then((content) => {
       expect(content).to.contain("Percentual bruto de acertos neste simulado; não equivale à pontuação em escala da AWS.");
       expect(content).to.contain("Fundamentos de IA e ML");
@@ -103,7 +104,7 @@ describe("public Lite demo release checks", () => {
     for (const theme of ["light", "dark", "system"]) {
       for (const locale of [
         { value: "en", start: "Start simulation", submit: "Submit", submitNow: "Submit now" },
-        { value: "pt-BR", start: "Iniciar simulado", submit: "Entregar", submitNow: "Entregar agora" },
+        { value: "pt-BR", start: "Iniciar simulado", submit: "Finalizar simulado", submitNow: "Finalizar agora" },
       ]) {
         cy.visit("/", { onBeforeLoad: (window) => window.localStorage.clear() });
         cy.get(".preferences select").eq(0).select(locale.value);
