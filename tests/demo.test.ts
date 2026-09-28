@@ -193,7 +193,7 @@ test("Portuguese keeps exam-critical distinctions and AWS product names recogniz
   assert.match(translations["aif-q049"].stem, /novos solicitantes de crédito/);
   assert.doesNotMatch(translations["aif-q049"].stem, /candidatos/);
   assert.match(translations["aif-q003"].options.B, /árvores de decisão \(decision trees\)/i);
-  assert.match(translations["aif-q003"].explanation, /interpretabilidade atende ao requisito/i);
+  assert.match(translations["aif-q003"].explanation, /interpretabilidade \(interpretability\) atende ao requisito/i);
   assert.match(translations["aif-q039"].explanation, /transparência e a explicabilidade/i);
   assert.match(translations["aif-q037"].options.B, /classes pouco representadas \(underrepresented classes\)/i);
   assert.match(translations["aif-q037"].explanation, /classes pouco representadas/i);
@@ -242,6 +242,13 @@ test("Portuguese responsible-AI explanation separates bias assessment from mitig
   assert.match(translations["aif-q049"].explanation, /Transparência, por si só, não reduz o viés/i);
   assert.match(translations["aif-q049"].explanation, /resultados da avaliação devem orientar eventuais correções/i);
   assert.equal(translations["aif-q049"].status, "machine-draft");
+});
+
+test("Portuguese interpretability and explainability items retain exam-term anchors", () => {
+  assert.match(translations["aif-q003"].explanation, /interpretabilidade \(interpretability\)/i);
+  assert.match(translations["aif-q039"].stem, /transparente \(transparent\) e explicável \(explainable\)/i);
+  assert.equal(translations["aif-q003"].status, "machine-draft");
+  assert.equal(translations["aif-q039"].status, "machine-draft");
 });
 
 test("Portuguese sampling-bias explanation states the missing premise", () => {

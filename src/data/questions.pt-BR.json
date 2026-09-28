@@ -566,7 +566,7 @@
       "C": "Redes neurais (neural networks)",
       "D": "Regressão linear (linear regression)"
     },
-    "explanation": "Árvores de decisão tornam explícita a lógica interna por meio de regras de divisão legíveis. Isso permite documentar como o modelo parte das características de entrada para chegar a uma das 20 categorias. Essa interpretabilidade atende ao requisito.\nRedes neurais costumam ter uma lógica interna pouco transparente, o que dificulta documentar seu funcionamento. Regressão linear prevê valores contínuos, não categorias discretas. Regressão logística pode ser interpretada por seus coeficientes, mas não oferece caminhos de decisão tão fáceis de documentar para muitas classes quanto uma árvore de decisão.",
+    "explanation": "Árvores de decisão tornam explícita a lógica interna por meio de regras de divisão legíveis. Isso permite documentar como o modelo parte das características de entrada para chegar a uma das 20 categorias. Essa interpretabilidade (interpretability) atende ao requisito.\nRedes neurais costumam ter uma lógica interna pouco transparente, o que dificulta documentar seu funcionamento. Regressão linear prevê valores contínuos, não categorias discretas. Regressão logística pode ser interpretada por seus coeficientes, mas não oferece caminhos de decisão tão fáceis de documentar para muitas classes quanto uma árvore de decisão.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
@@ -583,7 +583,7 @@
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
   "aif-q039": {
-    "stem": "Um banco está adaptando um modelo de base (foundation model, FM) para apoiar decisões de crédito. Os órgãos reguladores exigem que o modelo seja transparente e explicável. Qual solução atende a esses requisitos?",
+    "stem": "Um banco está adaptando um modelo de base (foundation model, FM) para apoiar decisões de crédito. Os órgãos reguladores exigem que o modelo seja transparente (transparent) e explicável (explainable). Qual solução atende a esses requisitos?",
     "options": {
       "A": "Configure controles de segurança e conformidade com o Amazon Inspector",
       "B": "Proteja e criptografe os dados de treinamento com o Amazon Macie",
