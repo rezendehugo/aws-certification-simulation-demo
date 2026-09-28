@@ -239,6 +239,14 @@ test("Portuguese responsible-AI explanation separates bias assessment from mitig
   assert.equal(translations["aif-q049"].status, "machine-draft");
 });
 
+test("Portuguese sampling-bias explanation states the missing premise", () => {
+  assert.match(translations["aif-q057"].explanation, /resposta indicada pela fonte é viés de amostragem/i);
+  assert.match(translations["aif-q057"].explanation, /pressupõe que algum grupo esteja sub-representado/i);
+  assert.match(translations["aif-q057"].explanation, /diferença na frequência de sinalizações, sozinha, não comprova essa causa/i);
+  assert.match(translations["aif-q057"].explanation, /não permite distinguir com segurança essas causas/i);
+  assert.equal(translations["aif-q057"].status, "machine-draft");
+});
+
 test("Portuguese drafts preserve AWS service names and avoid known literal calques", () => {
   const serviceNamePattern = /\b(?:Amazon|AWS)\s+[A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+){0,3}/g;
   const knownCalques = /engenharia imediata|modelo fundacional|modelos fundacionais|modelo básico|modelos básicos|taxa de transferência|rendimento provisionado|Amazon Personalizar|Cloud Front|incorporaç[aã]|\bPNL\b/i;

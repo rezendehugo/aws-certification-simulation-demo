@@ -663,7 +663,7 @@
       "C": "Viés de confirmação (confirmation bias)",
       "D": "Viés do observador (observer bias)"
     },
-    "explanation": "O viés de amostragem (sampling bias) ocorre quando os dados de treinamento não representam adequadamente toda a população. Essa sub-representação pode levar o modelo a sinalizar pessoas de um grupo étnico com frequência desproporcional.\nO viés de medição (measurement bias) decorre de erros sistemáticos na coleta ou no registro dos dados. Viés de confirmação (confirmation bias) e viés do observador (observer bias) se relacionam à forma como pessoas interpretam ou rotulam resultados, não à representatividade da amostra de treinamento.",
+    "explanation": "A resposta indicada pela fonte é viés de amostragem (sampling bias), que ocorre quando os dados de treinamento não representam adequadamente toda a população. Essa interpretação pressupõe que algum grupo esteja sub-representado na amostra. A diferença na frequência de sinalizações, sozinha, não comprova essa causa: também é preciso examinar os rótulos e a forma como os dados foram coletados.\nO viés de medição (measurement bias) pode surgir de erros sistemáticos na coleta ou no registro dos dados. Viés de confirmação (confirmation bias) e viés do observador (observer bias) se relacionam à forma como pessoas interpretam ou rotulam resultados. Como o enunciado não informa a representatividade nem o processo de coleta, ele não permite distinguir com segurança essas causas; a questão precisa de contexto adicional.",
     "status": "machine-draft",
     "sourceRevision": "3ec8a763268d244c99664fed4f23f2b759099408"
   },
