@@ -97,6 +97,8 @@ async function scanSource(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const absolute = join(directory, entry.name);
     const sourcePath = relative(repositoryRoot, absolute).replaceAll("\\", "/");
+    // Git worktrees use a root .git pointer file; it is repository metadata, not app source.
+    if (sourcePath === ".git" && entry.isFile()) continue;
     if (entry.isDirectory() && (ignoredDirectories.has(entry.name) || /^cypress\/(?:downloads|screenshots|videos)(?:\/|$)/.test(sourcePath))) continue;
     if (entry.isSymbolicLink()) throw new Error(`Symlinks are not allowed in the public source tree: ${relative(repositoryRoot, absolute)}`);
     if (entry.isDirectory()) await scanSource(absolute);
