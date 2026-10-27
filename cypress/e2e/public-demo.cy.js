@@ -63,9 +63,50 @@ describe("public Lite demo release checks", () => {
     cy.get("body").type("a");
     cy.get('.answers input[type="radio"]').first().should("be.checked");
     cy.get("body").type("{rightarrow}");
-    cy.get(".question-grid .current").should("have.text", "2");
+    cy.get(".navigator-status strong").should("contain.text", "Question 2 of 65");
+    cy.get(".question-range").should("have.value", "2");
     cy.get("body").type("f");
     cy.contains("button", "Unflag").should("be.visible");
+  });
+
+  it("navigates the range with its arrows and keeps answer, flag, and confidence state", () => {
+    cy.contains("button", "Start simulation").click();
+    cy.get('.answers input[type="radio"]').first().check({ force: true });
+    cy.get(".actionbar select").select("high");
+    cy.get("button.flag").click();
+
+    cy.get('button[aria-label="Next question"]').click();
+    cy.get(".question-range").should("have.value", "2");
+    cy.get('button[aria-label="Previous question"]').click();
+    cy.get(".question-range").should("have.value", "1");
+    cy.get('.answers input[type="radio"]').first().should("be.checked");
+    cy.get(".actionbar select").should("have.value", "high");
+    cy.contains("button", "Unflag").should("be.visible");
+    cy.get(".navigator-status").should("contain.text", "1 answered").and("contain.text", "1 flagged");
+    cy.get('button[aria-label="Previous question"]').should("be.disabled");
+  });
+
+  it("supports trackpad-style horizontal scrolling and clamps at the final question", () => {
+    cy.contains("button", "Start simulation").click();
+    cy.get(".question-range").trigger("wheel", { deltaX: 80, deltaY: 0 });
+    cy.get(".question-range").should("have.value", "3");
+
+    selectQuestion(65);
+    cy.get(".question-range").should("have.value", "65");
+    cy.get('button[aria-label="Next question"]').should("be.disabled");
+    cy.get(".question-range").trigger("wheel", { deltaX: 180, deltaY: 0 });
+    cy.get(".question-range").should("have.value", "65");
+  });
+
+  it("localizes the question range and arrow controls in Portuguese", () => {
+    cy.get(".preferences select").eq(0).select("pt-BR");
+    cy.contains("button", "Iniciar simulado").click();
+    cy.get('.question-range[aria-label="Questão"]')
+      .should("have.attr", "aria-valuetext", "Questão 1 de 65");
+    cy.get('button[aria-label="Próxima questão"]').click();
+    cy.get(".navigator-status strong").should("contain.text", "Questão 2 de 65");
+    cy.get('button[aria-label="Anterior questão"]').click();
+    cy.get(".question-range").should("have.value", "1");
   });
 
   it("shows Portuguese domain and question-format names instead of source IDs", () => {
@@ -94,7 +135,7 @@ describe("public Lite demo release checks", () => {
   it("teaches the SSE-KMS permission distinction without raw markup", () => {
     cy.get(".preferences select").eq(0).select("pt-BR");
     cy.contains("button", "Iniciar simulado").click();
-    cy.get('button[aria-label="Questão 56"]').click();
+    selectQuestion(56);
     cy.get(".question-card h1").should("contain.text", "SSE-KMS");
     cy.get(".answers").should("contain.text", "kms:Decrypt").and("not.contain.text", "`");
     cy.get(".question-card").should("contain.text", "já tem permissão para ler objetos");
@@ -103,7 +144,7 @@ describe("public Lite demo release checks", () => {
   it("separates human label review from retired service availability", () => {
     cy.get(".preferences select").eq(0).select("pt-BR");
     cy.contains("button", "Iniciar simulado").click();
-    cy.get('button[aria-label="Questão 30"]').click();
+    selectQuestion(30);
     cy.get('.answers input[type="radio"]').eq(1).check({ force: true });
     cy.contains("button", "Finalizar simulado").click();
     cy.get('[role="dialog"]').within(() => cy.contains("button", "Finalizar agora").click());
@@ -115,7 +156,7 @@ describe("public Lite demo release checks", () => {
   it("localizes accessible ordering controls in Portuguese", () => {
     cy.get(".preferences select").eq(0).select("pt-BR");
     cy.contains("button", "Iniciar simulado").click();
-    cy.get('button[aria-label="Questão 12"]').click();
+    selectQuestion(12);
     cy.get('button[aria-label="Mover para cima"]').should("be.visible");
     cy.get('button[aria-label="Mover para baixo"]').should("be.visible");
     cy.get('button[aria-label="Move up"]').should("not.exist");
@@ -194,4 +235,15 @@ function auditAccessibility() {
       cy.task("log", summary);
     },
   );
+}
+
+function selectQuestion(questionNumber) {
+  cy.get(".question-range").then(($range) => {
+    const input = $range[0];
+    const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").set;
+    setter.call(input, String(questionNumber));
+    input.dispatchEvent(new Event("input", { bubbles: true }));
+    input.dispatchEvent(new Event("change", { bubbles: true }));
+  });
+  cy.get(".question-range").should("have.value", String(questionNumber));
 }
